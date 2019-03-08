@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - api
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    networks:
+      - backend
+    expose:
+      - 5000
+  
+  postgres:
+    image: postgres
+    environment:         
+      POSTGRES_DB: hackqc19
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgres/
+    volumes: 
+      - postgres:/var/lib/postgres/
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    
+
+networks:
+  backend:
+
+volumes:
+  postgres:
+  api:

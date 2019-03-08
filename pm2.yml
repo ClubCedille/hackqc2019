@@ -1,0 +1,14 @@
+apps:
+  - script: index.js
+    instances: max
+    exec_mode: cluster
+    exec_interpreter: babel-node
+    autorestart: true
+    watch: true
+    ignore_watch:
+     - node_modules
+    env:
+      NODE_ENV: development
+      PORT: 5000
+      URL: http://localhost:5000
+      POSTGRES_URL: <postgres_url_goes_here>

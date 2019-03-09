@@ -103,26 +103,17 @@ async function getCollisions(road) {
     },
   });
 }
-function getRatingCollision(numberCollision){
-
-    let rating = 100-Math.pow(numberCollision, POW_FACTOR);
-    if(rating <= 0){
-        return 0;
-    }
-    return rating;
+function getRatingCollision(numberCollision) {
+  let rating = 100 - Math.pow(numberCollision, POW_FACTOR);
+  if (rating <= 0) {
+    return 0;
+  }
+  return rating;
 }
 
-async function getFeuxPietons(){
+async function getFeuxPietons() {}
 
-}
+async function getFeuxMalvoyants() {}
 
-async function getFeuxMalvoyants(){
-
-    
-}
-
-async function getTaillesTrotoires(){
-
-    
-}
+async function getTaillesTrotoires() {}
 export default router;

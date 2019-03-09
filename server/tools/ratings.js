@@ -6,7 +6,7 @@ const ProjetPietonnisation = sequelize.import(
   '../database/models/projet_pietonnisation',
 );
 
-class MasterRating {
+export class MasterRating {
   /**
    *
    * @param {sequelize.Model<Any,Any>} model
@@ -34,10 +34,15 @@ class MasterRating {
 
   /**
    * Get the rating of a model.
+   * @param {Number} length
    * @returns {Number}
    */
-  getRating() {
-    throw new Error('You must implement this method.');
+  getRating(length) {
+    let rating = 100 - Math.pow(length, POW_FACTOR);
+    if (rating <= 0) {
+      return 0;
+    }
+    return Math.round(rating);
   }
 
   /**
@@ -65,24 +70,10 @@ export class ProjetPietonnisationRating extends MasterRating {
   constructor() {
     super(ProjetPietonnisation, 'LATITUDE', 'LONGITUDE');
   }
-
-  getRating() {}
 }
 
 export class CollisionRating extends MasterRating {
   constructor() {
     super(Accident, 'LOC_LAT', 'LOC_LONG');
-  }
-
-  /**
-   * Get rating of collision.
-   * @param {Number} numberCollision
-   */
-  getRating(numberCollision) {
-    let rating = 100 - Math.pow(numberCollision, POW_FACTOR);
-    if (rating <= 0) {
-      return 0;
-    }
-    return rating;
   }
 }

@@ -1,6 +1,10 @@
 import express from 'express';
 import asyncForEach from '../tools/asyncForEach';
-import { CollisionRating, ProjetPietonnisationRating } from '../tools/ratings';
+import {
+  CollisionRating,
+  ProjetPietonnisationRating,
+  MasterRating,
+} from '../tools/ratings';
 const router = express.Router();
 
 const googleMapsClient = require('@google/maps').createClient({
@@ -20,24 +24,22 @@ router.get('/', async (req, res) => {
 
 async function querygoogleapi(origin, destination, modeDeplacement) {
   try {
-    let googleApiResponse = await requestGoogleApi(
+    // Google response.
+    const googleApiResponse = await requestGoogleApi(
       origin,
       destination,
       modeDeplacement,
     );
 
-    let ratings = await computeRatings(
-      googleApiResponse.json.routes[0].legs[0].steps,
-    );
-
-    return ratings;
+    // Ratings.
+    return await computeRatings(googleApiResponse.json.routes[0].legs[0].steps);
   } catch (error) {
     console.log(error);
     return error;
   }
 }
 
-function requestGoogleApi(origin, destination, modeDeplacement) {
+const requestGoogleApi = (origin, destination, modeDeplacement) => {
   return googleMapsClient
     .directions({
       origin: origin,
@@ -45,30 +47,45 @@ function requestGoogleApi(origin, destination, modeDeplacement) {
       mode: modeDeplacement,
     })
     .asPromise();
-}
+};
+
+/**
+ *
+ * @param {Array} foundData
+ * @param {MasterRating} rating
+ * @param {Object} road
+ * @param {String} key
+ */
+const addRatingToRatings = (foundData, rating, road, key) => {
+  if (foundData.length > 0) {
+    let ratings = {};
+    let toAdd = {};
+    toAdd['postions'] = foundData;
+    toAdd['rating'] = rating.getRating(foundData.length);
+    ratings[key] = toAdd;
+    road['ratings'] = ratings;
+  }
+};
 
 async function computeRatings(arrayOfRoad) {
-  let ratings = {};
-  let collision = {},
-    projetPiteonnisation = {};
-
   const projetPietonnisationRating = new ProjetPietonnisationRating(),
     collisionRating = new CollisionRating();
 
   await asyncForEach(arrayOfRoad, async road => {
     road['ratings'] = null;
     let collisionsTrouves = await collisionRating.getData(road);
-    let projetsPietonnisationRating = await projetPietonnisationRating.getData(
+    let projetsPietonnisationTrouves = await projetPietonnisationRating.getData(
       road,
     );
-    if (collisionsTrouves.length > 0) {
-      let ratings = {};
-      let collision = {};
-      collision['postions'] = collisionsTrouves;
-      collision['rating'] = collisionRating.getRating(collisionsTrouves.length);
-      ratings['collision'] = collision;
-      road['ratings'] = ratings;
-    }
+
+    addRatingToRatings(collisionsTrouves, collisionRating, road, 'collision');
+
+    addRatingToRatings(
+      projetsPietonnisationTrouves,
+      projetPietonnisationRating,
+      road,
+      'projetPietonnisation',
+    );
   });
 
   return arrayOfRoad;

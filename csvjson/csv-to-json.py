@@ -3,8 +3,6 @@ import json
 import os
 import sys
 
-print(sys.argv)
-
 for filename in sys.argv[1:]:
 
     csv_file = open(filename, 'r');
@@ -13,13 +11,23 @@ for filename in sys.argv[1:]:
     read_fields_command = "head -n 1 " + filename
     field_str = os.popen(read_fields_command).read()
 
+    file_lenght_command = "cat " + filename + " | wc -l"
+    lenght = int(os.popen(file_lenght_command).read())
+
     fields = field_str.split(",")
 
     reader = csv.DictReader( csv_file, fields)
 
+    print(lenght)
+
+    json_file.write('[')
     for row in reader:
         if reader.line_num > 1 :
             json.dump(row, json_file)
-            json_file.write('\n')
+            if lenght == reader.line_num:
+                json_file.write('\n')
+                print("fin de fichier")
+            else:
+                json_file.write(',\n')
 
-
+    json_file.write(']')

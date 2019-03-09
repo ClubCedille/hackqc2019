@@ -1,5 +1,6 @@
 import express from 'express';
 const router = express.Router();
+const POW_FACTOR = 1.35;
 const googleMapsClient = require('@google/maps').createClient({
   key: 'AIzaSyDagDGSn2btc_jP5KgOuk7QOZPuwnv0hMA',
   Promise: Promise,
@@ -102,5 +103,26 @@ async function getCollisions(road) {
     },
   });
 }
+function getRatingCollision(numberCollision){
 
+    let rating = 100-Math.pow(numberCollision, POW_FACTOR);
+    if(rating <= 0){
+        return 0;
+    }
+    return rating;
+}
+
+async function getFeuxPietons(){
+
+}
+
+async function getFeuxMalvoyants(){
+
+    
+}
+
+async function getTaillesTrotoires(){
+
+    
+}
 export default router;

@@ -27,9 +27,9 @@ async function querygoogleapi(origin, destination, modeDeplacement) {
       modeDeplacement,
     );
     let arrayOfRoutes = getDirectionRoutes(googleApiResponse.json);
-    let ratings = computeRatings(arrayOfRoutes);
+    let ratings = await computeRatings(arrayOfRoutes);
 
-    return arrayOfRoutes;
+    return ratings;
   } catch (error) {
     console.log(error);
     return error;
@@ -51,27 +51,60 @@ function requestGoogleApi(origin, destination, modeDeplacement) {
  * @param {response from google api} googleApiResponse
  */
 function getDirectionRoutes(googleApiResponse) {
-  let arrayOfRoutes = [];
-  let routeObject = {};
-  let startLocation = {};
-  let endLocation = {};
+    let arrayOfRoad = [];
+    let roadObject = {};
+    let startLocation = {};
+    let endLocation = {};
 
-  googleApiResponse.routes[0].legs[0].steps.forEach(element => {
+    googleApiResponse.routes[0].legs[0].steps.forEach(element => {
     startLocation.lat = element.start_location.lat;
     startLocation.lng = element.start_location.lng;
     endLocation.lat = element.end_location.lat;
     endLocation.lng = element.end_location.lng;
 
-    routeObject.start = startLocation;
-    routeObject.end = endLocation;
+    roadObject.start = startLocation;
+    roadObject.end = endLocation;
 
-    arrayOfRoutes.push(routeObject);
-  });
+    arrayOfRoad.push(routeObject);
+});
 
-  return arrayOfRoutes;
+    return arrayOfRoad;
 }
 
-function computeRatings(arrayOfRoutes) {
-  arrayOfRoutes.forEach(element => {});
+async function computeRatings(arrayOfRoad) {
+    let ratings = {};
+    let collision = {};
+    arrayOfRoad.forEach(async road => {
+
+        let collisionRating = await getCollisions(road);
+        road.ratings = null;
+
+        if(collisionRating.length != 0){
+            collision.postions = collisionRating;
+            collision.rating = getRatingCollision(collisionRating.length);
+            ratings.collision = collision;
+            road.ratings = ratings;
+        }
+    });
+
+    return arrayOfRoad;
 }
+
+async function getCollisions(road){
+
+    return await Table.findAll({
+        attributes: ["LOC_LAT","LOC_LONG"],
+        where: {
+            LOC_LAT: {
+                [Op.between]: [road.start.lat, road.end.lat]
+            },
+            LOC_LONG:{
+                [Op.between]: [road.start.lng, road.end.lng]
+            }
+        }
+    });
+
+
+}
+
 export default router;

@@ -1,4 +1,6 @@
 'use strict';
+
+import Sequelize from 'sequelize';
 module.exports = (sequelize, DataTypes) => {
   const accident = sequelize.define(
     'accident',
@@ -48,8 +50,5 @@ module.exports = (sequelize, DataTypes) => {
     },
     {},
   );
-  accident.associate = function(models) {
-    // associations can be defined here
-  };
   return accident;
 };

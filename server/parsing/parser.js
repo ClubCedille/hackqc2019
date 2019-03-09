@@ -3,13 +3,14 @@ import asyncForEach from '../tools/asyncForEach';
 
 // List parsers here.
 import AccidentParser from './parsers/accident_parser';
+import ComptageFeuxParser from './parsers/comptage_feux';
+import FeuxPietonsParser from './parsers/feux_pietons_parser';
 import SignauxSonoresParser from './parsers/signaux_sonores_parser';
 
 // Parsing function.
 const parse = async parser => await parser.parse();
 
 // List of parsers.
-new FeuxPietonsParser(), new SignauxSonoresParser();
 const parsers = [
   new AccidentParser(),
   new ComptageFeuxParser(),

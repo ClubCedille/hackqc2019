@@ -10,11 +10,7 @@ const googleMapsClient = require('@google/maps').createClient({
 router.get('/', async (req, res) => {
   let modeDeplacement = req.query.mode;
   let mode = 'walking';
-  if (
-    modeDeplacement === 'driving' &&
-    modeDeplacement === 'walking' &&
-    modeDeplacement === 'bicycling'
-  ) {
+  if (['driving', 'walking', 'bicycling'].includes(modeDeplacement)) {
     mode = modeDeplacement;
   }
 

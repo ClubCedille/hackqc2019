@@ -7,23 +7,29 @@ const ProjetPietonnisation = sequelize.import(
 );
 
 class MasterRating {
-  constructor() {
+  /**
+   *
+   * @param {sequelize.Model<Any,Any>} model
+   * @param {String} latitude
+   * @param {String} longitude
+   */
+  constructor(model, latitude, longitude) {
     /**
      * @type {sequelize.Model<Any,Any>}
      */
-    this.model = undefined;
+    this.model = model;
 
     /**
      * Name of the latitude field.
      * @type {String}
      */
-    this.latitude = '';
+    this.latitude = latitude;
 
     /**
      * Name of the longitude field.
      * @type {String}
      */
-    this.longitude = '';
+    this.longitude = longitude;
   }
 
   /**
@@ -57,9 +63,7 @@ class MasterRating {
 
 export class ProjetPietonnisationRating extends MasterRating {
   constructor() {
-    this.model = ProjetPietonnisation;
-    this.latitude = 'LATITUDE';
-    this.longitude = 'LONGITUDE';
+    super(ProjetPietonnisation, 'LATITUDE', 'LONGITUDE');
   }
 
   getRating() {}
@@ -67,9 +71,7 @@ export class ProjetPietonnisationRating extends MasterRating {
 
 export class CollisionRating extends MasterRating {
   constructor() {
-    this.model = Accident;
-    this.latitute = 'LOC_LAT';
-    this.longitude = 'LOC_LNG';
+    super(Accident, 'LOC_LAT', 'LOC_LNG');
   }
 
   /**

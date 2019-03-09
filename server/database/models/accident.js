@@ -1,6 +1,4 @@
 'use strict';
-
-import Sequelize from 'sequelize';
 module.exports = (sequelize, DataTypes) => {
   const accident = sequelize.define(
     'accident',
@@ -9,9 +7,29 @@ module.exports = (sequelize, DataTypes) => {
       JR_SEMN_ACCDN: DataTypes.STRING,
       DT_ACCDN: DataTypes.STRING,
       CD_MUNCP: DataTypes.STRING,
+      NO_CIVIQ_ACCDN: DataTypes.STRING,
+      SFX_NO_CIVIQ_ACCDN: DataTypes.STRING,
+      BORNE_KM_ACCDN: DataTypes.STRING,
       RUE_ACCDN: DataTypes.STRING,
       TP_REPRR_ACCDN: DataTypes.STRING,
+      ACCDN_PRES_DE: DataTypes.STRING,
       NB_METRE_DIST_ACCD: DataTypes.STRING,
+      CD_GENRE_ACCDN: DataTypes.STRING,
+      CD_SIT_PRTCE_ACCDN: DataTypes.STRING,
+      CD_ETAT_SURFC: DataTypes.STRING,
+      CD_ECLRM: DataTypes.STRING,
+      CD_ENVRN_ACCDN: DataTypes.STRING,
+      NO_ROUTE: DataTypes.STRING,
+      CD_CATEG_ROUTE: DataTypes.STRING,
+      CD_ETAT_CHASS: DataTypes.STRING,
+      CD_ASPCT_ROUTE: DataTypes.STRING,
+      CD_LOCLN_ACCDN: DataTypes.STRING,
+      CD_POSI_ACCDN: DataTypes.STRING,
+      CD_CONFG_ROUTE: DataTypes.STRING,
+      CD_ZON_TRAVX_ROUTR: DataTypes.STRING,
+      CD_PNT_CDRNL_ROUTE: DataTypes.STRING,
+      CD_PNT_CDRNL_REPRR: DataTypes.STRING,
+      CD_COND_METEO: DataTypes.STRING,
       NB_VEH_IMPLIQUES_ACCDN: DataTypes.STRING,
       NB_MORTS: DataTypes.STRING,
       NB_BLESSES_GRAVES: DataTypes.STRING,
@@ -20,6 +38,8 @@ module.exports = (sequelize, DataTypes) => {
       AN: DataTypes.STRING,
       NB_VICTIMES_TOTAL: DataTypes.STRING,
       GRAVITE: DataTypes.STRING,
+      REG_ADM: DataTypes.STRING,
+      MRC: DataTypes.STRING,
       nb_automobile_camion_leger: DataTypes.STRING,
       nb_camionLourd_tractRoutier: DataTypes.STRING,
       nb_outil_equipement: DataTypes.STRING,
@@ -45,10 +65,17 @@ module.exports = (sequelize, DataTypes) => {
       VITESSE_AUTOR: DataTypes.STRING,
       LOC_X: DataTypes.STRING,
       LOC_Y: DataTypes.STRING,
+      LOC_COTE_QD: DataTypes.STRING,
+      LOC_COTE_PD: DataTypes.STRING,
+      LOC_DETACHEE: DataTypes.STRING,
+      LOC_IMPRECISION: DataTypes.STRING,
       LOC_LONG: DataTypes.STRING,
       LOC_LAT: DataTypes.STRING,
     },
     {},
   );
+  accident.associate = function(models) {
+    // associations can be defined here
+  };
   return accident;
 };

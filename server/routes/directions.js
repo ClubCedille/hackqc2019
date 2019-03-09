@@ -53,7 +53,7 @@ async function computeRatings(arrayOfRoad) {
 
   const projetPietonnisationRating = new ProjetPietonnisationRating(),
     collisionRating = new CollisionRating();
-    
+
   await asyncForEach(arrayOfRoad, async road => {
     road['ratings'] = null;
     let collisionsTrouves = await collisionRating.getData(road);

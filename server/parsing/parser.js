@@ -14,7 +14,4 @@ const parsers = [new AccidentParser()];
 // Parse data.
 (async () => {
   await asyncForEach(parsers, parse);
-})();
-
-// Quit program.
-process.exit(0);
+})().then(process.exit);

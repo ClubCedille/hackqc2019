@@ -18,3 +18,5 @@ sequelize
   .authenticate()
   .then(() => console.log(`Connected to DB ${POSTGRES_DB}`))
   .catch(error => console.error(error));
+
+export default sequelize;

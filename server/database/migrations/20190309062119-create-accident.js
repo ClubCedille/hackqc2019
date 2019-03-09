@@ -90,25 +90,25 @@ module.exports = {
         type: Sequelize.STRING,
       },
       NB_VEH_IMPLIQUES_ACCDN: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_MORTS: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_BLESSES_GRAVES: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_BLESSES_LEGERS: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       HEURE_ACCDN: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       AN: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_VICTIMES_TOTAL: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       GRAVITE: {
         type: Sequelize.STRING,
@@ -120,97 +120,97 @@ module.exports = {
         type: Sequelize.STRING,
       },
       nb_automobile_camion_leger: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_camionLourd_tractRoutier: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_outil_equipement: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_tous_autobus_minibus: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_bicyclette: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_cyclomoteur: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_motocyclette: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_taxi: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_urgence: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_motoneige: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_VHR: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_autres_types: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       nb_veh_non_precise: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_DECES_PIETON: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_BLESSES_PIETON: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_VICTIMES_PIETON: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_DECES_MOTO: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_BLESSES_MOTO: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_VICTIMES_MOTO: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_DECES_VELO: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_BLESSES_VELO: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       NB_VICTIMES_VELO: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       VITESSE_AUTOR: {
         type: Sequelize.STRING,
       },
       LOC_X: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_Y: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_COTE_QD: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_COTE_PD: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_DETACHEE: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_IMPRECISION: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_LONG: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       LOC_LAT: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
       },
       createdAt: {
         allowNull: false,

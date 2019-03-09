@@ -12,7 +12,7 @@ import codecs
 
 for filename in sys.argv[1:]:
 
-    csv_file = codecs.open(filename, "r", "latin_1")
+    csv_file = codecs.open(filename, "r", "utf-8")
     json_file = codecs.open(filename.strip('.csv') + ".json",'w', "utf-8")
 
     read_fields_command = "head -n 1 " + filename

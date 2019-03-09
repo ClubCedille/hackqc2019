@@ -24,8 +24,10 @@ async function querygoogleapi(origin, destination, modeDeplacement) {
       destination,
       modeDeplacement,
     );
-    let arrayOfRoutes = getDirectionRoutes(googleApiResponse.json);
-    let ratings = await computeRatings(arrayOfRoutes);
+
+    let ratings = await computeRatings(
+      googleApiResponse.json.routes[0].legs[0].steps,
+    );
 
     return ratings;
   } catch (error) {
@@ -44,32 +46,6 @@ function requestGoogleApi(origin, destination, modeDeplacement) {
     .asPromise();
 }
 
-/**
- * recover only the location of routes of only one direction
- * @param {response from google api} googleApiResponse
- */
-function getDirectionRoutes(googleApiResponse) {
-  let arrayOfRoad = [];
-
-  for (let element of googleApiResponse.routes[0].legs[0].steps) {
-    let roadObject = {};
-    let startLocation = {};
-    let endLocation = {};
-
-    startLocation.lat = element.start_location.lat;
-    startLocation.lng = element.start_location.lng;
-    endLocation.lat = element.end_location.lat;
-    endLocation.lng = element.end_location.lng;
-
-    roadObject.start = startLocation;
-    roadObject.end = endLocation;
-
-    arrayOfRoad.push(roadObject);
-  }
-
-  return arrayOfRoad;
-}
-
 async function computeRatings(arrayOfRoad) {
   let ratings = {};
   let collision = {},
@@ -77,18 +53,20 @@ async function computeRatings(arrayOfRoad) {
 
   const projetPietonnisationRating = new ProjetPietonnisationRating(),
     collisionRating = new CollisionRating();
-  arrayOfRoad.forEach(async road => {
-    let collisionRating = await collisionRating.getData(road);
+    
+  await asyncForEach(arrayOfRoad, async road => {
+    road['ratings'] = null;
+    let collisionsTrouves = await collisionRating.getData(road);
     let projetsPietonnisationRating = await projetPietonnisationRating.getData(
       road,
     );
-    road.ratings = null;
-
-    if (collisionRating.length !== 0) {
-      collision.postions = collisionRating;
-      collision.rating = getRatingCollision(collisionRating.length);
-      ratings.collision = collision;
-      road.ratings = ratings;
+    if (collisionsTrouves.length > 0) {
+      let ratings = {};
+      let collision = {};
+      collision['postions'] = collisionsTrouves;
+      collision['rating'] = collisionRating.getRating(collisionsTrouves.length);
+      ratings['collision'] = collision;
+      road['ratings'] = ratings;
     }
   });
 

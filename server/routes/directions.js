@@ -1,10 +1,13 @@
 import express from 'express';
+import sequelize from '../config/database';
 const router = express.Router();
 const POW_FACTOR = 1.35;
+const Accident = sequelize.import('../database/models/accident');
 const googleMapsClient = require('@google/maps').createClient({
   key: 'AIzaSyDagDGSn2btc_jP5KgOuk7QOZPuwnv0hMA',
   Promise: Promise,
 });
+const Op = sequelize.Op;
 
 router.get('/', async (req, res) => {
   let modeDeplacement = req.query.mode;
@@ -66,7 +69,7 @@ function getDirectionRoutes(googleApiResponse) {
     roadObject.start = startLocation;
     roadObject.end = endLocation;
 
-    arrayOfRoad.push(routeObject);
+    arrayOfRoad.push(roadObject);
   });
 
   return arrayOfRoad;
@@ -77,6 +80,7 @@ async function computeRatings(arrayOfRoad) {
   let collision = {};
   arrayOfRoad.forEach(async road => {
     let collisionRating = await getCollisions(road);
+    console.log(collisionRating);
     road.ratings = null;
 
     if (collisionRating.length != 0) {
@@ -89,20 +93,32 @@ async function computeRatings(arrayOfRoad) {
 
   return arrayOfRoad;
 }
-
+/**
+ * get collisin from database that are beside the directions
+ * @param {*} road
+ */
 async function getCollisions(road) {
-  return await Table.findAll({
-    attributes: ['LOC_LAT', 'LOC_LONG'],
-    where: {
-      LOC_LAT: {
-        [Op.between]: [road.start.lat, road.end.lat],
+  try {
+    return await Accident.findAll({
+      attributes: ['LOC_LAT', 'LOC_LONG'],
+      where: {
+        LOC_LAT: {
+          [Op.between]: [road.start.lat, road.end.lat],
+        },
+        LOC_LONG: {
+          [Op.between]: [road.start.lng, road.end.lng],
+        },
       },
-      LOC_LONG: {
-        [Op.between]: [road.start.lng, road.end.lng],
-      },
-    },
-  });
+    });
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 }
+/**
+ * calculate collision rating
+ * @param {*} numberCollision
+ */
 function getRatingCollision(numberCollision) {
   let rating = 100 - Math.pow(numberCollision, POW_FACTOR);
   if (rating <= 0) {

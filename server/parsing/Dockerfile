@@ -11,4 +11,4 @@ COPY package*.json ./
 RUN npm i --quiet
 RUN npm i -g pm2 babel-cli
 
-CMD pm2-dev pm2.yml
+CMD pm2-dev pm2-parser.yml

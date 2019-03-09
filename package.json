@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "docker-compose up --build",
     "prod": "node index.js",
-    "prettier": "prettier 'server/**/*.js' --write .prettierrc.yaml"
+    "prettier": "prettier 'server/**/*.js' --write .prettierrc.yaml",
+    "parser": "docker-compose -f docker-compose.parser.yml up --build"
   },
   "repository": {
     "type": "git",

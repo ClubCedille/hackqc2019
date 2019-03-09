@@ -1,8 +1,10 @@
 version: '3'
 
 services:
-  api:
-    build: .
+  parser:
+    build:
+      context: .
+      dockerfile: server/parsing/Dockerfile
     ports:
       - "5000:5000"
     volumes:

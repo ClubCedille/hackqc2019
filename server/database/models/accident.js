@@ -1,0 +1,55 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const accident = sequelize.define(
+    'accident',
+    {
+      NO_SEQ_COLL: DataTypes.STRING,
+      JR_SEMN_ACCDN: DataTypes.STRING,
+      DT_ACCDN: DataTypes.STRING,
+      CD_MUNCP: DataTypes.STRING,
+      RUE_ACCDN: DataTypes.STRING,
+      TP_REPRR_ACCDN: DataTypes.STRING,
+      NB_METRE_DIST_ACCD: DataTypes.STRING,
+      NB_VEH_IMPLIQUES_ACCDN: DataTypes.STRING,
+      NB_MORTS: DataTypes.STRING,
+      NB_BLESSES_GRAVES: DataTypes.STRING,
+      NB_BLESSES_LEGERS: DataTypes.STRING,
+      HEURE_ACCDN: DataTypes.STRING,
+      AN: DataTypes.STRING,
+      NB_VICTIMES_TOTAL: DataTypes.STRING,
+      GRAVITE: DataTypes.STRING,
+      nb_automobile_camion_leger: DataTypes.STRING,
+      nb_camionLourd_tractRoutier: DataTypes.STRING,
+      nb_outil_equipement: DataTypes.STRING,
+      nb_tous_autobus_minibus: DataTypes.STRING,
+      nb_bicyclette: DataTypes.STRING,
+      nb_cyclomoteur: DataTypes.STRING,
+      nb_motocyclette: DataTypes.STRING,
+      nb_taxi: DataTypes.STRING,
+      nb_urgence: DataTypes.STRING,
+      nb_motoneige: DataTypes.STRING,
+      nb_VHR: DataTypes.STRING,
+      nb_autres_types: DataTypes.STRING,
+      nb_veh_non_precise: DataTypes.STRING,
+      NB_DECES_PIETON: DataTypes.STRING,
+      NB_BLESSES_PIETON: DataTypes.STRING,
+      NB_VICTIMES_PIETON: DataTypes.STRING,
+      NB_DECES_MOTO: DataTypes.STRING,
+      NB_BLESSES_MOTO: DataTypes.STRING,
+      NB_VICTIMES_MOTO: DataTypes.STRING,
+      NB_DECES_VELO: DataTypes.STRING,
+      NB_BLESSES_VELO: DataTypes.STRING,
+      NB_VICTIMES_VELO: DataTypes.STRING,
+      VITESSE_AUTOR: DataTypes.STRING,
+      LOC_X: DataTypes.STRING,
+      LOC_Y: DataTypes.STRING,
+      LOC_LONG: DataTypes.STRING,
+      LOC_LAT: DataTypes.STRING,
+    },
+    {},
+  );
+  accident.associate = function(models) {
+    // associations can be defined here
+  };
+  return accident;
+};

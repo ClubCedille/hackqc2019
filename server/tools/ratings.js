@@ -1,5 +1,5 @@
 import sequelize from '../config/database';
-const POW_FACTOR = 1.35;
+const POW_FACTOR = 1.18;
 const { Op } = sequelize;
 const Accident = sequelize.import('../database/models/accident');
 const ProjetPietonnisation = sequelize.import(
@@ -51,10 +51,10 @@ class MasterRating {
       attributes: [this.latitude, this.longitude],
       where: {
         [this.latitude]: {
-          [Op.between]: [road.start.lat, road.end.lat],
+          [Op.between]: [road.start_location.lat, road.end_location.lat],
         },
         [this.longitude]: {
-          [Op.between]: [road.start.lng, road.end.lng],
+          [Op.between]: [road.start_location.lng, road.end_location.lng],
         },
       },
     });
@@ -71,7 +71,7 @@ export class ProjetPietonnisationRating extends MasterRating {
 
 export class CollisionRating extends MasterRating {
   constructor() {
-    super(Accident, 'LOC_LAT', 'LOC_LNG');
+    super(Accident, 'LOC_LAT', 'LOC_LONG');
   }
 
   /**

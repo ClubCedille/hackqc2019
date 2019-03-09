@@ -1,4 +1,5 @@
 import express from 'express';
+import asyncForEach from '../tools/asyncForEach';
 import { CollisionRating, ProjetPietonnisationRating } from '../tools/ratings';
 const router = express.Router();
 

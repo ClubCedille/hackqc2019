@@ -1,8 +1,8 @@
 // AsyncForEach function.
-import asyncForEach from '../tools/asyncForEach';
+import asyncForEach from "../tools/asyncForEach";
 
 // List parsers here.
-import ExampleParser from './parsers/example_parser';
+import ExampleParser from "./parsers/example_parser";
 
 // Parsing function.
 const parse = async parser => await parser.parse();

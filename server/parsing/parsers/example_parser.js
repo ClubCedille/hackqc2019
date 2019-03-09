@@ -1,5 +1,4 @@
 import Parser from './master';
-import fs from 'fs';
 import dataset from '../../../datasets/example_dataset.json';
 
 export default class ExampleParser extends Parser {

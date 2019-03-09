@@ -1,21 +1,19 @@
 import express from 'express';
-import sequelize from '../config/database';
+import { CollisionRating, ProjetPietonnisationRating } from '../tools/ratings';
 const router = express.Router();
-const POW_FACTOR = 1.35;
-const Accident = sequelize.import('../database/models/accident');
+
 const googleMapsClient = require('@google/maps').createClient({
   key: 'AIzaSyD7DRx9Ll0jGqzneZ1pE0v17rMe3MW6AQo',
   Promise: Promise,
 });
-const Op = sequelize.Op;
 
 router.get('/', async (req, res) => {
   let modeDeplacement = req.query.mode;
   let mode = 'walking';
   if (
-    modeDeplacement == 'driving' &&
-    modeDeplacement == 'walking' &&
-    modeDeplacement == 'bicycling'
+    modeDeplacement === 'driving' &&
+    modeDeplacement === 'walking' &&
+    modeDeplacement === 'bicycling'
   ) {
     mode = modeDeplacement;
   }
@@ -57,7 +55,7 @@ function requestGoogleApi(origin, destination, modeDeplacement) {
 function getDirectionRoutes(googleApiResponse) {
   let arrayOfRoad = [];
 
-  googleApiResponse.routes[0].legs[0].steps.forEach(element => {
+  for (let element of googleApiResponse.routes[0].legs[0].steps) {
     let roadObject = {};
     let startLocation = {};
     let endLocation = {};
@@ -71,20 +69,26 @@ function getDirectionRoutes(googleApiResponse) {
     roadObject.end = endLocation;
 
     arrayOfRoad.push(roadObject);
-  });
+  }
 
   return arrayOfRoad;
 }
 
 async function computeRatings(arrayOfRoad) {
   let ratings = {};
-  let collision = {};
+  let collision = {},
+    projetPiteonnisation = {};
+
+  const projetPietonnisationRating = new ProjetPietonnisationRating(),
+    collisionRating = new CollisionRating();
   arrayOfRoad.forEach(async road => {
-    let collisionRating = await getCollisions(road);
-    console.log(collisionRating);
+    let collisionRating = await collisionRating.getData(road);
+    let projetsPietonnisationRating = await projetPietonnisationRating.getData(
+      road,
+    );
     road.ratings = null;
 
-    if (collisionRating.length != 0) {
+    if (collisionRating.length !== 0) {
       collision.postions = collisionRating;
       collision.rating = getRatingCollision(collisionRating.length);
       ratings.collision = collision;
@@ -94,43 +98,5 @@ async function computeRatings(arrayOfRoad) {
 
   return arrayOfRoad;
 }
-/**
- * get collisin from database that are beside the directions
- * @param {*} road
- */
-async function getCollisions(road) {
-  try {
-    return await Accident.findAll({
-      attributes: ['LOC_LAT', 'LOC_LONG'],
-      where: {
-        LOC_LAT: {
-          [Op.between]: [road.start.lat, road.end.lat],
-        },
-        LOC_LONG: {
-          [Op.between]: [road.start.lng, road.end.lng],
-        },
-      },
-    });
-  } catch (error) {
-    console.log(error);
-    return error;
-  }
-}
-/**
- * calculate collision rating
- * @param {*} numberCollision
- */
-function getRatingCollision(numberCollision) {
-  let rating = 100 - Math.pow(numberCollision, POW_FACTOR);
-  if (rating <= 0) {
-    return 0;
-  }
-  return rating;
-}
 
-async function getFeuxPietons() {}
-
-async function getFeuxMalvoyants() {}
-
-async function getTaillesTrotoires() {}
 export default router;

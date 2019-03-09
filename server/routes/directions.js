@@ -58,7 +58,6 @@ function getDirectionRoutes(googleApiResponse) {
   let arrayOfRoad = [];
 
   googleApiResponse.routes[0].legs[0].steps.forEach(element => {
-
     let roadObject = {};
     let startLocation = {};
     let endLocation = {};

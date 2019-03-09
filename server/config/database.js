@@ -12,6 +12,12 @@ const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
   port: 5432,
   protocol: null,
   operatorsAliases: false,
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 20000,
+    acquire: 20000,
+  },
 });
 
 sequelize

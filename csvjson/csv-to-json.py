@@ -10,6 +10,7 @@ for filename in sys.argv[1:]:
 
     read_fields_command = "head -n 1 " + filename
     field_str = os.popen(read_fields_command).read()
+    field_str = field_str.strip("\n")
 
     file_lenght_command = "cat " + filename + " | wc -l"
     lenght = int(os.popen(file_lenght_command).read())

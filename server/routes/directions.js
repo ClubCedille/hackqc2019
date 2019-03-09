@@ -4,14 +4,14 @@ const router = express.Router();
 const POW_FACTOR = 1.35;
 const Accident = sequelize.import('../database/models/accident');
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyDagDGSn2btc_jP5KgOuk7QOZPuwnv0hMA',
+  key: 'AIzaSyD7DRx9Ll0jGqzneZ1pE0v17rMe3MW6AQo',
   Promise: Promise,
 });
 const Op = sequelize.Op;
 
 router.get('/', async (req, res) => {
   let modeDeplacement = req.query.mode;
-  let mode = 'driving';
+  let mode = 'walking';
   if (
     modeDeplacement == 'driving' &&
     modeDeplacement == 'walking' &&
@@ -56,11 +56,13 @@ function requestGoogleApi(origin, destination, modeDeplacement) {
  */
 function getDirectionRoutes(googleApiResponse) {
   let arrayOfRoad = [];
-  let roadObject = {};
-  let startLocation = {};
-  let endLocation = {};
 
   googleApiResponse.routes[0].legs[0].steps.forEach(element => {
+
+    let roadObject = {};
+    let startLocation = {};
+    let endLocation = {};
+
     startLocation.lat = element.start_location.lat;
     startLocation.lng = element.start_location.lng;
     endLocation.lat = element.end_location.lat;

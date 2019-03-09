@@ -74,8 +74,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     {},
   );
-  accident.associate = function(models) {
-    // associations can be defined here
-  };
+
   return accident;
 };

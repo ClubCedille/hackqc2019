@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "docker-compose up",
-    "prod": "node index.js",
+    "start": "node index.js",
     "prettier": "prettier 'server/**/*.js' --write .prettierrc.yaml",
     "parser": "docker-compose -f docker-compose.parser.yml up",
     "aws": "sh deploy_parsing.sh"

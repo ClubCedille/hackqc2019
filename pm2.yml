@@ -8,6 +8,6 @@ apps:
     ignore_watch:
      - node_modules
     env:
-      NODE_ENV: development
+      NODE_ENV: production
       PORT: 5000
       URL: http://localhost:5000

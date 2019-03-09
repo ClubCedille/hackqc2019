@@ -2,16 +2,21 @@
 import asyncForEach from '../tools/asyncForEach';
 
 // List parsers here.
-import ExampleParser from './parsers/example_parser';
 import AccidentParser from './parsers/accident_parser';
+import FeuxPietonsParser from './parsers/feux_pietons_parser';
+import ComptageFeuxParser from './parsers/comptage_feux';
 
 // Parsing function.
 const parse = async parser => await parser.parse();
 
 // List of parsers.
-const parsers = [new AccidentParser()];
+const parsers = [
+  new AccidentParser(),
+  new ComptageFeuxParser(),
+  new FeuxPietonsParser(),
+];
 
 // Parse data.
-(async () => {
-  await asyncForEach(parsers, parse);
-})().then(process.exit);
+(async () => await asyncForEach(parsers, parse))()
+  .then(() => process.abort())
+  .catch(() => process.abort());

@@ -4,9 +4,18 @@ const {
   POSTGRES_USER,
   POSTGRES_PASSWORD,
   POSTGRES_HOST,
+  POSTGRES_URL,
 } = process.env;
 
-const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
+const sequelize = new Sequelize(POSTGRES_URL, {
+  host: POSTGRES_HOST,
+  dialect: 'postgres',
+  port: 5432,
+  operatorsAliases: false,
+  dialectOptions: {
+    ssl: 'Amazon RDS',
+  },
+}); /*POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
   host: POSTGRES_HOST,
   dialect: 'postgres',
   port: 5432,
@@ -41,7 +50,7 @@ const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
   dialectOptions: {
     ssl: 'Amazon RDS',
   },
-});
+});*/
 
 sequelize
   .authenticate()

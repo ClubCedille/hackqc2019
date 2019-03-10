@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
       req.query.origin,
       req.query.destination,
       modeDeplacement,
-      constraints,
+      constraintsToUse,
     ),
   );
 });
@@ -64,6 +64,7 @@ async function querygoogleapi(
     return await computeRatings(
       googleApiResponse.json.routes,
       constraints || [],
+      modeDeplacement,
     );
   } catch (error) {
     console.log(error);
@@ -106,7 +107,7 @@ const addFeuxRatingToRatings = (
   }
 };
 
-async function computeRatings(arrayOfRoads, constraints = []) {
+async function computeRatings(arrayOfRoads, constraints = [], modeDeplacement) {
   let allRoads = [];
 
   const collisionRating = new CollisionRating(),
@@ -131,7 +132,7 @@ async function computeRatings(arrayOfRoads, constraints = []) {
         road,
       );
 
-      if (constraints.length > 0) {
+      if (constraints.length > 0 || modeDeplacement === 'bicycling') {
         const conditionToRunCollision =
           constraints.includes('Family') ||
           constraints.includes('ReducedMobility') ||

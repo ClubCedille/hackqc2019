@@ -17,10 +17,6 @@ services:
       - 5000
     environment:
       POSTGRES_URL: postgres://root:JUIHKJAHSD87676@hackqc2019.ceixem2ut2a6.us-east-2.rds.amazonaws.com/postgres?sslrootcert=/server/config/rds-combined-ca-bundle.cer
-      POSTGRES_DB: postgres
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: JUIHKJAHSD87676
-      POSTGRES_HOST: hackqc2019.ceixem2ut2a6.us-east-2.rds.amazonaws.com
   
   postgres:
     image: postgres

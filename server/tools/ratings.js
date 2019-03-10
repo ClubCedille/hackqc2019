@@ -76,10 +76,21 @@ export class ComptageFeuxRating extends MasterRating {
   constructor() {
     super(ComptageFeu, 'Latitude', 'Longitude');
   }
+
+  getRating(length) {
+    // Cyclistes: plus y'a de passages, plus la note est basse
+    // Pietons: plys y'a de velos, plus la note est passe (COULD)
+    // Handicapes/Aveugles: Faut qu'il y ait le moins personnes possible.
+  }
 }
 
 export class ComptageVFeuxPietonRating extends MasterRating {
   constructor() {
     super(VehiculeFeuxPieton, 'Latitude', 'Longitude');
+  }
+
+  getRating(length) {
+    // plus y'a de vehicules, plus la note est basse.
+    // pour les Handicapes/Aveugles: Plus y'a de personnes, plus la note est basse
   }
 }

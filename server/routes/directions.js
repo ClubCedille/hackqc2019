@@ -61,7 +61,7 @@ async function querygoogleapi(
 
     // Ratings.
     return await computeRatings(
-      googleApiResponse.json.routes[0].legs[0].steps,
+      googleApiResponse.json.routes,
       constraints || [],
     );
   } catch (error) {
@@ -76,6 +76,7 @@ const requestGoogleApi = (origin, destination, modeDeplacement) => {
       origin: origin,
       destination: destination,
       mode: modeDeplacement,
+      alternatives: true,
     })
     .asPromise();
 };
@@ -89,77 +90,75 @@ const requestGoogleApi = (origin, destination, modeDeplacement) => {
  */
 const addRatingToRatings = (foundData, rating, road, key) => {
   if (foundData.length > 0) {
-    let ratings = {};
     let toAdd = {};
-    toAdd['postions'] = foundData;
     toAdd['rating'] = rating.getRating(foundData.length);
     ratings[key] = toAdd;
     road['ratings'] = ratings;
   }
 };
 
-async function computeRatings(arrayOfRoad, constraints = []) {
+async function computeRatings(arrayOfRoads, constraints = []) {
+  let allRoads = [];
+
   const collisionRating = new CollisionRating(),
     comptageFeuxRating = new ComptageFeuxRating(),
     comptageVFeuxPietonRating = new ComptageVFeuxPietonRating();
+  await asyncForEach(arrayOfRoads, async roads => {
+    let oneRoad = [];
+    await asyncForEach(roads.legs[0].steps, async road => {
+      let roadSergment = {};
+      roadSergment['collusion'] = 100;
 
-  await asyncForEach(arrayOfRoad, async road => {
-    let collisionsTrouves = await collisionRating.getData(road);
-    let comptageFeuxTrouves = await comptageFeuxRating.getData(road);
-    let comptageVFeuxPietonTrouves = await comptageVFeuxPietonRating.getData(
-      road,
-    );
+      let collisionsTrouves = await collisionRating.getData(road);
+      let comptageFeuxTrouves = await comptageFeuxRating.getData(road);
+      let comptageVFeuxPietonTrouves = await comptageVFeuxPietonRating.getData(
+        road,
+      );
 
-    if (constraints.length > 0) {
-      const conditionToRunCollision =
-        constraints.includes('Family') ||
-        constraints.includes('ReducedMobility') ||
-        constraints.includes('Blind');
+      if (constraints.length > 0) {
+        const conditionToRunCollision =
+          constraints.includes('Family') ||
+          constraints.includes('ReducedMobility') ||
+          constraints.includes('Blind');
 
-      const conditionToRunFeuPieton =
-        constraints.includes('Family') ||
-        constraints.includes('ReducedMobility');
+        const conditionToRunFeuPieton =
+          constraints.includes('Family') ||
+          constraints.includes('ReducedMobility');
 
-      const conditionToRunComptageVehiculesPietons =
-        constraints.includes('ReducedMobility') ||
-        constraints.includes('Blind');
+        const conditionToRunComptageVehiculesPietons =
+          constraints.includes('ReducedMobility') ||
+          constraints.includes('Blind');
 
-      const conditionToRunFeuxSonores = constraints.includes('Blind');
+        const conditionToRunFeuxSonores = constraints.includes('Blind');
 
-      if (conditionToRunCollision) {
-        addRatingToRatings(
-          collisionsTrouves,
-          collisionRating,
-          road,
-          'collision',
-        );
+        if (conditionToRunCollision) {
+          roadSergment['collusion'] = collisionRating.getRating(
+            collisionsTrouves.length,
+          );
+        }
+
+        if (conditionToRunFeuPieton) {
+          roadSergment['feupieton'] = comptageFeuxRating.getRating(
+            comptageFeuxTrouves.length,
+          );
+        }
+
+        if (conditionToRunComptageVehiculesPietons) {
+          roadSergment['viehculepietion'] = comptageVFeuxPietonRating.getRating(
+            comptageVFeuxPietonTrouves.length,
+          );
+        }
+
+        if (conditionToRunFeuxSonores) {
+          // TODO: Run feu sonore rating...
+        }
       }
-
-      if (conditionToRunFeuPieton) {
-        addRatingToRatings(
-          comptageFeuxTrouves,
-          comptageFeuxRating,
-          road,
-          'comptage_feux_pieton',
-        );
-      }
-
-      if (conditionToRunComptageVehiculesPietons) {
-        addRatingToRatings(
-          comptageVFeuxPietonTrouves,
-          comptageVFeuxPietonRating,
-          road,
-          'comptage_vehicule_feux_pietons',
-        );
-      }
-
-      if (conditionToRunFeuxSonores) {
-        // TODO: Run feu sonore rating...
-      }
-    }
+      oneRoad.push(roadSergment);
+    });
+    allRoads.push(oneRoad);
   });
 
-  return arrayOfRoad;
+  return allRoads;
 }
 
 export default router;

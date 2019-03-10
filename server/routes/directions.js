@@ -28,20 +28,22 @@ router.get('/', async (req, res) => {
     return res.status(406).json({ error: 'contraints must be an array.' });
   } else if (constraints instanceof Array) {
     if (
-      constraints.includes('Family') ||
-      constraints.includes('ReducedMobility') ||
-      constraints.includes('Blind')
+      constraints.includes('family') ||
+      constraints.includes('reducedmobility') ||
+      constraints.includes('blind')
     ) {
       constraintsToUse = constraints;
     }
   }
+
+  console.log(constraintsToUse, modeDeplacement);
 
   res.json(
     await querygoogleapi(
       req.query.origin,
       req.query.destination,
       modeDeplacement,
-      constraints,
+      constraintsToUse,
     ),
   );
 });
@@ -64,6 +66,7 @@ async function querygoogleapi(
     return await computeRatings(
       googleApiResponse.json.routes,
       constraints || [],
+      modeDeplacement,
     );
   } catch (error) {
     console.log(error);
@@ -106,7 +109,7 @@ const addFeuxRatingToRatings = (
   }
 };
 
-async function computeRatings(arrayOfRoads, constraints = []) {
+async function computeRatings(arrayOfRoads, constraints = [], modeDeplacement) {
   let allRoads = [];
 
   const collisionRating = new CollisionRating(),
@@ -131,21 +134,21 @@ async function computeRatings(arrayOfRoads, constraints = []) {
         road,
       );
 
-      if (constraints.length > 0) {
+      if (constraints.length > 0 || modeDeplacement === 'bicycling') {
         const conditionToRunCollision =
-          constraints.includes('Family') ||
-          constraints.includes('ReducedMobility') ||
-          constraints.includes('Blind');
+          constraints.includes('family') ||
+          constraints.includes('reducedmobility') ||
+          constraints.includes('blind');
 
         const conditionToRunFeuPieton =
-          constraints.includes('Family') ||
-          constraints.includes('ReducedMobility');
+          constraints.includes('family') ||
+          constraints.includes('reducedmobility');
 
         const conditionToRunComptageVehiculesPietons =
-          constraints.includes('ReducedMobility') ||
-          constraints.includes('Blind');
+          constraints.includes('reducedmobility') ||
+          constraints.includes('blind');
 
-        const conditionToRunFeuxSonores = constraints.includes('Blind');
+        const conditionToRunFeuxSonores = constraints.includes('blind');
 
         if (conditionToRunCollision) {
           roadSergment['collision'] = collisionRating.getRating(

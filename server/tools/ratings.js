@@ -1,6 +1,7 @@
 import sequelize from '../config/database';
 
 const POW_FACTOR = 1.18;
+const OFFSET = 0.002;
 const { Op } = sequelize;
 const Accident = sequelize.import('../database/models/accident');
 const ComptageFeu = sequelize.import('../database/models/comptage_feu');
@@ -10,13 +11,13 @@ const FeuxSonores = sequelize.import('../database/models/signaux_sonores.js');
 export class MasterRating {
   /**
    *
-   * @param {sequelize.Model<Any,Any>} model
+   * @param {sequelize.Model} model
    * @param {String} latitude
    * @param {String} longitude
    */
   constructor(model, latitude, longitude) {
     /**
-     * @type {sequelize.Model<Any,Any>}
+     * @type {sequelize.Model}
      */
     this.model = model;
 
@@ -47,21 +48,28 @@ export class MasterRating {
   }
 
   /**
-   * Fetch data from the
+   * Fetch data from the model's table.
    *
    * @param {Object} road
    * @returns {Object}
    */
-  async getData(road) {
+  async getData(road, columns = [], whereCondition = {}) {
     return await this.model.findAll({
-      attributes: [this.latitude, this.longitude],
+      attributes: [this.latitude, this.longitude, ...columns],
       where: {
         [this.latitude]: {
-          [Op.between]: [road.start_location.lat, road.end_location.lat],
+          [Op.between]: [
+            road.start_location.lat - OFFSET,
+            road.end_location.lat + OFFSET,
+          ],
         },
         [this.longitude]: {
-          [Op.between]: [road.start_location.lng, road.end_location.lng],
+          [Op.between]: [
+            road.start_location.lng - OFFSET,
+            road.end_location.lng + OFFSET,
+          ],
         },
+        ...whereCondition,
       },
     });
   }
@@ -116,31 +124,5 @@ export class FeuxSonoresRating extends MasterRating {
       rating = 100;
     }
     return Math.round(rating);
-  }
-
-  /**
-   * Fetch data from the
-   *
-   * @param {Object} road
-   * @returns {Object}
-   */
-  async getData(road) {
-    return await this.model.findAll({
-      attributes: [this.latitude, this.longitude],
-      where: {
-        [this.latitude]: {
-          [Op.between]: [
-            road.start_location.lat - 0.002,
-            road.end_location.lat + 0.002,
-          ],
-        },
-        [this.longitude]: {
-          [Op.between]: [
-            road.start_location.lng - 0.002,
-            road.end_location.lng + 0.002,
-          ],
-        },
-      },
-    });
   }
 }

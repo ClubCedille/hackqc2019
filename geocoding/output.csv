@@ -1,4 +1,4 @@
-Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
+Int_no,Rue_1,Rue_2,Arrondissement,X,Y,Longitude,Latitude
 2,Docteur-Penfield,Peel,Ville-Marie,298588.54,5040384.56,-73.5795077,45.50336009999999
 3,Borden,Somerled,Côte-des-Neiges - Notre-Dame-de-Grâce,294064.9,5036578.94,-73.6372888,45.46906610000001
 4,Cavendish,Côte-Saint-Luc,Côte-des-Neiges - Notre-Dame-de-Grâce,293240.69,5036867.49,-73.6477271,45.4716599
@@ -67,7 +67,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 102,Décarie,Snowdon inter. Est,Côte-des-Neiges - Notre-Dame-de-Grâce,294905.25,5038097,-73.62701919999999,45.4824355
 103,Décarie,Snowdon inter. Ouest,Côte-des-Neiges - Notre-Dame-de-Grâce,294873.7,5038067,-73.62701919999999,45.4824355
 104,Décarie,Paré inter. Est,Côte-des-Neiges - Notre-Dame-de-Grâce,292655.16,5039591,-73.6514048,45.49538829999999
-105,Décarie,Paré inter. Ouest,Côte-des-Neiges - Notre-Dame-de-Grâce,292618.56,5039547.5,-73.6558467,45.4957932
+105,Décarie,Paré inter. Ouest,Côte-des-Neiges - Notre-Dame-de-Grâce,292618.56,5039547.5,-73.6452631,45.4910735
 106,Décarie,Plamondon inter. Est,Côte-des-Neiges - Notre-Dame-de-Grâce,293447.06,5039028,-73.6455052,45.4907295
 107,Décarie,Plamondon inter. Ouest,Côte-des-Neiges - Notre-Dame-de-Grâce,293428.03,5038990.5,-73.6455052,45.4907295
 108,Décarie,Queen-Mary inter. Est,Côte-des-Neiges - Notre-Dame-de-Grâce,294716.44,5038217,-73.6289044,45.4837618
@@ -131,7 +131,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 203,Eadie,Église,Sud-Ouest,297765.38,5035987.15,-73.5899657,45.4637921
 206,Église,La Vérendrye,Sud-Ouest,298465.42,5035945.38,-73.58097289999999,45.4634106
 207,Église,Saint-Patrick,Sud-Ouest,297350.68,5036085.01,-73.564832,45.5035435
-211,Jolicoeur,La Vérendrye,Sud-Ouest,298458.63,5035234.2,-73.567256,45.5016889
+211,Jolicoeur,La Vérendrye,Sud-Ouest,298458.63,5035234.2,-73.5815345,45.4588715
 213,La Vérendrye,Parc Angrignon,Sud-Ouest,297277.63,5033504.31,-73.5962199,45.4415302
 214,La Vérendrye,Pont Stephens,Sud-Ouest,297681.94,5034123.57,-73.567256,45.5016889
 216,La Vérendrye,Woodland,Sud-Ouest,298263.27,5034818.15,-73.5836551,45.4532926
@@ -151,7 +151,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 233,Greene,Saint-Jacques,Sud-Ouest,298435.19,5038087.88,-73.59547309999999,45.474932
 234,Greene,Saint-Antoine,Sud-Ouest,298296.43,5038213.3,-73.583073,45.4839066
 235,Guy,Notre-Dame,Sud-Ouest,299548.1,5038910.49,-73.5561204,45.5045254
-236,Guy,Ottawa/William,Sud-Ouest,299706.65,5038803.66,-75.6305008,45.44629219999999
+236,Guy,Ottawa/William,Sud-Ouest,299706.65,5038803.66,-75.69719309999999,45.4215296
 239,Lenoir,Saint-Jacques,Sud-Ouest,297713.07,5037317.57,-73.61456559999999,45.4641855
 240,Montagne,Notre-Dame,Ville-Marie,299737.44,5039225.49,-73.5561204,45.5045254
 244,Notre-Dame,Saint-Henri (pl),Sud-Ouest,298169.48,5037499.04,-73.58481119999999,45.4773963
@@ -185,7 +185,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 291,Aylmer,Sherbrooke,Plateau Mont-Royal,299128.08,5040697.57,-73.57257380000001,45.5062452
 292,Bishop,Maisonneuve,Ville-Marie,298697.56,5039722.85,-73.57810839999999,45.4974225
 293,Bishop,Sainte-Catherine,Ville-Marie,298834.27,5039628.07,-73.5763492,45.4965671
-294,Bishop,Sherbrooke,Ville-Marie,298546.64,5039825.92,-71.8929107,45.4041718
+294,Bishop,Sherbrooke,Ville-Marie,298546.64,5039825.92,-73.52940579999999,45.6058591
 295,Bleury,Maisonneuve,Ville-Marie,299420.78,5040810.5,-73.56889749999999,45.5072041
 296,Bleury,Président-Kennedy,Ville-Marie,299370.02,5040843.99,-73.56950909999999,45.5074992
 297,Bleury,Sainte-Catherine,Ville-Marie,299568.73,5040710.57,-73.5669477,45.5063085
@@ -203,7 +203,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 312,Fort du,Maisonneuve,Ville-Marie,298327.76,5039193.55,-73.5395631,45.5524684
 313,Fort du,Sainte-Catherine,Ville-Marie,298426.96,5039110.05,-73.5815382,45.49187500000001
 315,City Councillors,Président-Kennedy,Ville-Marie,299256.23,5040681.07,-73.57095749999999,45.5060292
-316,Guy,Maisonneuve,Ville-Marie,298591.7,5039538.79,-73.580727,45.494608
+316,Guy,Maisonneuve,Ville-Marie,298591.7,5039538.79,-73.5793496,45.4957015
 317,Guy,Sainte-Catherine,Ville-Marie,298716.67,5039459.58,-73.5924246,45.4818419
 318,Hutchison,Milton,Plateau Mont-Royal,299002.42,5040994.57,-73.5742774,45.5088751
 320,Hutchison,Sherbrooke,Plateau Mont-Royal,299198.43,5040863.07,-73.5717051,45.50768009999999
@@ -234,7 +234,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 348,Milton,Parc,Plateau Mont-Royal,299043.12,5041066.07,-73.5759946,45.5106352
 350,Milton,University,Plateau Mont-Royal,298826.65,5040722.71,-73.567256,45.5016889
 351,Montagne,Sainte-Catherine,Ville-Marie,298936.75,5039776.56,-73.5924246,45.4818419
-352,Montagne,Sherbrooke,Ville-Marie,298647.98,5039975.08,-73.57872979999999,45.4996695
+352,Montagne,Sherbrooke,Ville-Marie,298647.98,5039975.08,-73.52940579999999,45.6058591
 353,Ontario / Président-Kennedy,Saint-Urbain,Ville-Marie,299530.71,5041111.4,-85.323214,51.253775
 354,Ontario,Saint-Laurent,Ville-Marie,299583.02,5041262.57,-85.323214,51.253775
 356,Peel,Sainte-Catherine,Ville-Marie,299101.34,5040012.56,-73.5729128,45.5000155
@@ -269,16 +269,16 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 390,McGill,Notre-Dame,Ville-Marie,300145.21,5040121.58,-73.5592178,45.5007528
 391,Saint-Antoine,Square Victoria Est,Ville-Marie,299983.72,5040202.5,-73.5616281,45.5017206
 392,Saint-Jacques,Square Victoria Est,Ville-Marie,300083.41,5040151.29,-73.5607691,45.5009
-393,McGill,Saint-Maurice,Ville-Marie,300239.88,5040075.5,-73.5771511,45.50478469999999
+393,McGill,Saint-Maurice,Ville-Marie,300239.88,5040075.5,-73.567256,45.5016889
 394,McGill,Saint-Paul,Ville-Marie,300332.44,5040030.56,-73.5567557,45.50028140000001
 395,McGill,Wellington,Ville-Marie,300510.13,5039943.97,-73.5548669,45.4994064
 396,Montagne,Saint-Antoine,Ville-Marie,299397.05,5039462.84,-73.5748158,45.4905177
-398,Nazareth,Wellington,Sud-Ouest,300442.43,5039522.5,35.303546,32.699635
+398,Nazareth,Wellington,Sud-Ouest,300442.43,5039522.5,-73.5557907,45.49570569999999
 399,Notre-Dame,Peel,Ville-Marie,299877.17,5039501.3,-73.5630455,45.4954267
 400,Notre-Dame,University,Ville-Marie,300002.66,5039823.5,-73.5561204,45.5045254
 403,Peel,Saint-Jacques,Ville-Marie,299691.05,5039588.06,-73.56535869999999,45.4962102
 404,Peel,Wellington,Sud-Ouest,300311.16,5039266.06,-73.5574576,45.4932734
-406,Saint-Antoine,University,Ville-Marie,299840.57,5039968.49,-73.5777595,45.4877768
+406,Saint-Antoine,University,Ville-Marie,299840.57,5039968.49,-73.5748158,45.4905177
 407,Saint-Jacques,University,Ville-Marie,299907.42,5039905.83,-73.61456559999999,45.4641855
 409,University,Viger,Ville-Marie,299763.44,5040047.41,-73.5641421,45.5011838
 410,Beaver Hall,René-Lévesque,Ville-Marie,299611.22,5040350.17,-73.5665077,45.5030704
@@ -308,14 +308,14 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 434,Berri,Viger,Ville-Marie,300502.89,5041400.32,-73.5550269,45.51249840000001
 436,Jean-Paul-Riopel pl.,Saint-Antoine / Saint-Pierre,Ville-Marie,300079.22,5040365.5,-73.5619531,45.5029091
 437,Bleury / Jean-Paul-Riopel,Viger,Ville-Marie,299973.88,5040435.74,-73.5619909,45.5034839
-439,Hôtel-de-Ville,René-Lévesque,Ville-Marie,300110.9,5041202.38,-73.5595219,45.510825
+439,Hôtel-de-Ville,René-Lévesque,Ville-Marie,300110.9,5041202.38,-73.5729448,45.4966248
 440,Panet,René-Lévesque,Ville-Marie,300716.01,5042092.95,-73.5831121,45.4881328
 441,René-Lévesque,Saint-Denis,Ville-Marie,300251.84,5041421.57,-73.5582913,45.5127628
 442,René-Lévesque,Saint-Hubert,Ville-Marie,300374.69,5041612.41,-73.5565894,45.5143844
 443,René-Lévesque,Saint-Laurent,Ville-Marie,299988.14,5040991.82,-73.56165159999999,45.508878
 444,René-Lévesque,Saint-Urbain,Ville-Marie,299911.31,5040867.03,-73.562505,45.5076784
 445,René-Lévesque,Sanguinet,Ville-Marie,300183.96,5041315.5,-73.55899219999999,45.5117043
-446,René-Lévesque,Visitation,Ville-Marie,300668.94,5042019.44,-73.5704708,45.4971878
+446,René-Lévesque,Visitation,Ville-Marie,300668.94,5042019.44,-73.5710326,45.4980885
 447,Jeanne-Mance,Viger,Ville-Marie,300024.53,5040548.57,-73.56108960000002,45.5048258
 452,Jacques-Cartier (pl),Notre-Dame,Ville-Marie,300579.3,5040926.41,-73.5539539,45.5083473
 454,Notre-Dame,Saint-Laurent,Ville-Marie,300453.63,5040699.07,-73.5556399,45.5062175
@@ -347,7 +347,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 489,Hôtel-de-Ville,Sherbrooke,Ville-Marie,299447.21,5041629.58,-73.5714483,45.50763449999999
 490,Hôtel-de-Ville,Pins,Plateau Mont-Royal,299054.01,5041887.08,-73.5543325,45.5089192
 491,Maisonneuve,250 Est,Ville-Marie,299824.03,5041388.5,-73.5395631,45.5524684
-493,Maisonneuve,Saint-Denis,Ville-Marie,299962.84,5041609.76,-73.60216009999999,45.47591269999999
+493,Maisonneuve,Saint-Denis,Ville-Marie,299962.84,5041609.76,-73.6119068,45.5371333
 495,Maisonneuve,Sanguinet,Ville-Marie,299896.9,5041504.21,-73.5395631,45.5524684
 497,Ontario,Saint-Denis,Ville-Marie,299702.81,5041778.58,-73.6119068,45.5371333
 499,Ontario,Sanguinet,Ville-Marie,299673.01,5041649.58,-85.323214,51.253775
@@ -365,10 +365,10 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 514,Beaubien,Parc,Rosemont - Petite-Patrie,295987.1,5043005.24,-73.612782,45.5269915
 515,Beaumont,Parc,Villeray - Saint-Michel - Parc-Extension,295590.3,5043258.5,-73.61815039999999,45.528909
 516,Bernard,Esplanade,Plateau Mont-Royal,296646.67,5042786.89,-73.604342,45.525054
-517,Bernard,Parc,Plateau Mont-Royal,296557.53,5042643.53,-73.6055202,45.5236885
+517,Bernard,Parc,Plateau Mont-Royal,296557.53,5042643.53,-73.6053895,45.523294
 518,Bernard,Saint-Laurent,Plateau Mont-Royal,296812.86,5043053.83,-73.601955,45.527314
 519,Bernard,Saint-Urbain,Plateau Mont-Royal,296733.4,5042920.6,-73.603544,45.526211
-520,Bullion,Saint-Joseph,Plateau Mont-Royal,297771.61,5042670.12,-73.567256,45.5016889
+520,Bullion,Saint-Joseph,Plateau Mont-Royal,297771.61,5042670.12,-73.6164668,45.49191219999999
 522,Coloniale,Pins,Plateau Mont-Royal,298994.31,5041785.08,-73.567256,45.5016889
 523,Côte-Sainte-Catherine,Mont-Royal,Ville-Marie,297747.9,5041766.19,-73.5903051,45.5157751
 527,Fairmount,Parc,Plateau Mont-Royal,297176.04,5042282.41,-73.5975892,45.5204072
@@ -395,7 +395,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 555,Saint-Laurent,Saint-Viateur,Plateau Mont-Royal,297074.38,5042882.04,-73.59894030000001,45.5258425
 557,Saint-Urbain,3650,Plateau Mont-Royal,298947.94,5041483,-73.57094719999999,45.5117351
 558,Saint-Urbain,Saint-Viateur,Plateau Mont-Royal,296990.01,5042750.58,-73.5999927,45.5246693
-561,Berri,Saint-Joseph,Plateau Mont-Royal,298015.65,5043056.93,-73.6164668,45.49191219999999
+561,Berri,Saint-Joseph,Plateau Mont-Royal,298015.65,5043056.93,-73.586933,45.52744
 565,Brébeuf,Laurier,Plateau Mont-Royal,298179.82,5043613.67,-73.5847804,45.5324038
 566,Brébeuf,Saint-Joseph,Plateau Mont-Royal,298321.63,5043519.19,-73.58302379999999,45.5315869
 570,Christophe-Colomb,Mont-Royal,Plateau Mont-Royal,298613.2,5043124.09,-73.578772,45.527654
@@ -415,11 +415,11 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 593,Laurier,Saint-Denis,Plateau Mont-Royal,297810.28,5043007.58,-73.5894778,45.5269813
 594,Laurier,Saint-Hubert,Plateau Mont-Royal,297942.9,5043231.09,-73.5878,45.5289492
 595,Marie-Anne,Saint-Denis,Plateau Mont-Royal,298505.73,5042556.15,-73.58056499999999,45.5228917
-598,Rachel,Saint-Hubert,Plateau Mont-Royal,298816.6,5042625.58,-73.567256,45.5016889
+598,Rachel,Saint-Hubert,Plateau Mont-Royal,298816.6,5042625.58,-73.6274712,45.5466394
 599,Mont-Royal,Saint-Hubert,Plateau Mont-Royal,298454.54,5042884.95,-73.4710222,45.4893783
 600,Mont-Royal,Rivard,Plateau Mont-Royal,298362.2,5042737.08,-73.57990219999999,45.5235146
 601,Mont-Royal,Saint-Denis,Plateau Mont-Royal,298322.6,5042675.08,-73.5842827,45.5244287
-602,Rachel,Saint-Denis,Plateau Mont-Royal,298692.51,5042435.58,-73.6119068,45.5371333
+602,Rachel,Saint-Denis,Plateau Mont-Royal,298692.51,5042435.58,-73.5781815,45.52182759999999
 603,Saint-Jacques,Wilson,Côte-des-Neiges - Notre-Dame-de-Grâce,296290.69,5036340.03,-73.61456559999999,45.4641855
 604,Resther,Saint-Joseph,Plateau Mont-Royal,298044.59,5043100.62,-73.5864328,45.527747
 606,Saint-Denis,Saint-Joseph,Plateau Mont-Royal,297933.97,5042927.73,-73.58784039999999,45.52623029999999
@@ -451,7 +451,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 661,Hochelaga,Iberville,Ville-Marie,300181.68,5043897,-73.55912250000002,45.5349691
 663,Hogan,Rachel,Plateau Mont-Royal,299989.39,5044348.1,-73.5616126,45.5390541
 669,Iberville,Rachel,Plateau Mont-Royal,299841.19,5044104.6,-73.56349639999999,45.5368359
-670,Iberville,Rouen,Ville-Marie,300398.72,5043769.5,-73.5568399,45.534007
+670,Iberville,Rouen,Ville-Marie,300398.72,5043769.5,1.099971,49.44323199999999
 671,Iberville,Sherbrooke,Plateau Mont-Royal,300009.29,5044002.6,-73.56136,45.5359522
 675,Parthenais,Sherbrooke,Plateau Mont-Royal,299919.69,5043617.1,-73.5625154,45.5324645
 681,Bordeaux,Rachel,Plateau Mont-Royal,299492.39,5043585.1,-73.567993,45.531984
@@ -465,15 +465,15 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 690,Gauthier,Lorimier,Plateau Mont-Royal,299702.09,5043543.6,-73.5652676,45.531797
 691,Gauthier,Papineau,Plateau Mont-Royal,299536.12,5043297.18,-73.5674161,45.529554
 693,Gilford,Papineau,Plateau Mont-Royal,298704.96,5043848.2,-73.5780454,45.5345478
-696,Laurier,Papineau inter. Nord,Plateau Mont-Royal,298447.4,5044017,-74.031195,45.7863129
+696,Laurier,Papineau inter. Nord,Plateau Mont-Royal,298447.4,5044017
 698,Lorimier,Masson,Plateau Mont-Royal,298415.77,5044402.96,-73.581831,45.5394978
 700,Lorimier,Rachel,Plateau Mont-Royal,299538.09,5043653.1,-73.567376,45.532793
 701,Lorimier,Rouen inter. Sud,Ville-Marie,300099.47,5043277,-73.5811519,45.5374141
-702,Lorimier,Saint-Joseph,Plateau Mont-Royal,298756.31,5044175.6,-73.56641499999999,45.532019
+702,Lorimier,Saint-Joseph,Plateau Mont-Royal,298756.31,5044175.6,-73.577339,45.5374565
 703,Lorimier,Sherbrooke,Ville-Marie,299876.29,5043429.1,-73.5630358,45.5307481
 704,Marie-Anne,Papineau,Plateau Mont-Royal,299154.39,5043549.59,-73.5722582,45.5318836
 705,Émile-Duployé,Marquette/Rachel,Plateau Mont-Royal,299319,5043323,-73.57019369999999,45.5298109
-706,Masson,Papineau,Plateau Mont-Royal,298246.09,5044149.59,-73.583733,45.537243
+706,Masson,Papineau,Plateau Mont-Royal,298246.09,5044149.59,-73.5839369,45.5372419
 708,Mont-Royal,Papineau,Plateau Mont-Royal,298975.61,5043669.52,-73.5766338,45.534244
 709,Papineau,Rachel,Plateau Mont-Royal,299371.69,5043406.09,-73.5694951,45.5305395
 711,Papineau,Saint-Joseph,Plateau Mont-Royal,298589,5043924.25,-73.5795854,45.5352693
@@ -495,21 +495,21 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 737,Hochelaga,Orléans,Mercier - Hochelaga - Maisonneuve,300951.8,5045640.94,-73.5492885,45.550663
 738,Hochelaga,Pie-IX,Mercier - Hochelaga - Maisonneuve,301034.2,5045849.53,-73.548222,45.5524827
 741,Hochelaga,Viau,Mercier - Hochelaga - Maisonneuve,301487.49,5046842.41,-73.5425419,45.5614541
-745,Pie-IX,Rouen,Mercier - Hochelaga - Maisonneuve,301302.82,5045726.49,-73.5447616,45.5514985
-748,Rouen,Viau,Mercier - Hochelaga - Maisonneuve,301752.5,5046718.11,-73.53885509999999,45.560376
-760,Davidson,Sainte-Catherine,Mercier - Hochelaga - Maisonneuve,301681.53,5044581.84,-73.567256,45.5016889
-761,Davidson,Notre-Dame,Mercier - Hochelaga - Maisonneuve,301831.99,5044519.11,-73.5381263,45.5406063
+745,Pie-IX,Rouen,Mercier - Hochelaga - Maisonneuve,301302.82,5045726.49,-73.6140485,45.5766061
+748,Rouen,Viau,Mercier - Hochelaga - Maisonneuve,301752.5,5046718.11,-73.5390202,45.5603813
+760,Davidson,Sainte-Catherine,Mercier - Hochelaga - Maisonneuve,301681.53,5044581.84,-73.5924246,45.4818419
+761,Davidson,Notre-Dame,Mercier - Hochelaga - Maisonneuve,301831.99,5044519.11,-73.5561204,45.5045254
 773,Notre-Dame,Pie-IX,Mercier - Hochelaga - Maisonneuve,302192.97,5045317.69,-73.533499,45.5478574
 777,Notre-Dame,Viau,Mercier - Hochelaga - Maisonneuve,302622.62,5046310.54,-73.5279606,45.5567597
-778,Ontario,Pie-IX,Mercier - Hochelaga - Maisonneuve,301581.07,5045599.37,-85.323214,51.253775
+778,Ontario,Pie-IX,Mercier - Hochelaga - Maisonneuve,301581.07,5045599.37,-73.541229,45.550104
 779,Ontario,Saint-Clément,Mercier - Hochelaga - Maisonneuve,301995,5046509.11,-73.53593359999999,45.558498
-780,Ontario,Viau,Mercier - Hochelaga - Maisonneuve,302030,5046587.61,-73.535701,45.559187
+780,Ontario,Viau,Mercier - Hochelaga - Maisonneuve,302030,5046587.61,-73.53548959999999,45.5591859
 782,Pie-IX,Sainte-Catherine,Mercier - Hochelaga - Maisonneuve,302029.42,5045394.01,-73.53548959999999,45.5485172
 783,Sainte-Catherine,Viau,Mercier - Hochelaga - Maisonneuve,302474.4,5046380.62,-73.5297863,45.5573419
 785,Aylwin,Sherbrooke,Rosemont - Petite-Patrie,300478.29,5045267.89,-73.5553972,45.5473478
 787,Bourbonnière,Pierre-de-Coubertin,Mercier - Hochelaga - Maisonneuve,300645.79,5045701.61,-73.5532316,45.5512256
 788,Bourbonnière,Rachel,Rosemont - Petite-Patrie,300391.39,5045816.61,-73.55643839999999,45.5522643
-790,Chambly,Sherbrooke,Rosemont - Petite-Patrie,300495.96,5045441.73,-73.2902464,45.4391627
+790,Chambly,Sherbrooke,Rosemont - Petite-Patrie,300495.96,5045441.73,-73.5475955,45.5747939
 791,Charlemagne,Sherbrooke,Rosemont - Petite-Patrie,300528.75,5045911.75,-73.568,45.51888599999999
 792,Henri-Bourassa Est,10 605 est (Sortie Shell),Rivières-des-Prairies - Pointe-aux-Trembles,301670.5,5056729.5,-73.6315788,45.60248869999999
 793,Davidson,Sherbrooke,Rosemont - Petite-Patrie,300425.09,5045117.11,-73.567256,45.5016889
@@ -539,9 +539,9 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 831,31 e Avenue,Saint-Zotique,Rosemont - Petite-Patrie,298633.83,5047671,-73.612807,45.531534
 833,42 e Avenue,Rosemont,Rosemont - Petite-Patrie,299842.12,5048046.13,-73.5634912,45.5722986
 834,30 e Avenue,Bélanger,Rosemont - Petite-Patrie,298295.16,5047739.57,-73.5833277,45.5695582
-835,Assomption,Beaubien,Rosemont - Petite-Patrie,299508.48,5048483.08,-73.56785529999999,45.576271
+835,Assomption,Beaubien,Rosemont - Petite-Patrie,299508.48,5048483.08,-73.5678101,45.576115
 838,Assomption,Rosemont,Rosemont - Petite-Patrie,299910.48,5048285.77,-73.5627016,45.5745379
-839,Assomption,Saint-Zotique,Rosemont - Petite-Patrie,299216.96,5048626.25,-73.599546,45.54477199999999
+839,Assomption,Saint-Zotique,Rosemont - Petite-Patrie,299216.96,5048626.25,-73.5715668,45.5775409
 840,Beaubien,Beaubien (pl),Mercier - Hochelaga - Maisonneuve,299830.59,5049234.82,-73.6134759,45.5262088
 842,Beaubien,Pie-IX,Rosemont - Petite-Patrie,298578.85,5046967.19,-73.5796598,45.5626414
 843,Beaubien,Saint-Michel,Rosemont - Petite-Patrie,298063.75,5046131.84,-73.5862659,45.5550687
@@ -557,7 +557,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 857,Dandurand,Saint-Michel,Rosemont - Petite-Patrie,298846.05,5045779.61,-73.5762657,45.5519097
 858,Jean-Talon,Saint-Michel,Villeray - Saint-Michel - Parc-Extension,297122.12,5046551.59,-73.5983795,45.55878939999999
 860,Laurier,Pie-IX,Rosemont - Petite-Patrie,299678.37,5046468.62,-73.5655645,45.55814170000001
-862,Masson,Pie-IX,Rosemont - Petite-Patrie,299454.83,5046571.66,-73.6140485,45.5766061
+862,Masson,Pie-IX,Rosemont - Petite-Patrie,299454.83,5046571.66,-73.5684605,45.5590748
 863,Masson,Saint-Michel,Rosemont - Petite-Patrie,299088.84,5045676.67,-73.5731428,45.5509774
 864,Mont-Royal,Pie-IX,Rosemont - Petite-Patrie,300201.98,5046230.18,-73.6424093,45.5967938
 865,Pie-IX,Rosemont,Rosemont - Petite-Patrie,299035.67,5046764.76,-73.5737343,45.5608017
@@ -565,7 +565,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 867,Pie-IX,Saint-Zotique,Rosemont - Petite-Patrie,298282.2,5047099.07,-73.5834952,45.5638289
 868,Rosemont,Saint-Michel,Rosemont - Petite-Patrie,298522.77,5045926.74,-73.58048819999999,45.5532543
 870,Saint-Joseph,Saint-Michel,Rosemont - Petite-Patrie,299470.96,5045514.16,-73.5682036,45.549464
-871,Saint-Michel,Saint-Zotique,Rosemont - Petite-Patrie,297766.68,5046257.58,-73.590396,45.556188
+871,Saint-Michel,Saint-Zotique,Rosemont - Petite-Patrie,297766.68,5046257.58,-73.5900929,45.556231
 872,Saint-Michel,Shaugnessy,Villeray - Saint-Michel - Parc-Extension,297032.9,5046607.53,-73.5994762,45.5592753
 873,Saint-Michel,Villeray,Villeray - Saint-Michel - Parc-Extension,296698.65,5046818.74,-73.6038262,45.5611894
 874,Saint-Zotique,Viau,Rosemont - Petite-Patrie,298865.07,5048047.58,-73.5760665,45.5723388
@@ -573,12 +573,12 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 876,Golf (Boul. du),Henri-Bourassa Est,Rivières-des-Prairies - Pointe-aux-Trembles,298781.06,5054270.06,-73.5109636,45.686179
 877,6 e Avenue,Crémazie inter. Nord,Villeray - Saint-Michel - Parc-Extension,296259.84,5046708,-73.5750796,45.5003154
 878,6 e Avenue,Crémazie inter. Sud,Villeray - Saint-Michel - Parc-Extension,296305.4,5046682,-73.6094317,45.5602366
-879,9 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296167.73,5046977.12,-73.63134389999999,45.5394607
+879,9 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296167.73,5046977.12,-73.621146,45.5550902
 884,Émile-Journault,Saint-Michel,Villeray - Saint-Michel - Parc-Extension,295100.48,5047827.87,-73.6245307,45.57031019999999
 886,Jarry,Saint-Michel,Villeray - Saint-Michel - Parc-Extension,296248.58,5047104.26,-73.6095042,45.5638462
 887,Legendre,Saint-Michel,Villeray - Saint-Michel - Parc-Extension,294852.82,5047981.52,-73.6274269,45.5717073
 888,Louvain,Saint-Michel,Villeray - Saint-Michel - Parc-Extension,294619.01,5048128.95,-73.6304864,45.5729455
-889,Robert,Saint-Michel inter. Nord,Villeray - Saint-Michel - Parc-Extension,295548.3,5047543.5,-74.031195,45.7863129
+889,Robert,Saint-Michel inter. Nord,Villeray - Saint-Michel - Parc-Extension,295548.3,5047543.5,-73.6069493,45.5629714
 890,Robert,Saint-Michel inter. Sud,Villeray - Saint-Michel - Parc-Extension,295592.34,5047516,-73.6137158,45.576665
 893,26 e Avenue,Bélanger,Rosemont - Petite-Patrie,298142.36,5047491.07,-73.5853056,45.5672723
 894,39 e Rue,Pie-IX,Villeray - Saint-Michel - Parc-Extension,295684.31,5048657.52,-73.65355559999999,45.6039587
@@ -701,7 +701,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 1111,Acadie,Liège,Villeray - Saint-Michel - Parc-Extension,293551.94,5043298.27,-73.6439824,45.5295214
 1114,Beaumont,Querbes,Villeray - Saint-Michel - Parc-Extension,295460.92,5043059.07,-73.6195551,45.5274378
 1117,Hutchison,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,295217.51,5043312.57,-73.6226571,45.5297377
-1118,Jarry,Querbes,Villeray - Saint-Michel - Parc-Extension,294230.02,5043571.24,-73.635302,45.53182100000001
+1118,Jarry,Querbes,Villeray - Saint-Michel - Parc-Extension,294230.02,5043571.24,-73.6355296,45.53205519999999
 1120,Jean-Talon,Querbes,Villeray - Saint-Michel - Parc-Extension,295163.79,5043181.91,-73.6233477,45.5285567
 1121,Jean-Talon,Wiseman,Villeray - Saint-Michel - Parc-Extension,295036.53,5042876.2,-73.6250006,45.5257438
 1124,Beaubien,Clark,Rosemont - Petite-Patrie,296214.18,5043356.24,-73.6099232,45.5300762
@@ -710,10 +710,10 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 1128,Casgrain,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,295672.86,5043982.72,-73.61685469999999,45.535688
 1129,Castelnau,Saint-Laurent,Villeray - Saint-Michel - Parc-Extension,295424.43,5043945.63,-73.6198367,45.5354627
 1131,Clark,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,295516.79,5043801.7,-73.61887089999999,45.5340715
-1134,Faillon,Saint-Laurent,Villeray - Saint-Michel - Parc-Extension,295248.46,5044046.33,-73.6223191,45.53623109999999
+1134,Faillon,Saint-Laurent,Villeray - Saint-Michel - Parc-Extension,295248.46,5044046.33,-73.62023500000001,45.5400111
 1138,Jarry,Saint-Laurent,Villeray - Saint-Michel - Parc-Extension,294542.44,5044340.15,-73.6312222,45.53896
 1141,Liège,Saint-Laurent,Villeray - Saint-Michel - Parc-Extension,294058.62,5044541.88,-73.74975669999999,45.4985638
-1143,Saint-Laurent,Saint-Zotique inter. Sud,Rosemont - Petite-Patrie,296042.81,5043556.08,-73.58416629999999,45.563063
+1143,Saint-Laurent,Saint-Zotique inter. Sud,Rosemont - Petite-Patrie,296042.81,5043556.08,-73.583451,45.472959
 1147,Émile-Journault,Papineau,Ahuntsic - Cartierville,294368.6,5046650.18,-73.63362529999999,45.5597351
 1151,Fleury,Papineau,Ahuntsic - Cartierville,292825.21,5047589.94,-73.6533745,45.5682009
 1153,Fort-Lorette,Henri-Bourassa,Ahuntsic - Cartierville,292328.4,5047541.95,-73.6596702,45.5676383
@@ -755,15 +755,15 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 1209,Meilleur,Sauvé,Ahuntsic - Cartierville,291961.32,5044476.11,-73.6644055,45.5402034
 1210,Port-Royal,Saint-Laurent,Ahuntsic - Cartierville,292527.36,5045154.43,-73.6571766,45.5461961
 1211,Prieur,Saint-Laurent,Ahuntsic - Cartierville,291686.74,5045514.91,-73.66792869999999,45.5494364
-1212,Saint-Laurent,Sauriol,Ahuntsic - Cartierville,292107.5,5045333.54,-73.5852132,45.5193286
+1212,Saint-Laurent,Sauriol,Ahuntsic - Cartierville,292107.5,5045333.54,-73.6625504,45.547792
 1213,Saint-Laurent,Sauvé,Ahuntsic - Cartierville,292317.14,5045241.26,-73.6599129,45.5469871
 1215,Bocage,Laurentien,Ahuntsic - Cartierville,287234.44,5043459.11,-73.71919799999999,45.5275267
-1216,Camille,Gouin/Ruisseau,Ahuntsic - Cartierville,284978.87,5041184.44,-73.753406,45.510485
+1216,Camille,Gouin/Ruisseau,Ahuntsic - Cartierville,284978.87,5041184.44,-73.567256,45.5016889
 1217,Dudemaine,Élie-Blanchard,Ahuntsic - Cartierville,289409.18,5043522.28,-73.69704800000001,45.5314625
 1219,Beaubien,Esplanade,Rosemont - Petite-Patrie,296081.91,5043154.07
 1223,Gouin,Lachapelle,Ahuntsic - Cartierville,287477.1,5043502.48,-73.7218121,45.5312026
 1224,Gouin,Laurentien,Ahuntsic - Cartierville,287362.12,5043334.02,-73.7232519,45.5297122
-1227,Gouin,Somerset,Ahuntsic - Cartierville,287173.06,5043221.54,-73.567256,45.5016889
+1227,Gouin,Somerset,Ahuntsic - Cartierville,287173.06,5043221.54,-73.799886,45.508641
 1228,Gouin,Toupin,Ahuntsic - Cartierville,286334.48,5042700.37,-73.7363733,45.5239822
 1229,Grenet,Salaberry,Ahuntsic - Cartierville,288168.31,5043100.99,-73.71293969999999,45.5276044
 1230,Guertin,Salaberry,Ahuntsic - Cartierville,288790.07,5043803.46,-73.7049366,45.5339828
@@ -783,7 +783,7 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 1249,Acadie,Sauvé,Ahuntsic - Cartierville,291866.3,5043983.69,-73.6656869,45.5357006
 1250,Acadie,Port-Royal,Ahuntsic - Cartierville,292005.81,5043960.54,-73.6762208,45.53326149999999
 1251,Bois-de-Boulogne,Henri-Bourassa,Ahuntsic - Cartierville,290851.84,5044240.85,-73.6787143,45.53799710000001
-1252,Bois-de-Boulogne,Saint-Réal/Salaberry,Ahuntsic - Cartierville,289627.93,5044781.89,-73.6770244,45.5401967
+1252,Bois-de-Boulogne,Saint-Réal/Salaberry,Ahuntsic - Cartierville,289627.93,5044781.89,-73.69451219999999,45.54284810000001
 1255,Notre-Dame,5376 Est (Vopak accès Ouest),Mercier - Hochelaga - Maisonneuve,302850.97,5046790.5,-73.5242679,45.5613226
 1256,James-Morrice,Salaberry,Ahuntsic - Cartierville,289269.29,5044283.32,-73.6988693,45.5382979
 1257,Poutrincourt,Salaberry,Ahuntsic - Cartierville,289179.4,5044196.8,-73.6999812,45.5374549
@@ -793,391 +793,391 @@ Int_no,Rue_1,Rue_2,Arrondissement,X,Y,long,lat
 1263,Acadie,Crémazie inter. Nord,Ahuntsic - Cartierville,293100.66,5043486.5,-73.6469984,45.5303832
 1264,Acadie,Crémazie bretelle Nord-Est,Ahuntsic - Cartierville,293133.47,5043527.5,-73.6626582,45.5349423
 1266,Berri,Henri-Bourassa,Ahuntsic - Cartierville,291632.38,5046076.84,-73.66877869999999,45.5545379
-1267,Chambord,Henri-Bourassa,Ahuntsic - Cartierville,291939.97,5046880.58
-1269,Christophe-Colomb,Henri-Bourassa,Ahuntsic - Cartierville,292116.29,5046981.15
-1270,Georges-Baril,Henri-Bourassa,Ahuntsic - Cartierville,291861.37,5046731.6
-1271,Gouin,Hôpital de la Merci,Ahuntsic - Cartierville,290225.78,5045267.5
-1272,Gouin,Lajeunesse,Ahuntsic - Cartierville,291443.94,5046246.32
+1267,Chambord,Henri-Bourassa,Ahuntsic - Cartierville,291939.97,5046880.58,-73.66483210000001,45.5617926
+1269,Christophe-Colomb,Henri-Bourassa,Ahuntsic - Cartierville,292116.29,5046981.15,-73.6623028,45.5625766
+1270,Georges-Baril,Henri-Bourassa,Ahuntsic - Cartierville,291861.37,5046731.6,-73.665842,45.5604029
+1271,Gouin,Hôpital de la Merci,Ahuntsic - Cartierville,290225.78,5045267.5,-73.7141048,45.5325192
+1272,Gouin,Lajeunesse,Ahuntsic - Cartierville,291443.94,5046246.32,-73.6711797,45.5559621
 1273,Gouin,Millen,Ahuntsic - Cartierville,291563.58,5046386.8,-73.6695672,45.557213
-1275,Gouin,Saint-Laurent,Ahuntsic - Cartierville,291188.29,5045731.53
+1275,Gouin,Saint-Laurent,Ahuntsic - Cartierville,291188.29,5045731.53,-73.6744008,45.5513426
 1276,Gouin,Tolhurst,Ahuntsic - Cartierville,290760.47,5045384.65,-73.67978719999999,45.5482345
 1278,Henri-Bourassa,Lajeunesse,Ahuntsic - Cartierville,291667.22,5046159.11,-73.6683673,45.5552578
-1279,Henri-Bourassa,Laverdure,Ahuntsic - Cartierville,291533.46,5045805.21
-1280,Henri-Bourassa,Meilleur,Ahuntsic - Cartierville,291112.77,5044842.86
-1281,Henri-Bourassa,Millen,Ahuntsic - Cartierville,291717.8,5046324.56
+1279,Henri-Bourassa,Laverdure,Ahuntsic - Cartierville,291533.46,5045805.21,-73.6698224,45.5520125
+1280,Henri-Bourassa,Meilleur,Ahuntsic - Cartierville,291112.77,5044842.86,-73.6751854,45.54334559999999
+1281,Henri-Bourassa,Millen,Ahuntsic - Cartierville,291717.8,5046324.56,-73.567256,45.5016889
 1282,Henri-Bourassa,Saint-Denis,Ahuntsic - Cartierville,291601.59,5045990.02,-73.6690046,45.5536989
 1283,Henri-Bourassa,Saint-Hubert,Ahuntsic - Cartierville,291750.83,5046506.55,-73.6672555,45.55839539999999
-1284,Henri-Bourassa,Saint-Laurent,Ahuntsic - Cartierville,291455.13,5045616.74
-1285,Henri-Bourassa,Tanguay,Ahuntsic - Cartierville,291174.53,5044968.22
+1284,Henri-Bourassa,Saint-Laurent,Ahuntsic - Cartierville,291455.13,5045616.74,-73.67085510000001,45.5502742
+1285,Henri-Bourassa,Tanguay,Ahuntsic - Cartierville,291174.53,5044968.22,-73.6784179,45.5438649
 1286,Henri-Bourassa,Tolhurst,Ahuntsic - Cartierville,291259.11,5045159.25,-73.673493,45.5462516
 1291,Jacques-Casault,Papineau,Ahuntsic - Cartierville,295123.01,5046165.09,-73.6242321,45.5551545
 1292,Christophe-Colomb,Crémazie inter. Nord,Ahuntsic - Cartierville,294673.6,5045655.5
-1293,Christophe-Colomb,Crémazie inter. Sud,Ahuntsic - Cartierville,294699.03,5045600.5
-1294,Crémazie,Lajeunesse inter. Nord,Villeray - Saint-Michel - Parc-Extension,294011.62,5045185
+1293,Christophe-Colomb,Crémazie inter. Sud,Ahuntsic - Cartierville,294699.03,5045600.5,-73.6293019,45.5502703
+1294,Crémazie,Lajeunesse inter. Nord,Villeray - Saint-Michel - Parc-Extension,294011.62,5045185,-74.031195,45.7863129
 1295,Crémazie,Lajeunesse inter. Sud,Villeray - Saint-Michel - Parc-Extension,294049.84,5045168,-73.6376635,45.5463465
-1296,Crémazie,Saint-Denis inter. Nord,Ahuntsic - Cartierville,293937.34,5045061.5
-1297,Crémazie,Saint-Denis inter. Sud,Ahuntsic - Cartierville,293978.8,5045050
-1298,Crémazie,Saint-Hubert inter. Nord,Ahuntsic - Cartierville,294230.94,5045487.5
-1300,Crémazie,Saint-Laurent inter. Sud-Ouest,Villeray - Saint-Michel - Parc-Extension,293739.4,5044588
-1301,Crémazie,Saint-Laurent inter. Sud-Est,Villeray - Saint-Michel - Parc-Extension,293792.6,5044708
-1302,Crémazie,Saint-Laurent int. Nord-Ouest,Ahuntsic - Cartierville,293702.8,5044613
+1296,Crémazie,Saint-Denis inter. Nord,Ahuntsic - Cartierville,293937.34,5045061.5,-73.6385859,45.5452846
+1297,Crémazie,Saint-Denis inter. Sud,Ahuntsic - Cartierville,293978.8,5045050,-73.6385859,45.5452846
+1298,Crémazie,Saint-Hubert inter. Nord,Ahuntsic - Cartierville,294230.94,5045487.5,-73.6353522,45.5492122
+1300,Crémazie,Saint-Laurent inter. Sud-Ouest,Villeray - Saint-Michel - Parc-Extension,293739.4,5044588,-73.6195039,45.5556947
+1301,Crémazie,Saint-Laurent inter. Sud-Est,Villeray - Saint-Michel - Parc-Extension,293792.6,5044708,-73.6195039,45.5556947
+1302,Crémazie,Saint-Laurent int. Nord-Ouest,Ahuntsic - Cartierville,293702.8,5044613,-73.6195039,45.5556947
 1303,Crémazie,Saint-Laurent inter. Nord-Est,Ahuntsic - Cartierville,293761.62,5044740,-73.6195039,45.5556947
-1304,Crémazie,Saint-Michel inter. Sud-Ouest,Villeray - Saint-Michel - Parc-Extension,296481.5,5046912
+1304,Crémazie,Saint-Michel inter. Sud-Ouest,Villeray - Saint-Michel - Parc-Extension,296481.5,5046912,-73.60653529999999,45.5620807
 1305,Crémazie,Saint-Michel inter. Nord-Est,Villeray - Saint-Michel - Parc-Extension,296453.03,5047009.5
-1306,Crémazie,Saint-Michel inter. Sud-Est,Villeray - Saint-Michel - Parc-Extension,296516.88,5046966
-1307,Crémazie,Saint-Michel inter. Nord-Ouest,Villeray - Saint-Michel - Parc-Extension,296413.75,5046951.5
-1308,3 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303584.09,5055426.69
-1309,16 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303805.97,5056343.24
-1310,Sherbrooke,Tricentenaire,Rivières-des-Prairies - Pointe-aux-Trembles,303961.71,5056988.55
-1311,Robert-Chevalier,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304035.92,5057292.22
-1312,32 e Avenue,Sherbrooke Est,Rivières-des-Prairies - Pointe-aux-Trembles,304113.7,5057616.25
-1313,Saint-Jean-Baptiste,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303718.44,5055987.76
-1315,36 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304170.36,5057850.49
-1316,40 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304252.04,5058189.04
-1321,Sherbrooke,15200 Est (Polyv. P.A.T.),Rivières-des-Prairies - Pointe-aux-Trembles,304856.97,5060676.5
-1322,Sherbrooke,15400 Est (C.I.P.),Rivières-des-Prairies - Pointe-aux-Trembles,304917.7,5060924.5
-1323,Chatelain,Rosemont,Rosemont - Petite-Patrie,299967.27,5048416.14
-1326,René-Lévesque,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,304766.32,5055747.33
-1327,3 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305368.94,5055018.46
-1328,8 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305499.39,5055372.63
-1329,16 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305596.79,5055948.13
-1331,32 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305472.14,5057317.95
+1306,Crémazie,Saint-Michel inter. Sud-Est,Villeray - Saint-Michel - Parc-Extension,296516.88,5046966,-73.6061115,45.5625594
+1307,Crémazie,Saint-Michel inter. Nord-Ouest,Villeray - Saint-Michel - Parc-Extension,296413.75,5046951.5,-73.6061115,45.5625594
+1308,3 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303584.09,5055426.69,-73.5157152,45.6387551
+1309,16 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303805.97,5056343.24,-73.5690809,45.5127107
+1310,Sherbrooke,Tricentenaire,Rivières-des-Prairies - Pointe-aux-Trembles,303961.71,5056988.55,-73.5108901,45.6527223
+1311,Robert-Chevalier,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304035.92,5057292.22,-73.5097469,45.6554972
+1312,32 e Avenue,Sherbrooke Est,Rivières-des-Prairies - Pointe-aux-Trembles,304113.7,5057616.25,-73.5089275,45.6584533
+1313,Saint-Jean-Baptiste,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303718.44,5055987.76,-73.5137858,45.6438116
+1315,36 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304170.36,5057850.49,-73.5082023,45.66056589999999
+1316,40 e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304252.04,5058189.04,-73.5069779,45.6635796
+1321,Sherbrooke,15200 Est (Polyv. P.A.T.),Rivières-des-Prairies - Pointe-aux-Trembles,304856.97,5060676.5,-73.52899380000001,45.6065338
+1322,Sherbrooke,15400 Est (C.I.P.),Rivières-des-Prairies - Pointe-aux-Trembles,304917.7,5060924.5,-73.567256,45.5016889
+1323,Chatelain,Rosemont,Rosemont - Petite-Patrie,299967.27,5048416.14,-73.561981,45.5756625
+1326,René-Lévesque,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,304766.32,5055747.33,-73.50068,45.641552
+1327,3 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305368.94,5055018.46,-73.4927189,45.6350545
+1328,8 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305499.39,5055372.63,-73.49108129999999,45.6382567
+1329,16 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305596.79,5055948.13,-73.5552165,45.5064406
+1331,32 e Avenue,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305472.14,5057317.95,-73.4914063,45.6557533
 1337,Notre-Dame,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,305560.31,5055561.12,-73.55538179999999,45.5065658
-1340,Montigny,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,304299.29,5055856.37
-1344,Biencourt,Monk,Sud-Ouest,297282.96,5035433.07
-1348,Hamilton,Jolicoeur,Sud-Ouest,297175.94,5035182.33
+1340,Montigny,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,304299.29,5055856.37,-73.5064135,45.6426322
+1344,Biencourt,Monk,Sud-Ouest,297282.96,5035433.07,-73.5961307,45.4587604
+1348,Hamilton,Jolicoeur,Sud-Ouest,297175.94,5035182.33,-73.5974657,45.4565415
 1352,Monk,Raudot,Sud-Ouest,297589.79,5034265.92,-73.59217699999999,45.448304
-1356,17 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296524.16,5047542.16
+1356,17 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296524.16,5047542.16,-73.6060279,45.5677342
 1365,1 ere Avenue,Rosemont,Rosemont - Petite-Patrie,298158.39,5045330.09,-73.58507879999999,45.5478868
-1366,Congrégation,Wellington,Sud-Ouest,300234.18,5037931.55
-1367,Fortune,Wellington,Sud-Ouest,300179.92,5037551.4
-1370,Berri,Mont-Royal,Plateau Mont-Royal,298393.8,5042787.58
-1371,Gouin,Poutrincourt,Ahuntsic - Cartierville,288669.33,5044651.97
-1372,6 e Avenue,Henri-Bourassa Est,Rivières-des-Prairies - Pointe-aux-Trembles,297472.23,5053007.09
-1373,Armand-Chaput,Henri-Bourassa Est,Rivières-des-Prairies - Pointe-aux-Trembles,302579.26,5057360.13
-1374,Armand-Bombardier,Henri-Bourassa Est/Ray-Lawson,Rivières-des-Prairies - Pointe-aux-Trembles,298444.52,5053933.39
-1378,Henri-Bourassa Est,Rivière-des-Prairies,Rivières-des-Prairies - Pointe-aux-Trembles,300592.06,5055964.07
-1379,27 e Avenue,Maurice-Duplessis,Rivières-des-Prairies - Pointe-aux-Trembles,298112.06,5054936.3
-1382,Coloniale,Sherbrooke,Plateau Mont-Royal,299410.02,5041515.58
-1383,Bélanger,Sagard,Villeray - Saint-Michel - Parc-Extension,296951.3,5045542.22
-1384,Docteur-Penfield,McTavish,Ville-Marie,298668.14,5040457.71
-1387,Saint-Alexandre,Viger,Ville-Marie,299916.71,5040324.88
-1388,Laurentien,Périnault,Ahuntsic - Cartierville,287863.12,5042995.97
-1390,Chambly,Rachel,Rosemont - Petite-Patrie,300273.77,5045536.56
-1391,Place d'Armes,Saint-Jacques Est,Ville-Marie,300309.9,5040586.55
-1392,Côte-des-Neiges,Goyer,Côte-des-Neiges - Notre-Dame-de-Grâce,294107.86,5040344.55
-1394,Garnier,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,296313.19,5045142.05
-1395,Henri-Bourassa,Marcelin-Wilson,Ahuntsic - Cartierville,290772.62,5044063.97
-1396,La Gauchetière,Saint-Urbain,Ville-Marie,300044.65,5040778.79
-1397,Lajeunesse,Prieur,Ahuntsic - Cartierville,291917.19,5046056.03
+1366,Congrégation,Wellington,Sud-Ouest,300234.18,5037931.55,-73.56096409999999,45.4749232
+1367,Fortune,Wellington,Sud-Ouest,300179.92,5037551.4,-73.56096409999999,45.4749232
+1370,Berri,Mont-Royal,Plateau Mont-Royal,298393.8,5042787.58,-73.56797740000002,45.518754
+1371,Gouin,Poutrincourt,Ahuntsic - Cartierville,288669.33,5044651.97,-73.7065243,45.5416205
+1372,6 e Avenue,Henri-Bourassa Est,Rivières-des-Prairies - Pointe-aux-Trembles,297472.23,5053007.09,-73.670518,45.5512008
+1373,Armand-Chaput,Henri-Bourassa Est,Rivières-des-Prairies - Pointe-aux-Trembles,302579.26,5057360.13,-73.528449,45.656083
+1374,Armand-Bombardier,Henri-Bourassa Est/Ray-Lawson,Rivières-des-Prairies - Pointe-aux-Trembles,298444.52,5053933.39,-73.5814278,45.62533570000001
+1378,Henri-Bourassa Est,Rivière-des-Prairies,Rivières-des-Prairies - Pointe-aux-Trembles,300592.06,5055964.07,-73.55393529999999,45.6435193
+1379,27 e Avenue,Maurice-Duplessis,Rivières-des-Prairies - Pointe-aux-Trembles,298112.06,5054936.3,-73.585813,45.634117
+1382,Coloniale,Sherbrooke,Plateau Mont-Royal,299410.02,5041515.58,-73.5689658,45.5135421
+1383,Bélanger,Sagard,Villeray - Saint-Michel - Parc-Extension,296951.3,5045542.22,-73.6005237,45.5497392
+1384,Docteur-Penfield,McTavish,Ville-Marie,298668.14,5040457.71,-73.5785336,45.5041509
+1387,Saint-Alexandre,Viger,Ville-Marie,299916.71,5040324.88,-73.5624522,45.50281469999999
+1388,Laurentien,Périnault,Ahuntsic - Cartierville,287863.12,5042995.97,-73.7168634,45.526702
+1390,Chambly,Rachel,Rosemont - Petite-Patrie,300273.77,5045536.56,-73.567256,45.5016889
+1391,Place d'Armes,Saint-Jacques Est,Ville-Marie,300309.9,5040586.55,-73.5574177,45.5051579
+1392,Côte-des-Neiges,Goyer,Côte-des-Neiges - Notre-Dame-de-Grâce,294107.86,5040344.55,-73.63680649999999,45.5029803
+1394,Garnier,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,296313.19,5045142.05,-73.621061,45.551257
+1395,Henri-Bourassa,Marcelin-Wilson,Ahuntsic - Cartierville,290772.62,5044063.97,-73.67992319999999,45.5364754
+1396,La Gauchetière,Saint-Urbain,Ville-Marie,300044.65,5040778.79,-73.5608846,45.5069033
+1397,Lajeunesse,Prieur,Ahuntsic - Cartierville,291917.19,5046056.03,-73.6650439,45.5543002
 1400,City Councillors,Maisonneuve,Ville-Marie,299310.43,5040644.07,-73.570295,45.5057078
-1401,Notre-Dame,Sortie Molson,Ville-Marie,301017.4,5041984.5
-1403,Parc,5305,Plateau Mont-Royal,296992.44,5042369
-1405,Esplanade,Henri-Bourassa,Ahuntsic - Cartierville,291323.07,5045305.69
-1407,La Rousselière,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305238.75,5058630.05
-1410,Mill,Oak,Sud-Ouest,300743.47,5038809.06
-1412,Mont-Royal,Parthenais,Plateau Mont-Royal,299234.54,5044057.46
+1401,Notre-Dame,Sortie Molson,Ville-Marie,301017.4,5041984.5,-73.5561204,45.5045254
+1403,Parc,5305,Plateau Mont-Royal,296992.44,5042369,-73.567256,45.5016889
+1405,Esplanade,Henri-Bourassa,Ahuntsic - Cartierville,291323.07,5045305.69,-73.7434604,45.4822993
+1407,La Rousselière,Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305238.75,5058630.05,-73.4943792,45.66751360000001
+1410,Mill,Oak,Sud-Ouest,300743.47,5038809.06,-73.567256,45.5016889
+1412,Mont-Royal,Parthenais,Plateau Mont-Royal,299234.54,5044057.46,-73.571364,45.536172
 1414,Atwater,1588 Atwater  Forum Pepsi,Ville-Marie,298142.7,5038870,-73.584234,45.489934
-1415,Legendre,Marché-Central,Ahuntsic - Cartierville,292854.26,5043730.23
-1416,Saint-Patrick,Thomas-Keefer,Sud-Ouest,299000,5037560
-1419,Saint-Jacques,Square Victoria Ouest,Ville-Marie,300049.22,5040108.5
-1420,Brébeuf,Rachel,Plateau Mont-Royal,299101.99,5043004.89
-1422,Docteur-Penfield,Drummond,Ville-Marie,298456.74,5040229.06
-1427,Bonavista,Côte-Saint-Luc,Côte-des-Neiges - Notre-Dame-de-Grâce,295731.29,5038179.43
-1432,Bloomfield,Ogilvy,Villeray - Saint-Michel - Parc-Extension,294963.47,5043117.93
-1435,Chabanel,Esplanade,Ahuntsic - Cartierville,292847.5,5044590.29
-1436,Christophe-Colomb,Jacques-Casault,Ahuntsic - Cartierville,294616.75,5045782.62
-1437,Champagneur,Ogilvy,Villeray - Saint-Michel - Parc-Extension,294938.22,5043058.07
+1415,Legendre,Marché-Central,Ahuntsic - Cartierville,292854.26,5043730.23,-73.6528594,45.532946
+1416,Saint-Patrick,Thomas-Keefer,Sud-Ouest,299000,5037560,-73.5741815,45.4779069
+1419,Saint-Jacques,Square Victoria Ouest,Ville-Marie,300049.22,5040108.5,-73.5607691,45.5009
+1420,Brébeuf,Rachel,Plateau Mont-Royal,299101.99,5043004.89,-73.5729514,45.5269703
+1422,Docteur-Penfield,Drummond,Ville-Marie,298456.74,5040229.06,-73.5811701,45.5019779
+1427,Bonavista,Côte-Saint-Luc,Côte-des-Neiges - Notre-Dame-de-Grâce,295731.29,5038179.43,-73.6161284,45.4834744
+1432,Bloomfield,Ogilvy,Villeray - Saint-Michel - Parc-Extension,294963.47,5043117.93,-73.626351,45.52797899999999
+1435,Chabanel,Esplanade,Ahuntsic - Cartierville,292847.5,5044590.29,-73.6555451,45.5368559
+1436,Christophe-Colomb,Jacques-Casault,Ahuntsic - Cartierville,294616.75,5045782.62,-73.6303765,45.5519176
+1437,Champagneur,Ogilvy,Villeray - Saint-Michel - Parc-Extension,294938.22,5043058.07,-73.6262454,45.5273848
 1438,6 e Avenue,Saint-Zotique,Rosemont - Petite-Patrie,297576.58,5045948.88,-73.6152295,45.5296083
-1440,Hôtel-de-Ville,Mont-Royal,Plateau Mont-Royal,298192.16,5042464.47
-1442,8 e Avenue,Rosemont,Rosemont - Petite-Patrie,298403.34,5045730.02
-1445,Cavendish,Chester,Côte-des-Neiges - Notre-Dame-de-Grâce,293421.23,5036764.96
+1440,Hôtel-de-Ville,Mont-Royal,Plateau Mont-Royal,298192.16,5042464.47,-73.6419755,45.5132769
+1442,8 e Avenue,Rosemont,Rosemont - Petite-Patrie,298403.34,5045730.02,-73.58202949999999,45.5514837
+1445,Cavendish,Chester,Côte-des-Neiges - Notre-Dame-de-Grâce,293421.23,5036764.96,-73.6455446,45.4707273
 1446,René-Lévesque,800 Face au Reine-Élizabeth,Ville-Marie,299471.4,5040123.5,-73.5680854,45.50044889999999
-1447,Beauharnois,Charles-de-la-Tour,Ahuntsic - Cartierville,292862.02,5043261.55
-1448,Jeanne-Mance,Mont-Royal,Plateau Mont-Royal,297874.81,5041960.07
-1449,Jeanne-Mance,Maisonneuve,Ville-Marie,299461.93,5040919.57
-1450,Côte-Sainte-Catherine,Stirling,Côte-des-Neiges - Notre-Dame-de-Grâce,295550.54,5040981.06
-1451,Montigny,Tricentenaire,Rivières-des-Prairies - Pointe-aux-Trembles,304618.46,5056844.1
-1458,Chambord,Fleury,Ahuntsic - Cartierville,292450.59,5046659.94
-1459,Saint-Urbain,Sauvé,Ahuntsic - Cartierville,292237.2,5045060.29
-1460,19 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296640.96,5047726.06
-1461,Pie-IX,face au 8211,Villeray - Saint-Michel - Parc-Extension,296676.88,5048032.5
-1462,Notre-Dame,Place d'Armes/Saint-Sulpice,Ville-Marie,300373.56,5040557.72
-1463,Assomption,Saules des,Rosemont - Petite-Patrie,300304.73,5048081.53
-1468,André-Grasset,Émile-Journault,Ahuntsic - Cartierville,294223.73,5046420.08
-1476,Crémazie,Henri-Julien inter. Nord,Ahuntsic - Cartierville,293871.56,5044954
-1478,Square Victoria Est,Viger,Ville-Marie,299882.3,5040259.5
+1447,Beauharnois,Charles-de-la-Tour,Ahuntsic - Cartierville,292862.02,5043261.55,-73.6528417,45.5291674
+1448,Jeanne-Mance,Mont-Royal,Plateau Mont-Royal,297874.81,5041960.07,-73.5886699,45.5175663
+1449,Jeanne-Mance,Maisonneuve,Ville-Marie,299461.93,5040919.57,-73.568348,45.5081824
+1450,Côte-Sainte-Catherine,Stirling,Côte-des-Neiges - Notre-Dame-de-Grâce,295550.54,5040981.06,-73.6183774,45.5087274
+1451,Montigny,Tricentenaire,Rivières-des-Prairies - Pointe-aux-Trembles,304618.46,5056844.1,-73.5022798,45.6515675
+1458,Chambord,Fleury,Ahuntsic - Cartierville,292450.59,5046659.94,-73.65818709999999,45.5597394
+1459,Saint-Urbain,Sauvé,Ahuntsic - Cartierville,292237.2,5045060.29,-73.66094799999999,45.5452906
+1460,19 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296640.96,5047726.06,-73.6045263,45.5694077
+1461,Pie-IX,face au 8211,Villeray - Saint-Michel - Parc-Extension,296676.88,5048032.5,-73.6140485,45.5766061
+1462,Notre-Dame,Place d'Armes/Saint-Sulpice,Ville-Marie,300373.56,5040557.72,-73.5549813,45.5044103
+1463,Assomption,Saules des,Rosemont - Petite-Patrie,300304.73,5048081.53,-73.5605496,45.573708
+1468,André-Grasset,Émile-Journault,Ahuntsic - Cartierville,294223.73,5046420.08,-73.63546989999999,45.5576097
+1476,Crémazie,Henri-Julien inter. Nord,Ahuntsic - Cartierville,293871.56,5044954,-73.6400377,45.5443212
+1478,Square Victoria Est,Viger,Ville-Marie,299882.3,5040259.5,-73.563129,45.5019451
 1479,Crémazie,Jarry inter. Nord,Villeray - Saint-Michel - Parc-Extension,295858.12,5046480
-1480,Crémazie,Jarry inter. Sud,Villeray - Saint-Michel - Parc-Extension,295727.8,5046298
-1481,24 e Avenue,Crémazie,Villeray - Saint-Michel - Parc-Extension,297063.6,5047946
-1484,19 e Avenue,Crémazie inter. Sud,Villeray - Saint-Michel - Parc-Extension,296882.38,5047574.5
-1485,19 e Avenue,Crémazie inter. Nord,Villeray - Saint-Michel - Parc-Extension,296837.4,5047604.5
-1488,17 e Avenue,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,297407.07,5047004.07
-1491,Fernand-Gauthier,Maurice-Duplessis,Rivières-des-Prairies - Pointe-aux-Trembles,297346.81,5054142.63
-1493,Davidson,Rachel/Saint-Michel,Rosemont - Petite-Patrie,300142.99,5045235.61
-1494,Érables,Rachel,Plateau Mont-Royal,299584.19,5043721.1
-1495,Aylmer,Pins,Plateau Mont-Royal,298587.59,5041048.84
-1497,Notre-Dame,Saint-Georges (pl),Rivières-des-Prairies - Pointe-aux-Trembles,305572.2,5057075.94
-1501,Sherbrooke,5300 Est (Village Olympique),Mercier - Hochelaga - Maisonneuve,300718.03,5047630.5
-1510,Atwater,Lionel-Groulx,Sud-Ouest,298617.98,5038127.54
-1517,Notre-Dame,Gypsum,Mercier - Hochelaga - Maisonneuve,303956.5,5049136
-1518,Rosemont,5689 (Hôp. Maisonneuve-R.),Rosemont - Petite-Patrie,300037.44,5048570.5
-1521,Acadie,Legendre,Ahuntsic - Cartierville,292805.5,5043613.61
-1524,Henri-Julien,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,295776.72,5044139.16
-1525,Montgomery,Sherbrooke,Plateau Mont-Royal,300139.09,5044352.6
-1526,Jean-d'Estrées,Saint-Antoine,Ville-Marie,299508.13,5039587.4
-1527,McGill College,Président-Kennedy,Ville-Marie,299040.82,5040367.04
-1528,Boyer,Jean-Talon,Rosemont - Petite-Patrie,296002.69,5044647.36
-1530,Boyer,Rosemont,Rosemont - Petite-Patrie,297326.59,5043806.11
-1531,Clifton,Sherbrooke,Côte-des-Neiges - Notre-Dame-de-Grâce,295510.34,5036573.09
-1532,Jean-Talon,Lucerne,Côte-des-Neiges - Notre-Dame-de-Grâce,293500.97,5040316.39
+1480,Crémazie,Jarry inter. Sud,Villeray - Saint-Michel - Parc-Extension,295727.8,5046298,-73.61465969999999,45.55817769999999
+1481,24 e Avenue,Crémazie,Villeray - Saint-Michel - Parc-Extension,297063.6,5047946,-73.5991569,45.5713709
+1484,19 e Avenue,Crémazie inter. Sud,Villeray - Saint-Michel - Parc-Extension,296882.38,5047574.5,-73.6020321,45.5682912
+1485,19 e Avenue,Crémazie inter. Nord,Villeray - Saint-Michel - Parc-Extension,296837.4,5047604.5,-73.6020321,45.5682912
+1488,17 e Avenue,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,297407.07,5047004.07,-73.59470859999999,45.5629081
+1491,Fernand-Gauthier,Maurice-Duplessis,Rivières-des-Prairies - Pointe-aux-Trembles,297346.81,5054142.63,-73.5955465,45.627107
+1493,Davidson,Rachel/Saint-Michel,Rosemont - Petite-Patrie,300142.99,5045235.61,-73.567256,45.5016889
+1494,Érables,Rachel,Plateau Mont-Royal,299584.19,5043721.1,-73.566794,45.5333923
+1495,Aylmer,Pins,Plateau Mont-Royal,298587.59,5041048.84,-73.57954339999999,45.5093489
+1497,Notre-Dame,Saint-Georges (pl),Rivières-des-Prairies - Pointe-aux-Trembles,305572.2,5057075.94,-73.5561204,45.5045254
+1501,Sherbrooke,5300 Est (Village Olympique),Mercier - Hochelaga - Maisonneuve,300718.03,5047630.5,-73.5535136,45.5684112
+1510,Atwater,Lionel-Groulx,Sud-Ouest,298617.98,5038127.54,-73.57902349999999,45.4830735
+1517,Notre-Dame,Gypsum,Mercier - Hochelaga - Maisonneuve,303956.5,5049136,-73.511757,45.5802207
+1518,Rosemont,5689 (Hôp. Maisonneuve-R.),Rosemont - Petite-Patrie,300037.44,5048570.5,-73.5611189,45.5770722
+1521,Acadie,Legendre,Ahuntsic - Cartierville,292805.5,5043613.61,-73.654269,45.532077
+1524,Henri-Julien,Jean-Talon,Villeray - Saint-Michel - Parc-Extension,295776.72,5044139.16,-73.6155304,45.5371141
+1525,Montgomery,Sherbrooke,Plateau Mont-Royal,300139.09,5044352.6,-73.567256,45.5016889
+1526,Jean-d'Estrées,Saint-Antoine,Ville-Marie,299508.13,5039587.4,-73.5675859,45.4961802
+1527,McGill College,Président-Kennedy,Ville-Marie,299040.82,5040367.04,-73.5736733,45.5032395
+1528,Boyer,Jean-Talon,Rosemont - Petite-Patrie,296002.69,5044647.36,-73.61263079999999,45.541672
+1530,Boyer,Rosemont,Rosemont - Petite-Patrie,297326.59,5043806.11,-73.5956686,45.5341293
+1531,Clifton,Sherbrooke,Côte-des-Neiges - Notre-Dame-de-Grâce,295510.34,5036573.09,-73.618856,45.468911
+1532,Jean-Talon,Lucerne,Côte-des-Neiges - Notre-Dame-de-Grâce,293500.97,5040316.39,-73.6445778,45.5026623
 1533,40 e Avenue,Henri-Bourassa inter.Sud,Rivières-des-Prairies - Pointe-aux-Trembles,303921.7,5058266,-73.5750796,45.5003154
-1535,31 e Avenue,Rosemont,Rosemont - Petite-Patrie,299395.71,5047335.16
-1536,Jean-d'Estrées,Saint-Jacques,Ville-Marie,299631,5039497
-1540,Beauclerk,Notre-Dame,Mercier - Hochelaga - Maisonneuve,303747.32,5048798.12
-1542,Lachapelle,Ranger,Ahuntsic - Cartierville,287745.45,5043261.17
-1543,Henri-Bourassa Est,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,301976.41,5056940.85
-1545,Irwin,Trinitaires,Sud-Ouest,296627.19,5034137.59
-1546,Lacroix,Trinitaires,Sud-Ouest,296871.14,5034074.69
+1535,31 e Avenue,Rosemont,Rosemont - Petite-Patrie,299395.71,5047335.16,-73.5691873,45.56586979999999
+1536,Jean-d'Estrées,Saint-Jacques,Ville-Marie,299631,5039497,-73.5661423,45.49538740000001
+1540,Beauclerk,Notre-Dame,Mercier - Hochelaga - Maisonneuve,303747.32,5048798.12,-73.5135835,45.57915269999999
+1542,Lachapelle,Ranger,Ahuntsic - Cartierville,287745.45,5043261.17,-73.567256,45.5016889
+1543,Henri-Bourassa Est,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,301976.41,5056940.85,-73.53618809999999,45.6524454
+1545,Irwin,Trinitaires,Sud-Ouest,296627.19,5034137.59,-73.5992813,45.4462396
+1546,Lacroix,Trinitaires,Sud-Ouest,296871.14,5034074.69,-73.5992813,45.4462396
 1547,Decelles,Swail,Côte-des-Neiges - Notre-Dame-de-Grâce,295537.12,5039696.85,-73.6185476,45.4971331
-1548,Bridge,Chemin-des-Irlandais,Sud-Ouest,301245.5,5038562.96
-1550,Commune de la,Mill,Ville-Marie,300661.44,5039604
-1551,Brennan/Commune,Prince,Ville-Marie,300650.55,5039571.56
-1555,Réal-Benoit,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304613.98,5059677.66
-1556,Saint-Patrick,5870 (Sidbec-Dosco),Sud-Ouest,296748.16,5035661
-1557,Parc,Rachel face monument,Plateau Mont-Royal,298172.5,5041645.5
-1559,Saint-Jean-Baptiste,Autoroute 40 nord,Rivières-des-Prairies - Pointe-aux-Trembles,302494.97,5056547
-1561,Beaubien,François-Boivin,Mercier - Hochelaga - Maisonneuve,300169.73,5050054.65
-1563,Beaubien,Pierre-Gadois,Mercier - Hochelaga - Maisonneuve,300288.9,5050330.25
-1564,Langelier,Renty,Mercier - Hochelaga - Maisonneuve,300933.3,5049438.03
-1566,Canadiens de Montréal,Montagne,Ville-Marie,299263.05,5039554.42
-1568,Parc,5647,Plateau Mont-Royal,296697.4,5042555
-1569,André-Laurendeau,Rachel,Rosemont - Petite-Patrie,299978.51,5044771.5
-1570,Sherbrooke,Valois,Rosemont - Petite-Patrie,300509.09,5045629.61
-1572,Laurentien,12150,Ahuntsic - Cartierville,287645.7,5043114
-1573,Saint-Antoine,Square Victoria Ouest,Ville-Marie,299961.7,5040163
-1574,Hôtel-de-Ville,Saint-Antoine,Ville-Marie,300439.42,5040988.07
-1575,Coolbrook,Vézina,Côte-des-Neiges - Notre-Dame-de-Grâce,293168.16,5039034.04
-1577,Grenet,Louisbourg,Ahuntsic - Cartierville,288408.61,5042880
-1578,Pullman,Sainte-Anne-de-Bellevue,Côte-des-Neiges - Notre-Dame-de-Grâce,294225.28,5034548.5
-1579,Cedar,Pins,Ville-Marie,298128.68,5040049.56
-1581,Brébeuf,Saint-Grégoire,Plateau Mont-Royal,297872.21,5043817.26
-1585,Perras,Rodolphe-Forget,Rivières-des-Prairies - Pointe-aux-Trembles,298643.2,5056610.61
-1588,Maurice-Duplessis,Rodolphe-Forget,Rivières-des-Prairies - Pointe-aux-Trembles,299096.23,5056000.4
-1589,Saint-Antoine,Saint-François-Xavier,Ville-Marie,300176.82,5040527.78
-1591,Acadie,Arthur-Lismer,Ahuntsic - Cartierville,291630.63,5043948.16
-1596,Angrignon,Autoroute 20 Est,Sud-Ouest,294908.8,5034826.5
-1597,Jean-Talon,5400 Ouest (Wal-Mart),Côte-des-Neiges - Notre-Dame-de-Grâce,292736.67,5039268.56
-1599,Chabanel,Meilleur,Ahuntsic - Cartierville,292681.01,5044188.57
-1603,Acadie,Place de l'Acadie,Ahuntsic - Cartierville,290817.98,5043774.54
-1605,Champlain,Église de l',Verdun,298626.38,5035933.56
-1611,Pins,Bretelle Parc Nord,Plateau Mont-Royal,298645.28,5041238
-1615,Parc,30 m Sud de Duluth,Plateau Mont-Royal,298382.59,5041507
-1618,Charon,Wellington,Sud-Ouest,300202.7,5037703.4
-1621,Queen-Mary,face 3791 (stat. Oratoire St-J,Côte-des-Neiges - Notre-Dame-de-Grâce,295356.06,5039238
-1641,Cherrier,Jacques-Bizard,Ile-Bizard - Sainte-Geneviève,275759.12,5039027
-1646,Hector-Barsalou,Notre-Dame,Mercier - Hochelaga - Maisonneuve,304014.02,5049229.51
-1648,Sherbrooke,7846 (face Fonteneau),Mercier - Hochelaga - Maisonneuve,302011.16,5050599
-1656,Côte-Vertu,3600 face Bazar,Saint-Laurent,288499.34,5039329
-1657,Côte-Vertu,Sainte-Croix,Saint-Laurent,290738.09,5041832.5
-1658,Edouard-Laurin,Marcel-Laurin,Saint-Laurent,290184.75,5041076
-1659,Côte-Vertu,Marcel-Laurin,Saint-Laurent,290107.22,5041144.5
-1660,Marcel-Laurin,Thimens,Saint-Laurent,289725.81,5041487.5
-1661,Marcel-Laurin,1515 Accès Super-C,Saint-Laurent,289550,5041646.5
-1662,Marcel-Laurin,1757 Accès Maxi,Saint-Laurent,289384.31,5041794
-1663,Henri-Bourassa,Marcel-Laurin,Saint-Laurent,288584.59,5042496
-1669,Mentana,Saint-Grégoire,Plateau Mont-Royal,297701.35,5043556.6
-1675,Acadie,Liban/Olivier-Berthelet,Ahuntsic - Cartierville,291435.26,5043892.07
-1678,Décarie,Jockeys des inter. Est,Côte-des-Neiges - Notre-Dame-de-Grâce,292816.23,5039457.37
-1679,2 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296029.11,5046757.59
-1684,Elzéar-Soucy,Sauvé,Ahuntsic - Cartierville,291832.34,5043777.75
-1698,Henri-Julien,Rachel,Plateau Mont-Royal,298618.11,5042320.58
-1699,Marcel-Laurin,Galerie St-Laurent St-Exupéry,Saint-Laurent,289045.55,5042092.94
-1701,Hochelaga,Vimont,Mercier - Hochelaga - Maisonneuve,301545.99,5047001.71
-1706,Christophe-Colomb,Mistral,Villeray - Saint-Michel - Parc-Extension,294876.95,5045482.24
-1708,Chabot,Crémazie Est,Villeray - Saint-Michel - Parc-Extension,295461,5046143.5
-1709,Barnabé-Larocque,Papineau,Villeray - Saint-Michel - Parc-Extension,294943.71,5046291.63
-1723,Saint-Charles,3933 Accès Rona,Pierrefonds - Roxboro,276085.09,5035772
-1726,Grey,Sherbrooke,Côte-des-Neiges - Notre-Dame-de-Grâce,296485.58,5037397.53
-1731,Acadie,Salaberry,Ahuntsic - Cartierville,289514.34,5044555
-1733,Montagne,Wellington,Ville-Marie,300241.44,5039093.98
-1737,Birnam,Sauvé,Ahuntsic - Cartierville,291888.91,5044077.04
-1738,Chemin-des-Moulins,Pierre-Dupuy int. Est,Ville-Marie,301357.2,5038834.5
-1750,Henri-Bourassa Est,Nicolas-Josselin,Rivières-des-Prairies - Pointe-aux-Trembles,297621.31,5053131.6
-1751,Henri-Bourassa Est,Louis-Hippolyte-La Fontaine,Anjou,297199,5052746
-1757,Dollard,Newman,LaSalle,294252.63,5032303.23
-1811,La Vérendrye,Trinitaires,Sud-Ouest,297554.81,5033933
-1906,Boyer,Villeray,Villeray - Saint-Michel - Parc-Extension,295411.2,5045022.07
-1941,Émile-Nelligan,Laurentien,Ahuntsic - Cartierville,287451.4,5043247
-1942,Jean-Talon,Saint-Dominique,Villeray - Saint-Michel - Parc-Extension,295631.59,5043925
-2008,Bennett,Hochelaga,Mercier - Hochelaga - Maisonneuve,301270.13,5046361.65
-2021,Christophe-Colomb,Henri-Gauthier 30 m au Nord,Ahuntsic - Cartierville,294504.07,5045936
-2028,Cathédrale,Notre-Dame,Ville-Marie,299899.55,5039557.06
-2039,Maisonneuve,Prud'Homme,Côte-des-Neiges - Notre-Dame-de-Grâce,296462.79,5036938.36
-2047,Berri,De La Gauchetière,Ville-Marie,300413.66,5041458.52
-2086,20e Avenue,Beaubien,Rosemont - Petite-Patrie,298482.03,5045808.86
-2151,Hochelaga,Joliette,Mercier - Hochelaga - Maisonneuve,300785,5045213
-2167,Garnier,Saint-Grégoire,Plateau Mont-Royal,297986.79,5043992.09
-2232,Parc,Pins,Plateau Mont-Royal,298695.26,5041304.3
-2303,Chomedey,Maisonneuve,Ville-Marie,298241.04,5039087.6
-2371,Assomption,Sapins des,Rosemont - Petite-Patrie,300122.11,5048170.28
-2386,Bellechasse,Louis-Hémon,Rosemont - Petite-Patrie,297774.29,5045051.59
-2410,Chabanel,Parc,Ahuntsic - Cartierville,292714.72,5044270.75
-2437,Saint-André,Saint-Antoine,Ville-Marie,300700.69,5041575
-2479,Maurice-Duplessis,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,301537.34,5057714.55
-2656,Saint-André,Viger,Ville-Marie,300642,5041613.5
-2699,Chemin du Golf,Gouin,Ahuntsic - Cartierville,286915.64,5043106.33
-2773,Henri-Julien,Jarry,Villeray - Saint-Michel - Parc-Extension,294651.81,5044607.11
-2796,Henri-Bourassa,Métropolitain Est,Rivières-des-Prairies - Pointe-aux-Trembles,303545.08,5057898.56
-2850,Clark,Maisonneuve (int. Nord),Ville-Marie,299600.9,5041181.97
-2869,Commune de la,McGill,Ville-Marie,300668.93,5039874.43
-2901,Maurice-Duplessis,Pierre-Baillargeon,Rivières-des-Prairies - Pointe-aux-Trembles,298833.28,5055715.57
-2947,Acadie,d'Anvers,Villeray - Saint-Michel - Parc-Extension,293793,5043198
-3007,Saint-Denis,Sauvé,Ahuntsic - Cartierville,292552.4,5045586.75
-3028,Bercy,Rouen,Ville-Marie,300520,5043998
-3060,Boyer,Saint-Zotique,Rosemont - Petite-Patrie,296544.7,5044304.58
-3064,Crescent,Sherbrooke,Ville-Marie,298595.82,5039897
-3097,Belgrave,Saint-Jacques,Côte-des-Neiges - Notre-Dame-de-Grâce,296020,5036189
-3231,Assomption,Marseille,Mercier - Hochelaga - Maisonneuve,301235.39,5047647.55
-3473,Jean-d'Estrées / Murray,Notre-Dame,Ville-Marie,299817,5039377
-3527,Papineau,Ville-Marie,Ville-Marie,301076.76,5042279.87
-3628,Chabanel,Jeanne-Mance,Ahuntsic - Cartierville,292772.39,5044409.99
-3720,Beaubien,De Gaspé,Rosemont - Petite-Patrie,296449.21,5043560.08
-3757,Clarence-Gagnon,Notre-Dame,Mercier - Hochelaga - Maisonneuve,303168.06,5047844
-3803,Mont-Royal,Resther,Plateau Mont-Royal,298433.32,5042851.59
-3853,Bélanger,Boyer,Rosemont - Petite-Patrie,296276.2,5044474.08
-3936,Bélanger,Chatelain,Mercier - Hochelaga - Maisonneuve,298981.27,5048896.07
-3944,16 e Avenue,Rosemont,Rosemont - Petite-Patrie,298750.5,5046299.57
-4081,McGill,William & Place Youville,Ville-Marie,300405.16,5039994
-4123,Henri-Julien,Pins des,Plateau Mont-Royal,299119.73,5041994.22
-4175,Carillon,Notre-Dame,Sud-Ouest,297362.6,5036541
-4320,Bellechasse,Boyer,Rosemont - Petite-Patrie,297061.91,5043974.32
-4323,Chabanel,Saint-Urbain,Ahuntsic - Cartierville,292930.66,5044791.24
+1548,Bridge,Chemin-des-Irlandais,Sud-Ouest,301245.5,5038562.96,-73.5463553,45.4868004
+1550,Commune de la,Mill,Ville-Marie,300661.44,5039604,-73.5539101,45.508761
+1551,Brennan/Commune,Prince,Ville-Marie,300650.55,5039571.56,-73.567256,45.5016889
+1555,Réal-Benoit,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,304613.98,5059677.66,-73.50241630000001,45.6769881
+1556,Saint-Patrick,5870 (Sidbec-Dosco),Sud-Ouest,296748.16,5035661,-73.567256,45.5016889
+1557,Parc,Rachel face monument,Plateau Mont-Royal,298172.5,5041645.5,-73.5852537,45.5142452
+1559,Saint-Jean-Baptiste,Autoroute 40 nord,Rivières-des-Prairies - Pointe-aux-Trembles,302494.97,5056547,-71.29378210000002,46.7859017
+1561,Beaubien,François-Boivin,Mercier - Hochelaga - Maisonneuve,300169.73,5050054.65,-73.5594243,45.59042729999999
+1563,Beaubien,Pierre-Gadois,Mercier - Hochelaga - Maisonneuve,300288.9,5050330.25,-73.5577721,45.5928542
+1564,Langelier,Renty,Mercier - Hochelaga - Maisonneuve,300933.3,5049438.03,-73.549529,45.5849077
+1566,Canadiens de Montréal,Montagne,Ville-Marie,299263.05,5039554.42,-73.5708496,45.4958836
+1568,Parc,5647,Plateau Mont-Royal,296697.4,5042555,-73.567256,45.5016889
+1569,André-Laurendeau,Rachel,Rosemont - Petite-Patrie,299978.51,5044771.5,-73.5617321,45.542851
+1570,Sherbrooke,Valois,Rosemont - Petite-Patrie,300509.09,5045629.61,-73.5435152,45.5476749
+1572,Laurentien,12150,Ahuntsic - Cartierville,287645.7,5043114,-73.567256,45.5016889
+1573,Saint-Antoine,Square Victoria Ouest,Ville-Marie,299961.7,5040163,-73.5616281,45.5017206
+1574,Hôtel-de-Ville,Saint-Antoine,Ville-Marie,300439.42,5040988.07,-73.560371,45.502858
+1575,Coolbrook,Vézina,Côte-des-Neiges - Notre-Dame-de-Grâce,293168.16,5039034.04,-73.65661709999999,45.4334374
+1577,Grenet,Louisbourg,Ahuntsic - Cartierville,288408.61,5042880,-73.7098599,45.5256091
+1578,Pullman,Sainte-Anne-de-Bellevue,Côte-des-Neiges - Notre-Dame-de-Grâce,294225.28,5034548.5,-73.95036069999999,45.4032761
+1579,Cedar,Pins,Ville-Marie,298128.68,5040049.56,-73.567256,45.5016889
+1581,Brébeuf,Saint-Grégoire,Plateau Mont-Royal,297872.21,5043817.26,-73.588695,45.53426710000001
+1585,Perras,Rodolphe-Forget,Rivières-des-Prairies - Pointe-aux-Trembles,298643.2,5056610.61,-73.5791301,45.6493763
+1588,Maurice-Duplessis,Rodolphe-Forget,Rivières-des-Prairies - Pointe-aux-Trembles,299096.23,5056000.4,-73.5732735,45.64389
+1589,Saint-Antoine,Saint-François-Xavier,Ville-Marie,300176.82,5040527.78,-73.5591487,45.5046707
+1591,Acadie,Arthur-Lismer,Ahuntsic - Cartierville,291630.63,5043948.16,-73.6686698,45.5354113
+1596,Angrignon,Autoroute 20 Est,Sud-Ouest,294908.8,5034826.5,-73.4760451,45.5788984
+1597,Jean-Talon,5400 Ouest (Wal-Mart),Côte-des-Neiges - Notre-Dame-de-Grâce,292736.67,5039268.56,-82.5978547,42.03666310000001
+1599,Chabanel,Meilleur,Ahuntsic - Cartierville,292681.01,5044188.57,-73.65529149999999,45.5375331
+1603,Acadie,Place de l'Acadie,Ahuntsic - Cartierville,290817.98,5043774.54,-73.6790591,45.5337071
+1605,Champlain,Église de l',Verdun,298626.38,5035933.56,-73.551119,45.5208793
+1611,Pins,Bretelle Parc Nord,Plateau Mont-Royal,298645.28,5041238,-73.577844,45.511638
+1615,Parc,30 m Sud de Duluth,Plateau Mont-Royal,298382.59,5041507,-73.5797262,45.5165195
+1618,Charon,Wellington,Sud-Ouest,300202.7,5037703.4,-73.55883469999999,45.47925499999999
+1621,Queen-Mary,face 3791 (stat. Oratoire St-J,Côte-des-Neiges - Notre-Dame-de-Grâce,295356.06,5039238,-73.6164668,45.49191219999999
+1641,Cherrier,Jacques-Bizard,Ile-Bizard - Sainte-Geneviève,275759.12,5039027,-73.8715569,45.4906091
+1646,Hector-Barsalou,Notre-Dame,Mercier - Hochelaga - Maisonneuve,304014.02,5049229.51,-73.51014789999999,45.5830508
+1648,Sherbrooke,7846 (face Fonteneau),Mercier - Hochelaga - Maisonneuve,302011.16,5050599,-73.534798,45.5955147
+1656,Côte-Vertu,3600 face Bazar,Saint-Laurent,288499.34,5039329,-73.567256,45.5016889
+1657,Côte-Vertu,Sainte-Croix,Saint-Laurent,290738.09,5041832.5,-73.6799061,45.5162097
+1658,Edouard-Laurin,Marcel-Laurin,Saint-Laurent,290184.75,5041076,-73.68701089999999,45.5094005
+1659,Côte-Vertu,Marcel-Laurin,Saint-Laurent,290107.22,5041144.5,-73.6880106,45.510144
+1660,Marcel-Laurin,Thimens,Saint-Laurent,289725.81,5041487.5,-73.69280719999999,45.5131611
+1661,Marcel-Laurin,1515 Accès Super-C,Saint-Laurent,289550,5041646.5,-73.695448,45.51556009999999
+1662,Marcel-Laurin,1757 Accès Maxi,Saint-Laurent,289384.31,5041794,-73.69847229999999,45.5175569
+1663,Henri-Bourassa,Marcel-Laurin,Saint-Laurent,288584.59,5042496,-73.7075756,45.5221303
+1669,Mentana,Saint-Grégoire,Plateau Mont-Royal,297701.35,5043556.6,-73.590903,45.531896
+1675,Acadie,Liban/Olivier-Berthelet,Ahuntsic - Cartierville,291435.26,5043892.07,-73.67100599999999,45.534991
+1678,Décarie,Jockeys des inter. Est,Côte-des-Neiges - Notre-Dame-de-Grâce,292816.23,5039457.37,-73.65394549999999,45.4945087
+1679,2 e Avenue,Jarry,Villeray - Saint-Michel - Parc-Extension,296029.11,5046757.59,-73.6123461,45.5606882
+1684,Elzéar-Soucy,Sauvé,Ahuntsic - Cartierville,291832.34,5043777.75,-73.6661206,45.5338066
+1698,Henri-Julien,Rachel,Plateau Mont-Royal,298618.11,5042320.58,-73.57917069999999,45.5207889
+1699,Marcel-Laurin,Galerie St-Laurent St-Exupéry,Saint-Laurent,289045.55,5042092.94,-73.6024257,45.5842566
+1701,Hochelaga,Vimont,Mercier - Hochelaga - Maisonneuve,301545.99,5047001.71,-73.5416078,45.5628968
+1706,Christophe-Colomb,Mistral,Villeray - Saint-Michel - Parc-Extension,294876.95,5045482.24,-73.6271283,45.54914249999999
+1708,Chabot,Crémazie Est,Villeray - Saint-Michel - Parc-Extension,295461,5046143.5,-73.6196082,45.5551397
+1709,Barnabé-Larocque,Papineau,Villeray - Saint-Michel - Parc-Extension,294943.71,5046291.63,-73.6262102,45.5565409
+1723,Saint-Charles,3933 Accès Rona,Pierrefonds - Roxboro,276085.09,5035772,-73.567256,45.5016889
+1726,Grey,Sherbrooke,Côte-des-Neiges - Notre-Dame-de-Grâce,296485.58,5037397.53,-73.52940579999999,45.6058591
+1731,Acadie,Salaberry,Ahuntsic - Cartierville,289514.34,5044555,-73.6957609,45.540686
+1733,Montagne,Wellington,Ville-Marie,300241.44,5039093.98,-73.56096409999999,45.4749232
+1737,Birnam,Sauvé,Ahuntsic - Cartierville,291888.91,5044077.04,-73.6654858,45.5365394
+1738,Chemin-des-Moulins,Pierre-Dupuy int. Est,Ville-Marie,301357.2,5038834.5,-73.5441855,45.4888141
+1750,Henri-Bourassa Est,Nicolas-Josselin,Rivières-des-Prairies - Pointe-aux-Trembles,297621.31,5053131.6,-73.5920936,45.6180288
+1751,Henri-Bourassa Est,Louis-Hippolyte-La Fontaine,Anjou,297199,5052746,-73.59632959999999,45.61515370000001
+1757,Dollard,Newman,LaSalle,294252.63,5032303.23,-73.63491669999999,45.4306115
+1811,La Vérendrye,Trinitaires,Sud-Ouest,297554.81,5033933,-73.5925812,45.445189
+1906,Boyer,Villeray,Villeray - Saint-Michel - Parc-Extension,295411.2,5045022.07,-73.6202189,45.5450588
+1941,Émile-Nelligan,Laurentien,Ahuntsic - Cartierville,287451.4,5043247,-73.7221015,45.5289331
+1942,Jean-Talon,Saint-Dominique,Villeray - Saint-Michel - Parc-Extension,295631.59,5043925,-73.6173677,45.535179
+2008,Bennett,Hochelaga,Mercier - Hochelaga - Maisonneuve,301270.13,5046361.65,-73.54527159999999,45.5571828
+2021,Christophe-Colomb,Henri-Gauthier 30 m au Nord,Ahuntsic - Cartierville,294504.07,5045936,-73.567256,45.5016889
+2028,Cathédrale,Notre-Dame,Ville-Marie,299899.55,5039557.06,-73.5561204,45.5045254
+2039,Maisonneuve,Prud'Homme,Côte-des-Neiges - Notre-Dame-de-Grâce,296462.79,5036938.36,-73.6066177,45.4723478
+2047,Berri,De La Gauchetière,Ville-Marie,300413.66,5041458.52,-73.5597267,45.5148865
+2086,20e Avenue,Beaubien,Rosemont - Petite-Patrie,298482.03,5045808.86,-73.58094489999999,45.5611604
+2151,Hochelaga,Joliette,Mercier - Hochelaga - Maisonneuve,300785,5045213,-73.55142239999999,45.5468103
+2167,Garnier,Saint-Grégoire,Plateau Mont-Royal,297986.79,5043992.09,-73.5666483,45.5175426
+2232,Parc,Pins,Plateau Mont-Royal,298695.26,5041304.3,-73.5779594,45.511455
+2303,Chomedey,Maisonneuve,Ville-Marie,298241.04,5039087.6,-73.5839089,45.4917023
+2371,Assomption,Sapins des,Rosemont - Petite-Patrie,300122.11,5048170.28,-73.5596789,45.5739825
+2386,Bellechasse,Louis-Hémon,Rosemont - Petite-Patrie,297774.29,5045051.59,-73.58996929999999,45.5453416
+2410,Chabanel,Parc,Ahuntsic - Cartierville,292714.72,5044270.75,-73.65467029999999,45.5382296
+2437,Saint-André,Saint-Antoine,Ville-Marie,300700.69,5041575,-73.55730299999999,45.516308
+2479,Maurice-Duplessis,Saint-Jean-Baptiste,Rivières-des-Prairies - Pointe-aux-Trembles,301537.34,5057714.55,-73.5420575,45.65938329999999
+2656,Saint-André,Viger,Ville-Marie,300642,5041613.5,-73.55321219999999,45.5144286
+2699,Chemin du Golf,Gouin,Ahuntsic - Cartierville,286915.64,5043106.33,-73.7290636,45.5276204
+2773,Henri-Julien,Jarry,Villeray - Saint-Michel - Parc-Extension,294651.81,5044607.11,-73.6299375,45.5413254
+2796,Henri-Bourassa,Métropolitain Est,Rivières-des-Prairies - Pointe-aux-Trembles,303545.08,5057898.56,-73.5158482,45.6611735
+2850,Clark,Maisonneuve (int. Nord),Ville-Marie,299600.9,5041181.97,-73.5395631,45.5524684
+2869,Commune de la,McGill,Ville-Marie,300668.93,5039874.43,-73.552798,45.499129
+2901,Maurice-Duplessis,Pierre-Baillargeon,Rivières-des-Prairies - Pointe-aux-Trembles,298833.28,5055715.57,-73.57650439999999,45.6412718
+2947,Acadie,d'Anvers,Villeray - Saint-Michel - Parc-Extension,293793,5043198,-73.640936,45.5286115
+3007,Saint-Denis,Sauvé,Ahuntsic - Cartierville,292552.4,5045586.75,-73.56478919999999,45.515919
+3028,Bercy,Rouen,Ville-Marie,300520,5043998,1.099971,49.44323199999999
+3060,Boyer,Saint-Zotique,Rosemont - Petite-Patrie,296544.7,5044304.58,-73.599546,45.54477199999999
+3064,Crescent,Sherbrooke,Ville-Marie,298595.82,5039897,-73.5794019,45.4989666
+3097,Belgrave,Saint-Jacques,Côte-des-Neiges - Notre-Dame-de-Grâce,296020,5036189,-73.61219799999999,45.4654894
+3231,Assomption,Marseille,Mercier - Hochelaga - Maisonneuve,301235.39,5047647.55,5.36978,43.296482
+3473,Jean-d'Estrées / Murray,Notre-Dame,Ville-Marie,299817,5039377,-73.63225779999999,45.4490572
+3527,Papineau,Ville-Marie,Ville-Marie,301076.76,5042279.87,-73.54773039999999,45.5203858
+3628,Chabanel,Jeanne-Mance,Ahuntsic - Cartierville,292772.39,5044409.99,-73.6540388,45.5395166
+3720,Beaubien,De Gaspé,Rosemont - Petite-Patrie,296449.21,5043560.08,-73.5786869,45.5638057
+3757,Clarence-Gagnon,Notre-Dame,Mercier - Hochelaga - Maisonneuve,303168.06,5047844,-73.52091589999999,45.57048229999999
+3803,Mont-Royal,Resther,Plateau Mont-Royal,298433.32,5042851.59,-73.5874071,45.5071024
+3853,Bélanger,Boyer,Rosemont - Petite-Patrie,296276.2,5044474.08,-73.567256,45.5016889
+3936,Bélanger,Chatelain,Mercier - Hochelaga - Maisonneuve,298981.27,5048896.07,-73.567256,45.5016889
+3944,16 e Avenue,Rosemont,Rosemont - Petite-Patrie,298750.5,5046299.57,-73.5774263,45.5565672
+4081,McGill,William & Place Youville,Ville-Marie,300405.16,5039994,-73.5771511,45.50478469999999
+4123,Henri-Julien,Pins des,Plateau Mont-Royal,299119.73,5041994.22,-73.614671,45.536465
+4175,Carillon,Notre-Dame,Sud-Ouest,297362.6,5036541,-73.5561204,45.5045254
+4320,Bellechasse,Boyer,Rosemont - Petite-Patrie,297061.91,5043974.32,-73.567256,45.5016889
+4323,Chabanel,Saint-Urbain,Ahuntsic - Cartierville,292930.66,5044791.24,-73.65191229999999,45.5429158
 4387,Brennan,Nazareth,Ville-Marie,300521.84,5039419.5
-4427,Musée,Sherbrooke,Ville-Marie,298583.7,5039879.14
-4582,Durocher,Van Horne,Outremont,296096.41,5042722
-4643,Cartier,René-Lévesque,Ville-Marie,300958.86,5042462.08
-4672,Notre-Dame,Station Chemin de la(face IGA),Sud-Ouest,298257.95,5037580.06
-4794,Acadie,Ogilvy,Villeray - Saint-Michel - Parc-Extension,294816,5042762
-5006,Bellechasse,Saint-Laurent,Rosemont - Petite-Patrie,296570.85,5043218.2
-5371,Beaubien,Boyer,Rosemont - Petite-Patrie,296814.8,5044131.58
-5643,Albani,Rosemont,Mercier - Hochelaga - Maisonneuve,300329,5049189
-5721,Crowley,Décarie,Côte-des-Neiges - Notre-Dame-de-Grâce,296644.09,5036930.37
-5725,Lacordaire,Saint-Zotique,Saint-Léonard,299406.6,5049084
-6152,Edouard-Montpetit,Vincent-d'Indy,Outremont,296033.7,5041145.47
-6189,Carlton,Côte-des-Neiges,Côte-des-Neiges - Notre-Dame-de-Grâce,294338.46,5040196.7
-6283,Clark,Montigny,Ville-Marie,299670.13,5041138.18
-6379,De Contrecoeur,Sherbrooke,Mercier - Hochelaga - Maisonneuve,302766.43,5052437.26
-6469,Monk,Notre-Dame,Sud-Ouest,296974.6,5036300.5
-6602,Angrignon,Saint-Patrick,LaSalle,295070,5034634.99
-7078,Érables,Saint-Joseph,Plateau Mont-Royal,298802.57,5044242.1
-7084,Côte-Sainte-Catherine,Laurier,Outremont,297053.22,5041793.5
-7148,Côte-Sainte-Catherine,Stuart,Outremont,296505.72,5041716.05
-7149,Bélanger,Lacordaire,Saint-Léonard,299135.74,5049212.05
-7197,Marcel-Laurin,Saint-Louis,Saint-Laurent,290947.38,5040506
-7206,Patricia,Sherbrooke,Côte-des-Neiges - Notre-Dame-de-Grâce,293752.84,5035047.06
-7211,Côte-des-Neiges,4595 (accès cimetière),Côte-des-Neiges - Notre-Dame-de-Grâce,296303.4,5039561
-7276,7e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303653.42,5055718.54
-7708,83e avenue,Antoine-Chaudillon/Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305652.86,5061181.67
-7712,Arcade,Saint-Laurent,Plateau Mont-Royal,296713.51,5043116.52
-7721,Assomption,Jean-Talon,Saint-Léonard,298493.09,5049037
-8201,Côte-Sainte-Catherine,Maplewood / Villeneuve,Outremont,297420.41,5041778
-8204,Côte-Sainte-Catherine,McEachran,Outremont,296284.79,5041644.66
-8256,Côte-Vertu,Décarie,Saint-Laurent,290519.64,5041608.28
-8258,Décarie,Dion,Saint-Laurent,291589.3,5040623.8
-8458,Filion,Henri-Bourassa,Saint-Laurent,289584.88,5043111.5
-8792,Grenet,Laval,Saint-Laurent,288858.09,5042489.5
-8830,Henri-Bourassa,Saint-Michel,Montréal-Nord,293069.49,5049345.87
-8831,Henri-Bourassa,Séguin,Ahuntsic - Cartierville,292475.43,5047950.72
-8832,Henri-Bourassa,Toupin,Saint-Laurent,287586.12,5041573.12
-8851,Gariépy,Henri-Bourassa,Montréal-Nord,293610.73,5050551.57
-8852,Garon,Henri-Bourassa,Montréal-Nord,293812.68,5050899.82
-8873,Henri-Bourassa,Mère Anselme / Parc-Georges,Montréal-Nord,293240.17,5049886.49
-8888,Henri-Bourassa,Saint-Vital,Montréal-Nord,293341.75,5050091.3
-9019,Buies,Jean-Talon,Saint-Léonard,298072.69,5048089.5
-9025,Dollier,Jean-Talon,Saint-Léonard,298355.75,5048704
-9032,Jean-Talon,Michelet,Saint-Léonard,298270.47,5048495.5
-9151,Langelier,"P,-E.-Lamarche",Saint-Léonard,297769.1,5050923.72
-9271,Davaar,Manoir,Outremont,295359.47,5042149.44
-9453,Arthur-Champoux,Pie IX,Montréal-Nord,293856,5050428
-9454,Castille de,Pie-IX,Montréal-Nord,294078.1,5050127.04
-9461,Martial,Pie-IX,Montréal-Nord,293983.46,5050254.26
-9684,Lapierre,Saint-Patrick,LaSalle,294312.53,5033908.45
-9864,Gilberte-Dubé,Wellington,Verdun,299802.78,5036797.5
-9994,Loire de la,Voie serv. A-40 Est,Anjou,300088.31,5052382.01
-10271,Alexis-Nihon,Côte-Vertu,Saint-Laurent,289752.19,5040740.49
-11164,Beaudet,Marcel-Laurin,Saint-Laurent,290568.61,5040734.39
-11176,Beaulac,Côte-Vertu,Saint-Laurent,288683.9,5039543.7
-11251,Bédard / Hardy,Dollard,LaSalle,294037.01,5032579.58
-11283,Bégin,Côte-Vertu,Saint-Laurent,288361.84,5039179.68
-11478,Bertrand,Côte-Vertu,Saint-Laurent,289428.37,5040381.52
-11812,Bourdaloue,Lacordaire,Saint-Léonard,298772.2,5049266.58
-11839,Bourgoin,Côte-Vertu,Saint-Laurent,289579.2,5040545.91
-12315,Cardinal,Côte-Vertu,Saint-Laurent,290373.35,5041443.37
-12453,Cavendish,Côte-Vertu,Saint-Laurent,289041.67,5039940.55
-12458,Cavendish,Ernest-Hemingway,Saint-Laurent,287946.48,5040925.67
-12459,Cavendish,Raymond-Lasnier,Saint-Laurent,288068.63,5040816.73
-13141,Collège,Marcel-Laurin,Saint-Laurent,290716.8,5040616.23
-13146,Collège,Sainte-Croix,Saint-Laurent,291330.66,5041307
-13279,Côte-Vertu,Place Côte-Vertu,Saint-Laurent,288841.65,5039718.52
-13280,Côte-Vertu,Crevier,Saint-Laurent,290317.02,5041376.86
-13281,Côte-Vertu,Duguay / Hill,Saint-Laurent,289344.45,5040283.99
-13283,Côte-Vertu,Gohier,Saint-Laurent,290451.65,5041531.08
-13285,Côte-Vertu,Hocquart,Saint-Laurent,289196.83,5040116.25
-13289,Côte-Vertu,Leduc,Saint-Laurent,290216.98,5041266.9
-13290,Côte-Vertu,Marlatt,Saint-Laurent,289955.44,5040972.98
-13293,Côte-Vertu,O'Brien,Saint-Laurent,290692.61,5041784.21
-13300,Côte-Vertu,Saint-Germain,Saint-Laurent,290615.84,5041713.74
-13332,Couture,Lacordaire,Saint-Léonard,296319.41,5050749.53
-13653,Decelles,Marcel-Laurin,Saint-Laurent,290284.91,5040986.92
-13660,Decelles,Sainte-Croix,Saint-Laurent,290905.03,5041681
-13671,Deguire,O'Brien,Saint-Laurent,290056,5042347.5
-14105,Duval / Saint-Denis,Saint-Charles,Pierrefonds - Roxboro,275613.63,5036257.27
-14209,Église,Marcel-Laurin,Saint-Laurent,290440.96,5040847.58
-14215,Église,Sainte-Croix,Saint-Laurent,291073.47,5041533.5
-14713,Galets des,Lacordaire,Saint-Léonard,297348.21,5049559.77
-15140,Harry-Worth,Saint-Jean,Pierrefonds - Roxboro,277431.41,5038840.5
-15297,Honoré-Mercier,Lacordaire,Saint-Léonard,296579.98,5050583
-15701,Archevêque l',Léger,Montréal-Nord,294128.6,5051522.62
-15738,Lacordaire,Lafourcade,Saint-Léonard,297006.25,5050117.17
-15739,Lacordaire,Lavoisier,Saint-Léonard,296838.68,5050372.96
-15744,Lacordaire,Paimpol,Saint-Léonard,298102.23,5049094.14
-15747,Lacordaire,Renty de,Saint-Léonard,297159.8,5049863.42
-15982,Laval,Marcel-Laurin,Saint-Laurent,288743.64,5042363.17
-16043,Léger,Sainte-Colette,Montréal-Nord,294503.03,5052444.43
-16044,Léger,Sainte-Gertrude,Montréal-Nord,294215.98,5051776.7
-16193,Lucien-Thimens Place,Marcel-Laurin,Saint-Laurent,289827.43,5041393.84
-16234,Oakwood,Saint-Charles,Pierrefonds - Roxboro,275944.38,5035878.67
-16283,Marcel-Laurin,Poirier,Saint-Laurent,289181.33,5041973.21
-16704,Notre-Dame,Saint-Joseph,Lachine,292960.75,5033458
-16730,O'Brien,Rochon,Saint-Laurent,290492.3,5041955.5
-16732,O'Brien,Tassé,Saint-Laurent,290272.5,5042150
-16776,Ouellette,Saint-Jacques,Lachine,293459.81,5033977.25
-16984,1 ere Avenue,Provost,Lachine,291920.16,5033578
-17234,1ère Avenue,Saint-Antoine,Lachine,291922.41,5033364
-17652,32 e Avenue,Victoria,Lachine,289768.22,5033047.82
-17874,Parc,6653 Parc,Rosemont - Petite-Patrie,295799.62,5043124
-17886,Lecocq,Papineau,Villeray - Saint-Michel - Parc-Extension,294027.9,5046863
-17888,Assomption,Accès Stat. Pyramides Olympiques,Mercier - Hochelaga - Maisonneuve,300657.53,5047920
-17890,Viau,Piste cyclable 200m au nord de Sherbrooke,Rosemont - Petite-Patrie,300365.03,5047359.5
-17892,Cavendish,Outardes,Saint-Laurent,287712.7,5041246.5
-17893,5ème Avenue,Sherbrooke Est,Rivières-des-Prairies - Pointe-aux-Trembles,303616.7,5055569.5
-17896,Place d'Armes Ouest,Saint-Jacques,Ville-Marie,300282.63,5040537.21
-17900,Atwater,Saint-Patrick (int. Ouest),Sud-Ouest,298898.44,5037442.5
-17910,Henri-Bourassa,Pie-IX,Montréal-Nord,293677.6,5050669
-17911,Henri-Bourassa,Bretelle d'accès pont Pie IX / Hébert,Montréal-Nord,293746.3,5050787.5
-17912,Côte-de-Liesse Dir Ouest,Devonshire,Saint-Laurent,291579.47,5040162
-17915,Marcel-Laurin,Voie Réservée Bus,Saint-Laurent,291670.97,5040287.5
-17920,Henri-Bourassa Est,Sherbrooke Ouest,Rivières-des-Prairies - Pointe-aux-Trembles,304258.94,5058502.5
-17921,Henri-Bourassa Est,Sherbrooke Est,Rivières-des-Prairies - Pointe-aux-Trembles,304346.75,5058481.5
-17927,Crowley,Upper-Lachine,Côte-des-Neiges - Notre-Dame-de-Grâce,296510.74,5036908.22
-17929,Lacordaire,Accès Gare AMT,Saint-Léonard,295961,5051196
-17930,Henri-Bourassa,Pie-IX (int. Nord),Montréal-Nord,293612.06,5050757
-17931,Louis-Hippolite-La Fontaine,Maurice-Duplessis côté Ouest,Rivières-des-Prairies - Pointe-aux-Trembles,296646.47,5053620
-17933,Jarry,Traverse Scolaire 100m O St-Laurent,Villeray - Saint-Michel - Parc-Extension,294501.12,5044240.79
-17936,Décarie,Accès sud CUSM,Côte-des-Neiges - Notre-Dame-de-Grâce,296744.47,5036866.5
-17939,Berri,1640 sortie BUS Ilot Voyageur,Ville-Marie,299867.44,5041817.98
-17940,Cabot,Saint-Rémi,Sud-Ouest,297986.97,5036164
-17951,3200 (Collège Brébreuf et Stat. Hôp. Sainte-Justine),Côte-Sainte-Catherine,Côte-des-Neiges - Notre-Dame-de-Grâce,295066,5040224
-18024,Notre-Dame,Face au 1700  (Molson),Ville-Marie,301066.8,5042114.5
-18026,Côte-des-Neiges,McDougall,Ville-Marie,297529.68,5039449.15
+4427,Musée,Sherbrooke,Ville-Marie,298583.7,5039879.14,-73.5794001,45.4985219
+4582,Durocher,Van Horne,Outremont,296096.41,5042722,-73.61137099999999,45.5243274
+4643,Cartier,René-Lévesque,Ville-Marie,300958.86,5042462.08,-73.5637368,45.5167921
+4672,Notre-Dame,Station Chemin de la(face IGA),Sud-Ouest,298257.95,5037580.06,-73.583575,45.477993
+4794,Acadie,Ogilvy,Villeray - Saint-Michel - Parc-Extension,294816,5042762,-73.6277559,45.5248333
+5006,Bellechasse,Saint-Laurent,Rosemont - Petite-Patrie,296570.85,5043218.2,-73.6054123,45.52881499999999
+5371,Beaubien,Boyer,Rosemont - Petite-Patrie,296814.8,5044131.58,-73.602239,45.5370418
+5643,Albani,Rosemont,Mercier - Hochelaga - Maisonneuve,300329,5049189,-73.5836271,45.5517018
+5721,Crowley,Décarie,Côte-des-Neiges - Notre-Dame-de-Grâce,296644.09,5036930.37,-73.6042887,45.4722978
+5725,Lacordaire,Saint-Zotique,Saint-Léonard,299406.6,5049084,-73.56913229999999,45.5815892
+6152,Edouard-Montpetit,Vincent-d'Indy,Outremont,296033.7,5041145.47,-73.6121977,45.5102477
+6189,Carlton,Côte-des-Neiges,Côte-des-Neiges - Notre-Dame-de-Grâce,294338.46,5040196.7,-73.6338856,45.5016109
+6283,Clark,Montigny,Ville-Marie,299670.13,5041138.18,-73.61304,45.5314382
+6379,De Contrecoeur,Sherbrooke,Mercier - Hochelaga - Maisonneuve,302766.43,5052437.26,-73.5260385,45.61184859999999
+6469,Monk,Notre-Dame,Sud-Ouest,296974.6,5036300.5,-73.59638079999999,45.4588384
+6602,Angrignon,Saint-Patrick,LaSalle,295070,5034634.99,-73.567256,45.5016889
+7078,Érables,Saint-Joseph,Plateau Mont-Royal,298802.57,5044242.1,-73.5768647,45.5381059
+7084,Côte-Sainte-Catherine,Laurier,Outremont,297053.22,5041793.5,-73.59881899999999,45.5160562
+7148,Côte-Sainte-Catherine,Stuart,Outremont,296505.72,5041716.05,-73.605834,45.515421
+7149,Bélanger,Lacordaire,Saint-Léonard,299135.74,5049212.05,-73.5725373,45.58285660000001
+7197,Marcel-Laurin,Saint-Louis,Saint-Laurent,290947.38,5040506,-73.678103,45.50449
+7206,Patricia,Sherbrooke,Côte-des-Neiges - Notre-Dame-de-Grâce,293752.84,5035047.06,-73.641266,45.455395
+7211,Côte-des-Neiges,4595 (accès cimetière),Côte-des-Neiges - Notre-Dame-de-Grâce,296303.4,5039561,-73.608322,45.4999574
+7276,7e Avenue,Sherbrooke,Rivières-des-Prairies - Pointe-aux-Trembles,303653.42,5055718.54,-73.5148358,45.64136690000001
+7708,83e avenue,Antoine-Chaudillon/Notre-Dame,Rivières-des-Prairies - Pointe-aux-Trembles,305652.86,5061181.67,-73.4884806,45.692577
+7712,Arcade,Saint-Laurent,Plateau Mont-Royal,296713.51,5043116.52,-73.74975669999999,45.4985638
+7721,Assomption,Jean-Talon,Saint-Léonard,298493.09,5049037,-73.58083169999999,45.5812177
+8201,Côte-Sainte-Catherine,Maplewood / Villeneuve,Outremont,297420.41,5041778,-73.5944595,45.5158845
+8204,Côte-Sainte-Catherine,McEachran,Outremont,296284.79,5041644.66,-73.6089367,45.5146841
+8256,Côte-Vertu,Décarie,Saint-Laurent,290519.64,5041608.28,-73.6828061,45.5143306
+8258,Décarie,Dion,Saint-Laurent,291589.3,5040623.8,-73.6452631,45.4910735
+8458,Filion,Henri-Bourassa,Saint-Laurent,289584.88,5043111.5,-73.6424093,45.5967938
+8792,Grenet,Laval,Saint-Laurent,288858.09,5042489.5,-73.712409,45.6066487
+8830,Henri-Bourassa,Saint-Michel,Montréal-Nord,293069.49,5049345.87,-73.6501986,45.583901
+8831,Henri-Bourassa,Séguin,Ahuntsic - Cartierville,292475.43,5047950.72,-73.657014,45.5542367
+8832,Henri-Bourassa,Toupin,Saint-Laurent,287586.12,5041573.12,-73.7203301,45.513895
+8851,Gariépy,Henri-Bourassa,Montréal-Nord,293610.73,5050551.57,-73.6424093,45.5967938
+8852,Garon,Henri-Bourassa,Montréal-Nord,293812.68,5050899.82,-73.64076659999999,45.5978568
+8873,Henri-Bourassa,Mère Anselme / Parc-Georges,Montréal-Nord,293240.17,5049886.49,-73.6482626,45.5888379
+8888,Henri-Bourassa,Saint-Vital,Montréal-Nord,293341.75,5050091.3,-73.6469159,45.59070819999999
+9019,Buies,Jean-Talon,Saint-Léonard,298072.69,5048089.5,-73.5861879,45.5727144
+9025,Dollier,Jean-Talon,Saint-Léonard,298355.75,5048704,-73.5825783,45.57825
+9032,Jean-Talon,Michelet,Saint-Léonard,298270.47,5048495.5,-73.58365409999999,45.576396
+9151,Langelier,"P,-E.-Lamarche",Saint-Léonard,297769.1,5050923.72,-73.5901322,45.598143
+9271,Davaar,Manoir,Outremont,295359.47,5042149.44,-73.620824,45.5192391
+9453,Arthur-Champoux,Pie IX,Montréal-Nord,293856,5050428,-73.6403953,45.593635
+9454,Castille de,Pie-IX,Montréal-Nord,294078.1,5050127.04,-73.6140485,45.5766061
+9461,Martial,Pie-IX,Montréal-Nord,293983.46,5050254.26,-73.6392225,45.5922457
+9684,Lapierre,Saint-Patrick,LaSalle,294312.53,5033908.45,-73.567256,45.5016889
+9864,Gilberte-Dubé,Wellington,Verdun,299802.78,5036797.5,-73.5638792,45.4710891
+9994,Loire de la,Voie serv. A-40 Est,Anjou,300088.31,5052382.01,-73.53240939999999,45.6434645
+10271,Alexis-Nihon,Côte-Vertu,Saint-Laurent,289752.19,5040740.49,-73.69271909999999,45.5064349
+11164,Beaudet,Marcel-Laurin,Saint-Laurent,290568.61,5040734.39,-73.68205309999999,45.5064668
+11176,Beaulac,Côte-Vertu,Saint-Laurent,288683.9,5039543.7,-73.70607559999999,45.495545
+11251,Bédard / Hardy,Dollard,LaSalle,294037.01,5032579.58,-73.567256,45.5016889
+11283,Bégin,Côte-Vertu,Saint-Laurent,288361.84,5039179.68,-73.710312,45.4920914
+11478,Bertrand,Côte-Vertu,Saint-Laurent,289428.37,5040381.52,-73.6966102,45.5031474
+11812,Bourdaloue,Lacordaire,Saint-Léonard,298772.2,5049266.58,-73.5772456,45.5832181
+11839,Bourgoin,Côte-Vertu,Saint-Laurent,289579.2,5040545.91,-73.6948688,45.5047386
+12315,Cardinal,Côte-Vertu,Saint-Laurent,290373.35,5041443.37,-73.6847015,45.5125831
+12453,Cavendish,Côte-Vertu,Saint-Laurent,289041.67,5039940.55,-73.70133129999999,45.4993207
+12458,Cavendish,Ernest-Hemingway,Saint-Laurent,287946.48,5040925.67,-73.71544399999999,45.508047
+12459,Cavendish,Raymond-Lasnier,Saint-Laurent,288068.63,5040816.73,-73.7142227,45.50702010000001
+13141,Collège,Marcel-Laurin,Saint-Laurent,290716.8,5040616.23,-73.69094799999999,45.51195939999999
+13146,Collège,Sainte-Croix,Saint-Laurent,291330.66,5041307,-73.6324954,45.5376552
+13279,Côte-Vertu,Place Côte-Vertu,Saint-Laurent,288841.65,5039718.52,-73.66800359999999,45.5301759
+13280,Côte-Vertu,Crevier,Saint-Laurent,290317.02,5041376.86,-73.6855338,45.5121562
+13281,Côte-Vertu,Duguay / Hill,Saint-Laurent,289344.45,5040283.99,-73.69773169999999,45.5022512
+13283,Côte-Vertu,Gohier,Saint-Laurent,290451.65,5041531.08,-73.68364869999999,45.5136314
+13285,Côte-Vertu,Hocquart,Saint-Laurent,289196.83,5040116.25,-73.6995912,45.5007518
+13289,Côte-Vertu,Leduc,Saint-Laurent,290216.98,5041266.9,-73.68668199999999,45.510951
+13290,Côte-Vertu,Marlatt,Saint-Laurent,289955.44,5040972.98,-73.6899109,45.5084847
+13293,Côte-Vertu,O'Brien,Saint-Laurent,290692.61,5041784.21,-73.68066720000002,45.5158546
+13300,Côte-Vertu,Saint-Germain,Saint-Laurent,290615.84,5041713.74,-73.6815771,45.5152808
+13332,Couture,Lacordaire,Saint-Léonard,296319.41,5050749.53,-73.60530419999999,45.5951517
+13653,Decelles,Marcel-Laurin,Saint-Laurent,290284.91,5040986.92,-73.6858187,45.508649
+13660,Decelles,Sainte-Croix,Saint-Laurent,290905.03,5041681,-73.6777767,45.5149132
+13671,Deguire,O'Brien,Saint-Laurent,290056,5042347.5,-73.6886707,45.5209003
+14105,Duval / Saint-Denis,Saint-Charles,Pierrefonds - Roxboro,275613.63,5036257.27,-73.8712937,45.4660579
+14209,Église,Marcel-Laurin,Saint-Laurent,290440.96,5040847.58,-73.6855195,45.5087365
+14215,Église,Sainte-Croix,Saint-Laurent,291073.47,5041533.5,-73.6579925,45.5585062
+14713,Galets des,Lacordaire,Saint-Léonard,297348.21,5049559.77,-73.595755,45.585942
+15140,Harry-Worth,Saint-Jean,Pierrefonds - Roxboro,277431.41,5038840.5,-73.8502981,45.4890139
+15297,Honoré-Mercier,Lacordaire,Saint-Léonard,296579.98,5050583,-73.60530419999999,45.5951517
+15701,Archevêque l',Léger,Montréal-Nord,294128.6,5051522.62,-73.567256,45.5016889
+15738,Lacordaire,Lafourcade,Saint-Léonard,297006.25,5050117.17,-73.59981379999999,45.5909475
+15739,Lacordaire,Lavoisier,Saint-Léonard,296838.68,5050372.96,-73.602094,45.59314850000001
+15744,Lacordaire,Paimpol,Saint-Léonard,298102.23,5049094.14,-73.5858183,45.5816628
+15747,Lacordaire,Renty de,Saint-Léonard,297159.8,5049863.42,-73.5980022,45.58861960000001
+15982,Laval,Marcel-Laurin,Saint-Laurent,288743.64,5042363.17,-73.691373,45.511618
+16043,Léger,Sainte-Colette,Montréal-Nord,294503.03,5052444.43,-73.6321629,45.6117887
+16044,Léger,Sainte-Gertrude,Montréal-Nord,294215.98,5051776.7,-73.635947,45.605997
+16193,Lucien-Thimens Place,Marcel-Laurin,Saint-Laurent,289827.43,5041393.84,-73.691266,45.512252
+16234,Oakwood,Saint-Charles,Pierrefonds - Roxboro,275944.38,5035878.67,-73.5518907,45.4782303
+16283,Marcel-Laurin,Poirier,Saint-Laurent,289181.33,5041973.21,-73.69959399999999,45.517439
+16704,Notre-Dame,Saint-Joseph,Lachine,292960.75,5033458,-73.6164668,45.49191219999999
+16730,O'Brien,Rochon,Saint-Laurent,290492.3,5041955.5,-73.68307349999999,45.5174042
+16732,O'Brien,Tassé,Saint-Laurent,290272.5,5042150,-73.567256,45.5016889
+16776,Ouellette,Saint-Jacques,Lachine,293459.81,5033977.25,-73.645016,45.445578
+16984,1 ere Avenue,Provost,Lachine,291920.16,5033578,-73.6092888,45.53884739999999
+17234,1ère Avenue,Saint-Antoine,Lachine,291922.41,5033364,-73.66463019999999,45.4400704
+17652,32 e Avenue,Victoria,Lachine,289768.22,5033047.82,-73.6920669,45.4372143
+17874,Parc,6653 Parc,Rosemont - Petite-Patrie,295799.62,5043124,-73.6149148,45.5279181
+17886,Lecocq,Papineau,Villeray - Saint-Michel - Parc-Extension,294027.9,5046863,-73.63818429999999,45.5613867
+17888,Assomption,Accès Stat. Pyramides Olympiques,Mercier - Hochelaga - Maisonneuve,300657.53,5047920,-73.5535136,45.5684112
+17890,Viau,Piste cyclable 200m au nord de Sherbrooke,Rosemont - Petite-Patrie,300365.03,5047359.5,-71.8929107,45.4041718
+17892,Cavendish,Outardes,Saint-Laurent,287712.7,5041246.5,-73.7186211,45.5109428
+17893,5ème Avenue,Sherbrooke Est,Rivières-des-Prairies - Pointe-aux-Trembles,303616.7,5055569.5,-73.5151162,45.6399975
+17896,Place d'Armes Ouest,Saint-Jacques,Ville-Marie,300282.63,5040537.21,-73.5573881,45.5054393
+17900,Atwater,Saint-Patrick (int. Ouest),Sud-Ouest,298898.44,5037442.5,-73.5732296,45.47879040000001
+17910,Henri-Bourassa,Pie-IX,Montréal-Nord,293677.6,5050669,-73.6424995,45.5957129
+17911,Henri-Bourassa,Bretelle d'accès pont Pie IX / Hébert,Montréal-Nord,293746.3,5050787.5,-73.6475954,45.5993798
+17912,Côte-de-Liesse Dir Ouest,Devonshire,Saint-Laurent,291579.47,5040162,-73.6891058,45.4878523
+17915,Marcel-Laurin,Voie Réservée Bus,Saint-Laurent,291670.97,5040287.5,-73.70122549999999,45.4866103
+17920,Henri-Bourassa Est,Sherbrooke Ouest,Rivières-des-Prairies - Pointe-aux-Trembles,304258.94,5058502.5,-73.507021,45.6664194
+17921,Henri-Bourassa Est,Sherbrooke Est,Rivières-des-Prairies - Pointe-aux-Trembles,304346.75,5058481.5,-73.50583370000001,45.6662549
+17927,Crowley,Upper-Lachine,Côte-des-Neiges - Notre-Dame-de-Grâce,296510.74,5036908.22,-73.609589,45.4689189
+17929,Lacordaire,Accès Gare AMT,Saint-Léonard,295961,5051196,-73.5750796,45.5003154
+17930,Henri-Bourassa,Pie-IX (int. Nord),Montréal-Nord,293612.06,5050757,-73.6424093,45.5967938
+17931,Louis-Hippolite-La Fontaine,Maurice-Duplessis côté Ouest,Rivières-des-Prairies - Pointe-aux-Trembles,296646.47,5053620,-73.57555339999999,45.6419832
+17933,Jarry,Traverse Scolaire 100m O St-Laurent,Villeray - Saint-Michel - Parc-Extension,294501.12,5044240.79,-73.6015218,45.5268651
+17936,Décarie,Accès sud CUSM,Côte-des-Neiges - Notre-Dame-de-Grâce,296744.47,5036866.5,-73.5750796,45.5003154
+17939,Berri,1640 sortie BUS Ilot Voyageur,Ville-Marie,299867.44,5041817.98,-73.5635899,45.5171312
+17940,Cabot,Saint-Rémi,Sud-Ouest,297986.97,5036164,-73.587007,45.4675895
+17951,3200 (Collège Brébreuf et Stat. Hôp. Sainte-Justine),Côte-Sainte-Catherine,Côte-des-Neiges - Notre-Dame-de-Grâce,295066,5040224,-73.6239156,45.5032186
+18024,Notre-Dame,Face au 1700  (Molson),Ville-Marie,301066.8,5042114.5,-73.567256,45.5016889
+18026,Côte-des-Neiges,McDougall,Ville-Marie,297529.68,5039449.15,-73.8793925,45.4865153

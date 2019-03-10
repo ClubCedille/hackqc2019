@@ -49,30 +49,16 @@ const requestGoogleApi = (origin, destination, modeDeplacement) => {
     .asPromise();
 };
 
-/**
- *
- * @param {Array} foundData
- * @param {MasterRating} rating
- * @param {Object} road
- * @param {String} key
- */
-const addRatingToRatings = (foundData, rating, road, key) => {
-  if (foundData.length > 0) {
-    let ratings = {};
-    let toAdd = {};
-    toAdd['postions'] = foundData;
-    toAdd['rating'] = rating.getRating(foundData.length);
-    ratings[key] = toAdd;
-    road['ratings'] = ratings;
-  }
-};
-
 async function computeRatings(arrayOfRoad) {
+  let collision = {},
+    projetPiteonnisation = {};
+  let arayOfRatings = [];
+  var i = 0;
   const projetPietonnisationRating = new ProjetPietonnisationRating(),
     collisionRating = new CollisionRating();
 
   await asyncForEach(arrayOfRoad, async road => {
-    road['ratings'] = null;
+    arayOfRatings[i] = null;
     let collisionsTrouves = await collisionRating.getData(road);
     let projetsPietonnisationTrouves = await projetPietonnisationRating.getData(
       road,
@@ -86,9 +72,14 @@ async function computeRatings(arrayOfRoad) {
       road,
       'projetPietonnisation',
     );
+
+    if (collisionsTrouves.length > 0) {
+      arayOfRatings[i] = collisionRating.getRating(collisionsTrouves.length);
+    }
+    i++;
   });
 
-  return arrayOfRoad;
+  return arayOfRatings;
 }
 
 export default router;

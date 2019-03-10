@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
       Arrondissement: DataTypes.STRING,
       X: DataTypes.DOUBLE,
       Y: DataTypes.DOUBLE,
+      Latitude: DataTypes.DOUBLE,
+      Longitude: DataTypes.DOUBLE,
     },
     {},
   );

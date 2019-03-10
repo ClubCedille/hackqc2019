@@ -1,10 +1,10 @@
 import sequelize from '../config/database';
+
 const POW_FACTOR = 1.18;
 const { Op } = sequelize;
 const Accident = sequelize.import('../database/models/accident');
-const ProjetPietonnisation = sequelize.import(
-  '../database/models/projet_pietonnisation',
-);
+const ComptageFeu = sequelize.import('../database/models/comptage_feu');
+const VehiculeFeuxPieton = sequelize.import('../database/models/feuxpieton');
 
 export class MasterRating {
   /**
@@ -66,14 +66,20 @@ export class MasterRating {
   }
 }
 
-export class ProjetPietonnisationRating extends MasterRating {
-  constructor() {
-    super(ProjetPietonnisation, 'LATITUDE', 'LONGITUDE');
-  }
-}
-
 export class CollisionRating extends MasterRating {
   constructor() {
     super(Accident, 'LOC_LAT', 'LOC_LONG');
+  }
+}
+
+export class ComptageFeuxRating extends MasterRating {
+  constructor() {
+    super(ComptageFeu, 'Latitude', 'Longitude');
+  }
+}
+
+export class ComptageVFeuxPietonRating extends MasterRating {
+  constructor() {
+    super(VehiculeFeuxPieton, 'Latitude', 'Longitude');
   }
 }

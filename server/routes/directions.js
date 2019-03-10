@@ -2,8 +2,9 @@ import express from 'express';
 import asyncForEach from '../tools/asyncForEach';
 import {
   CollisionRating,
-  ProjetPietonnisationRating,
+  ComptageVFeuxPietonRating,
   MasterRating,
+  ComptageFeuxRating,
 } from '../tools/ratings';
 const router = express.Router();
 
@@ -13,13 +14,35 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 
 router.get('/', async (req, res) => {
-  let modeDeplacement = req.query.mode;
-  let mode = 'walking';
-  if (['driving', 'walking', 'bicycling'].includes(modeDeplacement)) {
-    mode = modeDeplacement;
+  let modeDeplacement = 'walking';
+  let constraintsToUse = [];
+  const { mode, constraints } = req.query;
+
+  if (['driving', 'walking', 'bicycling'].includes(mode)) {
+    modeDeplacement = mode;
   }
 
-  res.json(await querygoogleapi(req.query.origin, req.query.destination, mode));
+  // Make sure that if constraints is set, it is of type Array.
+  if (constraints && !(constraints instanceof Array)) {
+    return res.status(406).json({ error: 'contraints must be an array.' });
+  } else if (constraints instanceof Array) {
+    if (
+      constraints.includes('Family') ||
+      constraints.includes('ReducedMobility') ||
+      constraints.includes('Blind')
+    ) {
+      constraintsToUse = constraints;
+    }
+  }
+
+  res.json(
+    await querygoogleapi(
+      req.query.origin,
+      req.query.destination,
+      modeDeplacement,
+      constraints,
+    ),
+  );
 });
 
 async function querygoogleapi(origin, destination, modeDeplacement) {
@@ -32,7 +55,10 @@ async function querygoogleapi(origin, destination, modeDeplacement) {
     );
 
     // Ratings.
-    return await computeRatings(googleApiResponse.json.routes[0].legs[0].steps);
+    return await computeRatings(
+      googleApiResponse.json.routes[0].legs[0].steps,
+      constraints || [],
+    );
   } catch (error) {
     console.log(error);
     return error;
@@ -67,25 +93,64 @@ const addRatingToRatings = (foundData, rating, road, key) => {
   }
 };
 
-async function computeRatings(arrayOfRoad) {
-  const projetPietonnisationRating = new ProjetPietonnisationRating(),
-    collisionRating = new CollisionRating();
+async function computeRatings(arrayOfRoad, constraints = []) {
+  const collisionRating = new CollisionRating(),
+    comptageFeuxRating = new ComptageFeuxRating(),
+    comptageVFeuxPietonRating = new ComptageVFeuxPietonRating();
 
   await asyncForEach(arrayOfRoad, async road => {
     road['ratings'] = null;
     let collisionsTrouves = await collisionRating.getData(road);
-    let projetsPietonnisationTrouves = await projetPietonnisationRating.getData(
-      road,
-    );
+    let comptageFeuxTrouves = await comptageFeuxRating.getData(road);
+    let comptageVFeuxPietonTrouves = await comptageVFeuxPieton.getData(road);
 
-    addRatingToRatings(collisionsTrouves, collisionRating, road, 'collision');
+    if (constraints.length > 0) {
+      const conditionToRunCollision =
+        constraints.includes('Family') ||
+        constraints.includes('ReducedMobility') ||
+        constraints.includes('Blind');
 
-    addRatingToRatings(
-      projetsPietonnisationTrouves,
-      projetPietonnisationRating,
-      road,
-      'projetPietonnisation',
-    );
+      const conditionToRunFeuPieton =
+        constraints.includes('Family') ||
+        constraints.includes('ReducedMobility');
+
+      const conditionToRunComptageVehiculesPietons =
+        constraints.includes('ReducedMobility') ||
+        constraints.includes('Blind');
+
+      const conditionToRunFeuxSonores = constraints.includes('Blind');
+
+      if (conditionToRunCollision) {
+        addRatingToRatings(
+          collisionsTrouves,
+          collisionRating,
+          road,
+          'collision',
+        );
+      }
+
+      if (conditionToRunFeuPieton) {
+        addRatingToRatings(
+          comptageFeuxTrouves,
+          comptageFeuxRating,
+          road,
+          'comptage_feux_pieton',
+        );
+      }
+
+      if (conditionToRunComptageVehiculesPietons) {
+        addRatingToRatings(
+          comptageVFeuxPietonTrouves,
+          comptageVFeuxPietonRating,
+          road,
+          'comptage_vehicule_feux_pietons',
+        );
+      }
+
+      if (conditionToRunFeuxSonores) {
+        // TODO: Run feu sonore rating...
+      }
+    }
   });
 
   return arrayOfRoad;

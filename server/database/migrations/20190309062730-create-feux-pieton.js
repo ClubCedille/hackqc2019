@@ -26,6 +26,12 @@ module.exports = {
       Y: {
         type: Sequelize.DOUBLE,
       },
+      Latitude: {
+        type: Sequelize.DOUBLE,
+      },
+      Longitude: {
+        type: Sequelize.DOUBLE,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

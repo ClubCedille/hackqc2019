@@ -158,7 +158,7 @@ async function computeRatings(arrayOfRoad, constraints = []) {
     }
   });
 
-  return arayOfRatings;
+  return arrayOfRoad;
 }
 
 export default router;

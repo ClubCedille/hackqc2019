@@ -45,11 +45,9 @@ router.get('/', async (req, res) => {
     }
   }
 
-  console.log(constraintsToUse, modeDeplacement);
-
   res.json(
     await querygoogleapi(
-      req.query.nightplannorigin,
+      req.query.origin,
       req.query.destination,
       modeDeplacement,
       constraintsToUse,

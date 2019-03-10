@@ -45,7 +45,12 @@ router.get('/', async (req, res) => {
   );
 });
 
-async function querygoogleapi(origin, destination, modeDeplacement) {
+async function querygoogleapi(
+  origin,
+  destination,
+  modeDeplacement,
+  constraints = [],
+) {
   try {
     // Google response.
     const googleApiResponse = await requestGoogleApi(

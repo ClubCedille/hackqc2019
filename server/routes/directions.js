@@ -64,8 +64,6 @@ async function computeRatings(arrayOfRoad) {
       road,
     );
 
-    addRatingToRatings(collisionsTrouves, collisionRating, road, 'collision');
-
     addRatingToRatings(
       projetsPietonnisationTrouves,
       projetPietonnisationRating,
@@ -81,5 +79,16 @@ async function computeRatings(arrayOfRoad) {
 
   return arayOfRatings;
 }
+
+const addRatingToRatings = (foundData, rating, road, key) => {
+  if (foundData.length > 0) {
+    let ratings = {};
+    let toAdd = {};
+    toAdd['postions'] = foundData;
+    toAdd['rating'] = rating.getRating(foundData.length);
+    ratings[key] = toAdd;
+    road['ratings'] = ratings;
+  }
+};
 
 export default router;

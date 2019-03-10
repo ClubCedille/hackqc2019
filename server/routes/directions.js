@@ -89,21 +89,6 @@ const requestGoogleApi = (origin, destination, modeDeplacement) => {
  * @param {Object} road
  * @param {String} key
  */
-const addRatingToRatings = (foundData, rating, road, key) => {
-  if (foundData.length > 0) {
-    let toAdd = {};
-    toAdd['rating'] = rating.getRating(foundData.length);
-    ratings[key] = toAdd;
-    road['ratings'] = ratings;
-  }
-};
-/**
- *
- * @param {Array} foundData
- * @param {MasterRating} rating
- * @param {Object} road
- * @param {String} key
- */
 const addFeuxRatingToRatings = (
   feuxSonores,
   feuxNormaux,
@@ -160,7 +145,7 @@ async function computeRatings(arrayOfRoads, constraints = []) {
         const conditionToRunFeuxSonores = constraints.includes('Blind');
 
         if (conditionToRunCollision) {
-          roadSergment['collusion'] = collisionRating.getRating(
+          roadSergment['collision'] = collisionRating.getRating(
             collisionsTrouves.length,
           );
         }
@@ -172,18 +157,15 @@ async function computeRatings(arrayOfRoads, constraints = []) {
         }
 
         if (conditionToRunComptageVehiculesPietons) {
-          roadSergment['viehculepietion'] = comptageVFeuxPietonRating.getRating(
+          roadSergment['vehiculepietion'] = comptageVFeuxPietonRating.getRating(
             comptageVFeuxPietonTrouves.length,
           );
         }
 
         if (conditionToRunFeuxSonores) {
-          addFeuxRatingToRatings(
-            feuxSonoresTrouves,
+          roadSergment['feuxsonores'] = feuxSonoresRating.getRating(
+            feuxSonoresTrouves.length,
             nbOfRoads,
-            feuxSonoresRating,
-            road,
-            'feux_sonores',
           );
         }
         oneRoad.push(roadSergment);

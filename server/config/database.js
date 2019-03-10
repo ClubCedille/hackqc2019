@@ -24,6 +24,7 @@ const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
       ca: [require('fs').readFileSync(__dirname + '/amazon-rds-ca-cert.pem')],
     },
   },
+  ssl: true,
 });
 
 sequelize

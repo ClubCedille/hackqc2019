@@ -48,30 +48,27 @@ function requestGoogleApi(origin, destination, modeDeplacement) {
 }
 
 async function computeRatings(arrayOfRoad) {
-  let ratings = {};
   let collision = {},
     projetPiteonnisation = {};
-
+  let arayOfRatings = [];
+  var i = 0;
   const projetPietonnisationRating = new ProjetPietonnisationRating(),
     collisionRating = new CollisionRating();
 
   await asyncForEach(arrayOfRoad, async road => {
-    road['ratings'] = null;
+    arayOfRatings[i] = null;
     let collisionsTrouves = await collisionRating.getData(road);
     let projetsPietonnisationRating = await projetPietonnisationRating.getData(
       road,
     );
+
     if (collisionsTrouves.length > 0) {
-      let ratings = {};
-      let collision = {};
-      collision['postions'] = collisionsTrouves;
-      collision['rating'] = collisionRating.getRating(collisionsTrouves.length);
-      ratings['collision'] = collision;
-      road['ratings'] = ratings;
+      arayOfRatings[i] = collisionRating.getRating(collisionsTrouves.length);
     }
+    i++;
   });
 
-  return arrayOfRoad;
+  return arayOfRatings;
 }
 
 export default router;

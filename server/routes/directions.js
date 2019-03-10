@@ -104,7 +104,6 @@ async function computeRatings(arrayOfRoad, constraints = []) {
     comptageVFeuxPietonRating = new ComptageVFeuxPietonRating();
 
   await asyncForEach(arrayOfRoad, async road => {
-    arayOfRatings[i] = null;
     let collisionsTrouves = await collisionRating.getData(road);
     let comptageFeuxTrouves = await comptageFeuxRating.getData(road);
     let comptageVFeuxPietonTrouves = await comptageVFeuxPieton.getData(road);

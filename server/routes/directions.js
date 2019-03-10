@@ -28,13 +28,15 @@ router.get('/', async (req, res) => {
     return res.status(406).json({ error: 'contraints must be an array.' });
   } else if (constraints instanceof Array) {
     if (
-      constraints.includes('Family') ||
-      constraints.includes('ReducedMobility') ||
-      constraints.includes('Blind')
+      constraints.includes('family') ||
+      constraints.includes('reducedmobility') ||
+      constraints.includes('blind')
     ) {
       constraintsToUse = constraints;
     }
   }
+
+  console.log(constraintsToUse, modeDeplacement);
 
   res.json(
     await querygoogleapi(
@@ -134,19 +136,19 @@ async function computeRatings(arrayOfRoads, constraints = [], modeDeplacement) {
 
       if (constraints.length > 0 || modeDeplacement === 'bicycling') {
         const conditionToRunCollision =
-          constraints.includes('Family') ||
-          constraints.includes('ReducedMobility') ||
-          constraints.includes('Blind');
+          constraints.includes('family') ||
+          constraints.includes('reducedmobility') ||
+          constraints.includes('blind');
 
         const conditionToRunFeuPieton =
-          constraints.includes('Family') ||
-          constraints.includes('ReducedMobility');
+          constraints.includes('family') ||
+          constraints.includes('reducedmobility');
 
         const conditionToRunComptageVehiculesPietons =
-          constraints.includes('ReducedMobility') ||
-          constraints.includes('Blind');
+          constraints.includes('reducedmobility') ||
+          constraints.includes('blind');
 
-        const conditionToRunFeuxSonores = constraints.includes('Blind');
+        const conditionToRunFeuxSonores = constraints.includes('blind');
 
         if (conditionToRunCollision) {
           roadSergment['collision'] = collisionRating.getRating(

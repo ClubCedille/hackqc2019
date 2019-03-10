@@ -3,6 +3,7 @@ import asyncForEach from '../tools/asyncForEach';
 import {
   CollisionRating,
   ComptageVFeuxPietonRating,
+  FeuxSonoresRating,
   MasterRating,
   ComptageFeuxRating,
 } from '../tools/ratings';
@@ -97,15 +98,42 @@ const addRatingToRatings = (foundData, rating, road, key) => {
     road['ratings'] = ratings;
   }
 };
+/**
+ *
+ * @param {Array} foundData
+ * @param {MasterRating} rating
+ * @param {Object} road
+ * @param {String} key
+ */
+const addFeuxRatingToRatings = (
+  feuxSonores,
+  feuxNormaux,
+  rating,
+  road,
+  key,
+) => {
+  if (feuxSonores.length > 0) {
+    let ratings = {};
+    let toAdd = {};
+    toAdd['postions'] = feuxSonores;
+    toAdd['rating'] = rating.getRating(feuxSonores.length, feuxNormaux);
+    ratings[key] = toAdd;
+    road['ratings'] = ratings;
+  }
+};
 
 async function computeRatings(arrayOfRoad, constraints = []) {
   const collisionRating = new CollisionRating(),
     comptageFeuxRating = new ComptageFeuxRating(),
+    feuxSonoresRating = new FeuxSonoresRating(),
     comptageVFeuxPietonRating = new ComptageVFeuxPietonRating();
+
+  const nbOfRoads = arrayOfRoad.length;
 
   await asyncForEach(arrayOfRoad, async road => {
     let collisionsTrouves = await collisionRating.getData(road);
     let comptageFeuxTrouves = await comptageFeuxRating.getData(road);
+    let feuxSonoresTrouves = await feuxSonoresRating.getData(road);
     let comptageVFeuxPietonTrouves = await comptageVFeuxPietonRating.getData(
       road,
     );
@@ -154,7 +182,13 @@ async function computeRatings(arrayOfRoad, constraints = []) {
       }
 
       if (conditionToRunFeuxSonores) {
-        // TODO: Run feu sonore rating...
+        addFeuxRatingToRatings(
+          feuxSonoresTrouves,
+          nbOfRoads,
+          feuxSonoresRating,
+          road,
+          'feux_sonores',
+        );
       }
     }
   });

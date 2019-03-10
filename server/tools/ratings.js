@@ -5,6 +5,7 @@ const { Op } = sequelize;
 const Accident = sequelize.import('../database/models/accident');
 const ComptageFeu = sequelize.import('../database/models/comptage_feu');
 const VehiculeFeuxPieton = sequelize.import('../database/models/feuxpieton');
+const FeuxSonores = sequelize.import('../database/models/signaux_sonores.js');
 
 export class MasterRating {
   /**
@@ -81,5 +82,54 @@ export class ComptageFeuxRating extends MasterRating {
 export class ComptageVFeuxPietonRating extends MasterRating {
   constructor() {
     super(VehiculeFeuxPieton, 'Latitude', 'Longitude');
+  }
+}
+
+export class FeuxSonoresRating extends MasterRating {
+  constructor() {
+    super(FeuxSonores, 'latitude', 'longitude');
+  }
+
+  /**
+   * Get the rating of a Feux model.
+   * @param {Number} feuxSonores
+   * @param {Number} feuxNormaux
+   * @returns {Number}
+   */
+  getRating(feuxSonores, nbIntersections) {
+    let rating = (feuxSonores / nbIntersections) * 100;
+    if (rating <= 0) {
+      return 0;
+    }
+    if (rating >= 100) {
+      rating = 100;
+    }
+    return Math.round(rating);
+  }
+
+  /**
+   * Fetch data from the
+   *
+   * @param {Object} road
+   * @returns {Object}
+   */
+  async getData(road) {
+    return await this.model.findAll({
+      attributes: [this.latitude, this.longitude],
+      where: {
+        [this.latitude]: {
+          [Op.between]: [
+            road.start_location.lat - 0.002,
+            road.end_location.lat + 0.002,
+          ],
+        },
+        [this.longitude]: {
+          [Op.between]: [
+            road.start_location.lng - 0.002,
+            road.end_location.lng + 0.002,
+          ],
+        },
+      },
+    });
   }
 }

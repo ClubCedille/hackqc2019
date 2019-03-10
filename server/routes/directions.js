@@ -21,6 +21,10 @@ router.get('/', async (req, res) => {
 
   if (['driving', 'walking', 'bicycling'].includes(mode)) {
     modeDeplacement = mode;
+  } else {
+    return res.status(406).json({
+      error: 'You must pass driving, walking or bicycling as mode (STRICTLY).',
+    });
   }
 
   // Make sure that if constraints is set, it is of type Array.
@@ -33,6 +37,11 @@ router.get('/', async (req, res) => {
       constraints.includes('blind')
     ) {
       constraintsToUse = constraints;
+    } else {
+      return res.status(406).json({
+        error:
+          'constraints must include family, reducedmobility or blind (STRICTLY).',
+      });
     }
   }
 
@@ -40,7 +49,7 @@ router.get('/', async (req, res) => {
 
   res.json(
     await querygoogleapi(
-      req.query.origin,
+      req.query.nightplannorigin,
       req.query.destination,
       modeDeplacement,
       constraintsToUse,

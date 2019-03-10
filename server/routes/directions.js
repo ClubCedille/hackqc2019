@@ -156,15 +156,4 @@ async function computeRatings(arrayOfRoad, constraints = []) {
   return arayOfRatings;
 }
 
-const addRatingToRatings = (foundData, rating, road, key) => {
-  if (foundData.length > 0) {
-    let ratings = {};
-    let toAdd = {};
-    toAdd['postions'] = foundData;
-    toAdd['rating'] = rating.getRating(foundData.length);
-    ratings[key] = toAdd;
-    road['ratings'] = ratings;
-  }
-};
-
 export default router;

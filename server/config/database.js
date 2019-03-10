@@ -18,6 +18,12 @@ const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
     idle: 20000,
     acquire: 20000,
   },
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: true,
+      ca: [require('fs').readFileSync(__dirname + '/amazon-rds-ca-cert.pem')],
+    },
+  },
 });
 
 sequelize

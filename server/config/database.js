@@ -7,6 +7,7 @@ const sequelize = new Sequelize(POSTGRES_URL, {
   dialectOptions: {
     ssl: true,
   },
+  operatorsAliases: false,
 });
 
 sequelize

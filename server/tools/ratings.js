@@ -86,10 +86,44 @@ export class ComptageFeuxRating extends MasterRating {
     super(ComptageFeu, 'Latitude', 'Longitude');
   }
 
+  /**
+   * Get the rating of a model.
+   * @param {Number} length
+   * @returns {Number}
+   */
   getRating(length) {
-    // Cyclistes: plus y'a de passages, plus la note est basse
-    // Pietons: plys y'a de velos, plus la note est passe (COULD)
-    // Handicapes/Aveugles: Faut qu'il y ait le moins personnes possible.
+    let rating = (length / 25) * 100;
+    if (rating > 0) {
+      return 100;
+    }
+    return Math.round(rating);
+  }
+
+  /**
+   * Fetch data from the
+   *
+   * @param {Object} road
+   * @returns {Object}
+   */
+  async getData(road) {
+    return await this.model.findAll({
+      attributes: [this.latitude, this.longitude, 'Description_Code_Banque'],
+      where: {
+        [this.latitude]: {
+          [Op.between]: [
+            road.start_location.lat - 0.002,
+            road.end_location.lat + 0.002,
+          ],
+        },
+        [this.longitude]: {
+          [Op.between]: [
+            road.start_location.lng - 0.002,
+            road.end_location.lng + 0.002,
+          ],
+        },
+        ['Description_Code_Banque']: 'Piéton',
+      },
+    });
   }
 }
 

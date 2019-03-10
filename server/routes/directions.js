@@ -118,8 +118,11 @@ async function computeRatings(arrayOfRoads, constraints = []) {
     await asyncForEach(roads.legs[0].steps, async road => {
       let roadSergment = {};
       roadSergment['collision'] = 100;
+      roadSergment['feupieton'] = 0;
+      roadSergment['vehiculepietion'] = 100;
+      roadSergment['feuxsonores'] = 100;
 
-      const nbOfRoads = arrayOfRoad.length;
+      const nbOfRoads = roads.legs[0].steps.length;
 
       let collisionsTrouves = await collisionRating.getData(road);
       let comptageFeuxTrouves = await comptageFeuxRating.getData(road);

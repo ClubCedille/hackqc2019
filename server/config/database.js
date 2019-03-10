@@ -1,21 +1,11 @@
 import Sequelize from 'sequelize';
-const {
-  POSTGRES_DB,
-  POSTGRES_USER,
-  POSTGRES_PASSWORD,
-  POSTGRES_HOST,
-} = process.env;
+const { POSTGRES_DB, POSTGRES_URL } = process.env;
 
-const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
-  host: POSTGRES_HOST,
+const sequelize = new Sequelize(POSTGRES_URL, {
   dialect: 'postgres',
-  port: 5432,
-  operatorsAliases: false,
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 20000,
-    acquire: 20000,
+  protocol: 'postgres',
+  dialectOptions: {
+    ssl: true,
   },
 });
 

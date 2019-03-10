@@ -106,7 +106,9 @@ async function computeRatings(arrayOfRoad, constraints = []) {
   await asyncForEach(arrayOfRoad, async road => {
     let collisionsTrouves = await collisionRating.getData(road);
     let comptageFeuxTrouves = await comptageFeuxRating.getData(road);
-    let comptageVFeuxPietonTrouves = await comptageVFeuxPieton.getData(road);
+    let comptageVFeuxPietonTrouves = await comptageVFeuxPietonRating.getData(
+      road,
+    );
 
     if (constraints.length > 0) {
       const conditionToRunCollision =

@@ -1,4 +1,5 @@
 import sequelize from '../config/database';
+import _ from 'lodash';
 
 const POW_FACTOR = 1.18;
 const OFFSET = 0.002;
@@ -40,7 +41,7 @@ export class MasterRating {
    * @returns {Number}
    */
   getRating(length) {
-    let rating = 100 - Math.pow(length, POW_FACTOR);
+    const rating = 100 - Math.pow(length, POW_FACTOR);
     if (rating <= 0) {
       return 0;
     }
@@ -58,12 +59,16 @@ export class MasterRating {
       attributes: [this.latitude, this.longitude, ...columns],
       where: {
         [this.latitude]: {
+          ..._.pick(whereCondition, [this.latitude]),
+          [Op.not]: null,
           [Op.between]: [
             road.start_location.lat - OFFSET,
             road.end_location.lat + OFFSET,
           ],
         },
         [this.longitude]: {
+          ..._.pick(whereCondition, [this.longitude]),
+          [Op.not]: null,
           [Op.between]: [
             road.start_location.lng - OFFSET,
             road.end_location.lng + OFFSET,
@@ -92,37 +97,16 @@ export class ComptageFeuxRating extends MasterRating {
    * @returns {Number}
    */
   getRating(length) {
-    let rating = (length / 25) * 100;
+    const rating = (length / 25) * 100;
     if (rating > 0) {
       return 100;
     }
     return Math.round(rating);
   }
 
-  /**
-   * Fetch data from the
-   *
-   * @param {Object} road
-   * @returns {Object}
-   */
   async getData(road) {
-    return await this.model.findAll({
-      attributes: [this.latitude, this.longitude, 'Description_Code_Banque'],
-      where: {
-        [this.latitude]: {
-          [Op.between]: [
-            road.start_location.lat - 0.002,
-            road.end_location.lat + 0.002,
-          ],
-        },
-        [this.longitude]: {
-          [Op.between]: [
-            road.start_location.lng - 0.002,
-            road.end_location.lng + 0.002,
-          ],
-        },
-        ['Description_Code_Banque']: 'Piéton',
-      },
+    return await super.getData(road, ['Description_Code_Banque'], {
+      Description_Code_Banque: 'Piéton',
     });
   }
 }
@@ -130,11 +114,6 @@ export class ComptageFeuxRating extends MasterRating {
 export class ComptageVFeuxPietonRating extends MasterRating {
   constructor() {
     super(VehiculeFeuxPieton, 'Latitude', 'Longitude');
-  }
-
-  getRating(length) {
-    // plus y'a de vehicules, plus la note est basse.
-    // pour les Handicapes/Aveugles: Plus y'a de personnes, plus la note est basse
   }
 }
 

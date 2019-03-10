@@ -15,9 +15,9 @@ const parse = async parser => await parser.parse();
 const parsers = [
   // new AccidentParser(), // DONE
   // new ComptageFeuxParser(),
-  // new FeuxPietonsParser(),
+  new FeuxPietonsParser(),
   // new SignauxSonoresParser(),
-  new ProjetPietonnisationParser(),
+  //new ProjetPietonnisationParser(),
 ];
 
 // Parse data.

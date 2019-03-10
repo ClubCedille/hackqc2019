@@ -77,6 +77,46 @@ export class ComptageFeuxRating extends MasterRating {
   constructor() {
     super(ComptageFeu, 'Latitude', 'Longitude');
   }
+
+  /**
+   * Get the rating of a model.
+   * @param {Number} length
+   * @returns {Number}
+   */
+  getRating(length) {
+    let rating = (length / 25) * 100;
+    if (rating > 0) {
+      return 100;
+    }
+    return Math.round(rating);
+  }
+
+  /**
+   * Fetch data from the
+   *
+   * @param {Object} road
+   * @returns {Object}
+   */
+  async getData(road) {
+    return await this.model.findAll({
+      attributes: [this.latitude, this.longitude, 'Description_Code_Banque'],
+      where: {
+        [this.latitude]: {
+          [Op.between]: [
+            road.start_location.lat - 0.002,
+            road.end_location.lat + 0.002,
+          ],
+        },
+        [this.longitude]: {
+          [Op.between]: [
+            road.start_location.lng - 0.002,
+            road.end_location.lng + 0.002,
+          ],
+        },
+        ['Description_Code_Banque']: 'Piéton',
+      },
+    });
+  }
 }
 
 export class ComptageVFeuxPietonRating extends MasterRating {

@@ -117,7 +117,7 @@ async function computeRatings(arrayOfRoads, constraints = []) {
     let oneRoad = [];
     await asyncForEach(roads.legs[0].steps, async road => {
       let roadSergment = {};
-      roadSergment['collusion'] = 100;
+      roadSergment['collision'] = 100;
 
       const nbOfRoads = arrayOfRoad.length;
 

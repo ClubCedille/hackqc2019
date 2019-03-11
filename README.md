@@ -1,5 +1,9 @@
 # HackQC19-API
 
+
+![hackqc_gagnants_1](https://user-images.githubusercontent.com/25652765/54165021-3f1aba00-441c-11e9-998c-6008d45700e1.JPG)
+
+
 ## How to run the project in dev
 
 ``` npm i && npm run dev ```
